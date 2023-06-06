@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SpaceShooter",
+    "\\SpaceShooter\\SpaceShooter"
   ],
-  "SelectedNode": "\\C:\\Users\\clementboutet\\Desktop\\S2_01\\2022-23_S2-01_C1_SpaceShooter",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }
