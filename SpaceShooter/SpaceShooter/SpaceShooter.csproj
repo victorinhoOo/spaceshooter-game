@@ -15,6 +15,9 @@
     <None Remove="Sprites\explosion.png" />
     <None Remove="Sprites\laser-bolts.png" />
     <None Remove="Sprites\power-up.png" />
+    <None Remove="Sprites\Ship_1.png" />
+    <None Remove="Sprites\Ship_3.png" />
+    <None Remove="Sprites\Ship_5.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +36,9 @@
     <Resource Include="Sprites\explosion.png" />
     <Resource Include="Sprites\laser-bolts.png" />
     <Resource Include="Sprites\power-up.png" />
+    <Resource Include="Sprites\Ship_1.png" />
+    <Resource Include="Sprites\Ship_3.png" />
+    <Resource Include="Sprites\Ship_5.png" />
   </ItemGroup>
 
 </Project>
