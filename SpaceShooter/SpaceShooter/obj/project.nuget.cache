@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zmMBxeB8o0mpZzTAqM9mJkGLh3M2rPmALTtK0WHOmcL+kW166fc3EUbr9SMdntmxSXqTpx9+fSn4izK65p4Fjw==",
+  "dgSpecHash": "xq4/zoiXx8EgeftUmAP7maQyGqhfKuF8dIPGzg2uMSiyIfol+Y8wG2G/6c/UzAi7L+074mDBDY6jmsc+ZbjS6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Victor\\Desktop\\Cours\\S2.02\\SpaceShooter\\SpaceShooter\\SpaceShooter.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Victor\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\Victor\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\Victor\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\Victor\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Tayk0oo\\Desktop\\SAE 02 01\\2022-23_S2-01_C1_SpaceShooter\\SpaceShooter\\SpaceShooter\\SpaceShooter.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
