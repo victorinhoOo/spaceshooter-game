@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceShooter.model
+namespace SpaceShooter.model.Vaisseaux
 {
     public class Spaceship : GameItem
     {

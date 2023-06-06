@@ -42,9 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="model\Joueur\" />
+    <Folder Include="model\Tirs\" />
+    <Folder Include="model\Vaisseaux\Joueur\" />
     <Folder Include="model\Bonus\" />
-    <Folder Include="model\Déplacment\" />
   </ItemGroup>
 
 </Project>
