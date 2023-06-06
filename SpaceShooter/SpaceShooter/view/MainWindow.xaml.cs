@@ -22,7 +22,7 @@ namespace SpaceShooter.view
     {
         public MainWindow()
         {
-            InitializeCoponent();
+            InitializeComponent();
         }
     }
 }
