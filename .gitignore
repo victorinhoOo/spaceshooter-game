@@ -396,18 +396,3 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-
-
-# obj
-/SpaceShooter/SpaceShooter/obj/*
-
-# bin
-/SpaceShooter/SpaceShooter/bin/*
-
-# .vs
-/.vs/*
-/SpaceShooter/.vs/*
-/SpaceShooter/.vs/SpaceShooter/v17/.suo
-/SpaceShooter/SpaceShooter/obj/Debug/net6.0-windows/SpaceShooter.assets.cache
-/SpaceShooter/SpaceShooter/obj/Debug/net6.0-windows/SpaceShooter.GeneratedMSBuildEditorConfig.editorconfig
-/SpaceShooter/SpaceShooter/obj/Debug/net6.0-windows/SpaceShooter_MarkupCompile.i.cache
