@@ -12,6 +12,7 @@ namespace SpaceShooter.model.Space.Enemy
         private double vitesse = 200;
         public double Vitesse { get => vitesse; set => vitesse = value; }
         private double angle = 315;
+        public double Angle { get => angle; set => angle = value; }
         private static int nombre = 0;
         private TimeSpan waiting = TimeSpan.Zero;
         private bool touched = false;

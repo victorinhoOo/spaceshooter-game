@@ -48,7 +48,7 @@ namespace SpaceShooter.model.Space
                 time = 0;
                 PlaySound("blop.mp3");
             }
-            if (other.GetType() == typeof(Shoot))
+            /*if (other.GetType() == typeof(Shoot))
             {
 
             }
@@ -59,7 +59,7 @@ namespace SpaceShooter.model.Space
                 {
                     TheGame.Loose();
                 }
-            }
+            }*/
 
 
         }

@@ -21,6 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="view\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="view\App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Sounds\music.mp3" />
   </ItemGroup>
 

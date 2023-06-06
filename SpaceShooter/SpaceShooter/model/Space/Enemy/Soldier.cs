@@ -17,6 +17,7 @@ namespace SpaceShooter.model.Space.Enemy
         }
         public override string TypeName => "Soldier";
 
-        public Trow 
     }
+
+
 }
