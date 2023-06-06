@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SpaceShooter
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\clementboutet\Desktop\S2_01\2022-23_S2-01_C1_SpaceShooter\SpaceShooter\SpaceShooter\
+=======
+build_property.ProjectDir = C:\Users\Tayk0oo\Desktop\SAE 02 01\2022-23_S2-01_C1_SpaceShooter\SpaceShooter\SpaceShooter\
+>>>>>>> 2c4cdebfd1582ac295ab9a10ea0bf91548753453
