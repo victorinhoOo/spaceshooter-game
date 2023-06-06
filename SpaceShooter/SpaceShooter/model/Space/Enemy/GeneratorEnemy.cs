@@ -5,10 +5,10 @@ using IUTGame;
 
 namespace SpaceShooter.model.Vaisseaux.Enemi
 {
-    public class GenerateurBalle : GameItem, IAnimable
+    public class GeneratorEnemy : GameItem, IAnimable
     {
         private TimeSpan timeToCreate;
-        public GenerateurBalle(Game g) : base(0, 0, g)
+        public GeneratorEnemy(Game g) : base(0, 0, g)
         {
             timeToCreate = new TimeSpan(0, 0, 2);
         }
@@ -26,7 +26,7 @@ namespace SpaceShooter.model.Vaisseaux.Enemi
                 double x = r.NextDouble() * GameWidth;
                 double y = r.NextDouble() * GameHeight / 2;
 
-                Balle b = new Balle(x, y, TheGame);
+                Soldier b = new Soldier(x, y, TheGame);
                 TheGame.AddItem(b);
                 double ms = r.NextDouble() * 5000 + 1000;
                 timeToCreate = new TimeSpan(0, 0, 0, 0, (int)ms);
@@ -34,17 +34,18 @@ namespace SpaceShooter.model.Vaisseaux.Enemi
 
 
             }
-            Random Z = new Random();
+            Random Z = new Random();//systeme de chance plus augmente la range plus c rare 
+            //d'avoir une apparition 
             double random = Z.Next(1, 500);
             if (random == 99)
             {
 
                 double x = GameWidth / 2;
                 double y = GameHeight / 2;
-                SuperBalle superBalle = new SuperBalle(x, y, TheGame);
-                superBalle.Vitesse = 1000;
-                superBalle.Angle = Z.Next(180, 361);
-                TheGame.AddItem(superBalle);
+                Officer officer = new Officer(x, y, TheGame);
+                officer.Vitesse = 1000;
+                officer.Angle = Z.Next(180, 361);
+                TheGame.AddItem(officer);
 
 
             }

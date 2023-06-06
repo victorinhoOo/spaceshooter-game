@@ -1,25 +1,34 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Input;
 using IUTGame;
-namespace PetitJeu
+using PetitJeu;
+using SpaceShooter.model.Space.Enemi;
+
+namespace SpaceShooter.model.Space
 {
     class Player : GameItem, IAnimable, IKeyboardInteract
-    {        
+    {
         private bool compte = false;
         private double time = 0;
         private ObjScore objScore;
+        private int life = 3;
 
-        public Joueur(double x, double y, Game g)
-            :base(x,y,g,"Player.png")
+        public int Life { get => life; set => life = value; }
+
+        public Player(double x, double y, Game g)
+            : base(x, y, g, "Ship_1.png")
         {
             objScore = new ObjScore(0, 10, 10, g);
             TheGame.AddItem(objScore);
         }
         public override string TypeName => "Player";
 
+        
+
         public void Animate(TimeSpan dt)
         {
-            if(compte)
+            if (compte)
             {
                 time += dt.TotalMilliseconds;
                 if (time > 500)
@@ -29,8 +38,9 @@ namespace PetitJeu
 
         public override void CollideEffect(GameItem other)
         {
-            if(!compte)
+            if (!compte)
             {
+                // Score à changer ainsi que la limite 
                 objScore.Score++;
                 if (objScore.Score >= 10)
                     TheGame.Win();
@@ -38,28 +48,41 @@ namespace PetitJeu
                 time = 0;
                 PlaySound("blop.mp3");
             }
-            if (other.TypeName == "SuperBalle")
+            if (other.GetType() == typeof(Shoot))
             {
-                TheGame.Win();
+
             }
-            
+            if (other.GetType() == typeof(Enemi.Enemy))
+            {
+                Life -= 1;
+                if (Life == 0)
+                {
+                    TheGame.Loose();
+                }
+            }
+
 
         }
 
         public void KeyDown(Key key)
         {
-            switch(key)
+            switch (key)
             {
                 case Key.Left:
-                    MoveXY(-10, 0);break;
+                    MoveXY(-10, 0); break;
                 case Key.Right:
-                    MoveXY(10, 0);break;
+                    MoveXY(10, 0); break;
+                case Key.Up:
+                    MoveXY(0, +10); break;
+                case Key.Down:
+                    MoveXY(0, -10); break;
+
             }
         }
 
         public void KeyUp(Key key)
         {
-            
+
         }
     }
 }

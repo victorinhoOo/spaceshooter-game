@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceShooter.model.Vaisseaux
+namespace SpaceShooter.model.Space.Enemy
 {
-    public class Spaceship : GameItem, IAnimable
+    abstract public class Enemy : GameItem, IAnimable
     {
         private double vitesse = 200;
         public double Vitesse { get => vitesse; set => vitesse = value; }
@@ -16,7 +16,7 @@ namespace SpaceShooter.model.Vaisseaux
         private TimeSpan waiting = TimeSpan.Zero;
         private bool touched = false;
 
-        public Spaceship(double x, double y, Game g, string name = "", int zindex = 0) :
+        public Enemy(double x, double y, Game g, string name = "", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
             ++nombre;
@@ -44,12 +44,12 @@ namespace SpaceShooter.model.Vaisseaux
 
             }
 
-            else if (other.TypeName == this.TypeName)
+            else if (other.TypeName == TypeName)
             {
-                
+
             }
 
-            
+
 
         }
 
@@ -59,31 +59,31 @@ namespace SpaceShooter.model.Vaisseaux
             {
                 waiting = waiting - dt;
             }
-            if (this.Top < 0)
+            if (Top < 0)
             {
                 Top = 0;
-                angle = 360 - angle;
-                
+
+
             }
             else if (Bottom > GameHeight)
             {
                 TheGame.RemoveItem(this);
                 --nombre;
                 if (nombre == 0)
-                    TheGame.Loose();
+                {
+                    //peut etre en faire spaw plus
+                }
+
             }
-            else if (Left < 0)
+            else if (touched) 
             {
-                angle = (360 + 180 - angle) % 360;
-                Left = 0;
-                
+                TheGame.RemoveItem(this);
+                --nombre;
+                //peut etre rajouter une option qui fais que quand le spaceship est touché 
+                //alors son sprite change en exploision puis l'item disparait
             }
-            else if (Right > GameWidth)
-            {
-                angle = (360 + 180 - angle) % 360;
-                Right = GameWidth;
-                
-            }
+
+
             MoveDA(Vitesse * dt.TotalSeconds, angle);
         }
     }
