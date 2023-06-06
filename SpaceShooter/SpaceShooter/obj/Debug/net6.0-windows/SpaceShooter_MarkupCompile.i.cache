@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-C:\Users\Victor\Desktop\Cours\S2.02\SpaceShooter\SpaceShooter\obj\Debug\net6.0-windows\
-=======
 C:\Users\Tayk0oo\Desktop\SAE 02 01\2022-23_S2-01_C1_SpaceShooter\SpaceShooter\SpaceShooter\obj\Debug\net6.0-windows\
->>>>>>> 82ce4922a0cfbfef8b98898d9dd5d5fc00a84ae5
 SpaceShooter
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-<<<<<<< HEAD
 
 22068657990
 1-825840921
 528392249
-195-660746609
-view\App.xaml;view\MainWindow.xaml;
-=======
-C:\Users\Tayk0oo\Desktop\SAE 02 01\2022-23_S2-01_C1_SpaceShooter\SpaceShooter\SpaceShooter\App.xaml
-11407045341
-1-825840921
-51769479802
 195-972130991
-MainWindow.xaml;
->>>>>>> 82ce4922a0cfbfef8b98898d9dd5d5fc00a84ae5
+view\App.xaml;view\MainWindow.xaml;
 
-True
+False
 
