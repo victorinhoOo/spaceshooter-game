@@ -41,4 +41,9 @@
     <Resource Include="Sprites\Ship_5.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="model\Space\Tirs\" />
+    <Folder Include="model\Bonus\" />
+  </ItemGroup>
+
 </Project>
