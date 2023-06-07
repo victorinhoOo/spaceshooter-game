@@ -65,7 +65,7 @@ namespace SpaceShooter.model.Space
         }
         public void Shoot()
         {
-            Bullet bullet = new Bullet(this.Left, this.Top, this.TheGame);
+            Bullet bullet = new Bullet(this.Left, this.Top -30, this.TheGame);
             TheGame.AddItem(bullet);
         }
 

@@ -16,8 +16,8 @@ namespace SpaceShooter.model.Space.Projectile
         public TimeSpan Waiting { get => waiting; set => waiting = value; }
         public bool Touched { get => touched; set => touched = value; }
 
-        public Projectile(double x, double y, Game g, string name = "", int zindex = 0) :
-            base(x, y, g, name, zindex)
+        public Projectile(double x, double y, Game g, string name , int zindex = 0) :
+            base(x, y, g, "laser-bolts.png", zindex)
         {
 
         }

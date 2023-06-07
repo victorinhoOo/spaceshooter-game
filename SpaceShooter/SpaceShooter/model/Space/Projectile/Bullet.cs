@@ -1,6 +1,7 @@
 ﻿using IUTGame;
 using SpaceShooter.model.Space.Projectile;
 using System;
+using System.Reflection.Metadata;
 
 namespace PetitJeu
 {
@@ -29,8 +30,8 @@ namespace PetitJeu
 
         public override void Animate(TimeSpan dt)
         {
-            
-            
+
+            MoveDA(Vitesse * dt.TotalSeconds, 270);
         }
     }
 }
