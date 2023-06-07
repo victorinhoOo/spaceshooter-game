@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IUTGame;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,20 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Space.Projectile
 {
-    internal class Bomb
+    public class Bomb : Projectile
     {
+        public Bomb(double x, double y, Game g, string name = "", int zindex = 0) : base(x, y, g, name, zindex)
+        {
+        }
+
+        public void Explode()
+        {
+            
+        }
+
+        public override void Animate(TimeSpan dt)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

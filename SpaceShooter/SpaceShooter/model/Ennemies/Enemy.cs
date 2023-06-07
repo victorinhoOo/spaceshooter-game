@@ -54,38 +54,8 @@ namespace SpaceShooter.model.Space.Enemy
 
         }
 
-        public void Animate(TimeSpan dt)
-        {
-            if (waiting > TimeSpan.Zero)
-            {
-                waiting = waiting - dt;
-            }
-            if (Top < 0)
-            {
-                Top = 0;
-
-
-            }
-            else if (Bottom > GameHeight)
-            {
-                TheGame.RemoveItem(this);
-                --nombre;
-                if (nombre == 0)
-                {
-                    //peut etre en faire spaw plus
-                }
-
-            }
-            else if (touched) 
-            {
-                TheGame.RemoveItem(this);
-                --nombre;
-                //peut etre rajouter une option qui fais que quand le spaceship est touché 
-                //alors son sprite change en exploision puis l'item disparait
-            }
-
-
-            
-        }
+        abstract public void Animate(TimeSpan dt);
+      
+        
     }
 }

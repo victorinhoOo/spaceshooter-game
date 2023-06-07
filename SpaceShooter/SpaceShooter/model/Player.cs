@@ -63,6 +63,10 @@ namespace SpaceShooter.model.Space
 
 
         }
+        public void Shoot()
+        {
+
+        }
 
         public void KeyDown(Key key)
         {

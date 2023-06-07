@@ -16,5 +16,41 @@ namespace SpaceShooter.model.Space.Enemy
 
         }
         public override string TypeName => "Officer";
+        public void ShootBomb()
+        {
+
+        }
+        public void Shoot() 
+        { 
+        }
+        override public void Animate(TimeSpan dt)
+        {
+            /*if (waiting > TimeSpan.Zero)
+            {
+                waiting = waiting - dt;
+            }
+            if (Top < 0)
+            {
+                Top = 0;
+
+
+            }
+            else if (Bottom > GameHeight)
+            {
+                TheGame.RemoveItem(this);
+                
+
+            }
+            else if (touched)
+            {
+                TheGame.RemoveItem(this);
+                
+                //peut etre rajouter une option qui fais que quand le spaceship est touché 
+                //alors son sprite change en exploision puis l'item disparait
+            }*/
+
+
+
+        }
     }
 }

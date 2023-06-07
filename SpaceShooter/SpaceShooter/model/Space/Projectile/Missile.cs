@@ -1,12 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using IUTGame;
+using SpaceShooter.model.Space.Projectile;
+using System;
 
-namespace SpaceShooter.model.Space.Projectile
+namespace PetitJeu
 {
-    internal class Missile
+    public class Missile : Projectile
     {
+        private double vitesse = 200;
+        public double Vitesse { get => vitesse; set => vitesse = value; }
+
+
+        private TimeSpan waiting = TimeSpan.Zero;
+        private bool touched = false;
+
+
+
+        public Missile(double x, double y, Game g, string name = "SpriteBullet", int zindex = 0) :
+            base(x, y, g, name, zindex)
+        {
+
+        }
+
+
+        public override string TypeName => "Bullet";
+
+
+
+
+        public override void Animate(TimeSpan dt)
+        {
+
+
+        }
     }
 }

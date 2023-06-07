@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Space.Projectile
 {
-    public class Projectile : GameItem, IAnimable
+    abstract public class Projectile : GameItem, IAnimable
     {
         public Projectile(double x, double y, Game g, string name = "", int zindex = 0) :
             base(x, y, g, name, zindex)
@@ -18,10 +18,8 @@ namespace SpaceShooter.model.Space.Projectile
         {
 
         }
-        public void Animate(TimeSpan dt)
-        {
-
-        }
+        abstract public void Animate(TimeSpan dt);
+        
         public override string TypeName => "Projectile";
     }
 }
