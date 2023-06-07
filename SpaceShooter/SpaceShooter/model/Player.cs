@@ -65,7 +65,8 @@ namespace SpaceShooter.model.Space
         }
         public void Shoot()
         {
-
+            Bullet bullet = new Bullet(this.Left, this.Top, this.TheGame);
+            TheGame.AddItem(bullet);
         }
 
         public void KeyDown(Key key)
@@ -80,8 +81,8 @@ namespace SpaceShooter.model.Space
                     MoveXY(0, +10); break;
                 case Key.Down:
                     MoveXY(0, -10); break;
-                /*case Key.S: 
-                    Shoot(); break;*/
+                case Key.S: 
+                    Shoot(); break;
 
             }
         }
