@@ -26,11 +26,11 @@ namespace SpaceShooter.model.Space.Enemy
         {
 
         }
-        override public void Animate(TimeSpan dt)
+        public override void Animate(TimeSpan dt)
         {
-            if (waiting > TimeSpan.Zero)
+            if (Waiting > TimeSpan.Zero)
             {
-                waiting = waiting - dt;
+                Waiting = Waiting - dt;
             }
             if (Top < 0)
             {
@@ -44,7 +44,7 @@ namespace SpaceShooter.model.Space.Enemy
                 
 
             }
-            else if (touched)
+            else if (Touched)
             {
                 TheGame.RemoveItem(this);
                 
