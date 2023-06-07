@@ -52,7 +52,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="model\Space\Shoot\" />
     <Folder Include="model\Bonus\" />
   </ItemGroup>
 

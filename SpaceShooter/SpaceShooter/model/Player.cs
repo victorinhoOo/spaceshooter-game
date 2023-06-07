@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Windows.Input;
 using IUTGame;
 using PetitJeu;
-using SpaceShooter.model.Space.Enemy;
 
 namespace SpaceShooter.model.Space
 {
@@ -52,14 +51,15 @@ namespace SpaceShooter.model.Space
             {
 
             }
-            if (other.GetType() == typeof(Enemy))
+            */
+            if (other is SpaceShooter.model.Space.Enemy.Enemy)
             {
                 Life -= 1;
                 if (Life == 0)
                 {
                     TheGame.Loose();
                 }
-            }*/
+            }
 
 
         }

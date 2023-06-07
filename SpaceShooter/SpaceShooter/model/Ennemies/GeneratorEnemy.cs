@@ -44,8 +44,6 @@ namespace SpaceShooter.model.Vaisseaux.Enemi
                 double x = GameWidth / 2;
                 double y = GameHeight / 2;
                 Officer officer = new Officer(x, y, TheGame, "Shi^p_5.png");
-                officer.Vitesse = 1000;
-                officer.Angle = Z.Next(180, 361);
                 TheGame.AddItem(officer);
 
 

@@ -23,7 +23,7 @@ namespace SpaceShooter.model.Space.Enemy
             ++nombre;
         }
 
-        public override string TypeName => "vaisseau";
+        public override string TypeName => "Ship";
 
         public override void CollideEffect(GameItem other)
         {
@@ -40,7 +40,7 @@ namespace SpaceShooter.model.Space.Enemy
             {
                 
             }
-            else if (other.TypeName == "tirs")
+            else if (other.TypeName == "Shoot")
             {
 
             }
