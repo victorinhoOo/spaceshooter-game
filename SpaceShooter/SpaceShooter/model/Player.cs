@@ -45,7 +45,7 @@ namespace SpaceShooter.model.Space
                     TheGame.Win();
                 compte = true;
                 time = 0;
-                PlaySound("blop.mp3");
+                /*PlaySound("music.mp3");*/
             }
             /*if (other.GetType() == typeof(Shoot))
             {
@@ -78,9 +78,9 @@ namespace SpaceShooter.model.Space
                 case Key.Right:
                     MoveXY(10, 0); break;
                 case Key.Up:
-                    MoveXY(0, +10); break;
-                case Key.Down:
                     MoveXY(0, -10); break;
+                case Key.Down:
+                    MoveXY(0, 10); break;
                 case Key.S: 
                     Shoot(); break;
 

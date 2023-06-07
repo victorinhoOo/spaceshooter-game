@@ -19,7 +19,7 @@ namespace PetitJeu
             set
             {
                 score = Math.Min(10,value);
-                ChangeSprite(string.Format("{0}.png", score));
+                /*ChangeSprite(string.Format("{0}.png", score));*/
             }
         }
         
