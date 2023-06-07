@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Ennemies
 {
-    internal class Asteroid
+    public class Asteroid
     {
+
     }
 }

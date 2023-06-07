@@ -52,7 +52,7 @@ namespace SpaceShooter.model.Space
 
             }
             */
-            if (other is SpaceShooter.model.Space.Enemy.Enemy)
+            if (other is Enemy.Enemy)
             {
                 Life -= 1;
                 if (Life == 0)
@@ -76,6 +76,8 @@ namespace SpaceShooter.model.Space
                     MoveXY(0, +10); break;
                 case Key.Down:
                     MoveXY(0, -10); break;
+                /*case Key.S: 
+                    Shoot(); break;*/
 
             }
         }
