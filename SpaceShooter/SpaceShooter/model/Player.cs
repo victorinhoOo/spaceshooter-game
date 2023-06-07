@@ -18,8 +18,8 @@ namespace SpaceShooter.model.Space
         public Player(double x, double y, Game g)
             : base(x, y, g, "Ship_1.png")
         {
-            objScore = new ObjScore(0, 10, 10, g);
-            TheGame.AddItem(objScore);
+            /*objScore = new ObjScore(0, 10, 10, g);
+            TheGame.AddItem(objScore);*/
         }
         public override string TypeName => "Player";
 
@@ -77,9 +77,9 @@ namespace SpaceShooter.model.Space
                 case Key.Right:
                     MoveXY(10, 0); break;
                 case Key.Up:
-                    MoveXY(0, +10); break;
-                case Key.Down:
                     MoveXY(0, -10); break;
+                case Key.Down:
+                    MoveXY(0, 10); break;
                 /*case Key.S: 
                     Shoot(); break;*/
 
