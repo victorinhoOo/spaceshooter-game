@@ -31,5 +31,12 @@ namespace IHM
             this.game = new TheGame(screen);
             this.game.Run();
         }
+
+        public void Play()
+        {
+            WPFScreen screen = new WPFScreen(this.canvas);
+            this.game = new TheGame(screen);
+            this.game.Run();
+        }
     }
 }
