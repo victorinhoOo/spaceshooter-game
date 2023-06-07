@@ -13,7 +13,7 @@ namespace SpaceShooter.model.Vaisseaux.Enemi
         {
             timeToCreate = new TimeSpan(0, 0, 2);
         }
-        public override string TypeName => "generateur";
+        public override string TypeName => "generator";
 
         public void Animate(TimeSpan dt)
         {
