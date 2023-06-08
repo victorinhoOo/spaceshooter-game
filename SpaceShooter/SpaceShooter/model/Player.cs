@@ -37,7 +37,7 @@ namespace SpaceShooter.model.Space
 
         public override void CollideEffect(GameItem other)
         {
-            if (!compte)
+            /*if (!compte)
             {
                 // Score à changer ainsi que la limite 
                 objScore.Score++;
@@ -45,9 +45,9 @@ namespace SpaceShooter.model.Space
                     TheGame.Win();
                 compte = true;
                 time = 0;
-                /*PlaySound("music.mp3");*/
+                /*PlaySound("music.mp3");
             }
-            /*if (other.GetType() == typeof(Shoot))
+            if (other.GetType() == typeof(Shoot))
             {
 
             }
