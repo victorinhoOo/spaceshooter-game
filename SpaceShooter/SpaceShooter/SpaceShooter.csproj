@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Sounds\music.mp3" />
+    <None Remove="Sounds\backGroundMusic.mp3" />
+    <None Remove="Sprites\Asteroid.png" />
     <None Remove="Sprites\enemy-big.png" />
     <None Remove="Sprites\enemy-medium.png" />
     <None Remove="Sprites\enemy-small.png" />
@@ -31,16 +32,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Sounds\music.mp3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="IUTGame">
       <HintPath>IUTGame.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Sounds\backGroundMusic.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Sprites\Asteroid.png" />
     <Resource Include="Sprites\enemy-medium.png" />
     <Resource Include="Sprites\enemy-small.png" />
     <Resource Include="Sprites\explosion.png" />

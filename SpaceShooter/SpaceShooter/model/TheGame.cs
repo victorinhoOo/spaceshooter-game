@@ -21,7 +21,7 @@ namespace SpaceShooter.model
             double x = this.Screen.Width / 2;
             Player player = new Player(x, y, this);
             AddItem(player);
-            PlayBackgroundMusic("music");
+            PlayBackgroundMusic("backGroundMusic.mp3");
         }
 
         protected override void RunWhenLoose()
