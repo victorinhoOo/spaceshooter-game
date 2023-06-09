@@ -79,17 +79,18 @@ namespace SpaceShooter.model.Space
                     MoveXY(10, 0); break;
                 case Key.Up:
                     MoveXY(0, -10); break;
-                case Key.Down:
+                case Key.Down :
                     MoveXY(0, 10); break;
                 case Key.S: 
                     Shoot(); break;
+                
 
             }
         }
 
         public void KeyUp(Key key)
         {
-
+            KeyDown( key);
         }
     }
 }
