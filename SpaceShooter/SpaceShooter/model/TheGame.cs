@@ -1,6 +1,5 @@
 ﻿using IUTGame;
 using SpaceShooter.model.Space;
-using SpaceShooter.model.Vaisseaux.Enemi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +17,13 @@ namespace SpaceShooter.model
 
         protected override void InitItems()
         {
-            double x = this.Screen.Width / 2;
             double y = this.Screen.Height / 2;
+            double x = this.Screen.Width / 2;
             Player player = new Player(x, y, this);
             AddItem(player);
-            AddItem(new GeneratorEnemy(this));
+            //AddItem(new GeneratorEnemy(this));
+            //PlayBackgroundMusic("backGroundMusic.mp3");
+
         }
 
         protected override void RunWhenLoose()

@@ -13,14 +13,16 @@ namespace SpaceShooter.model.Space
         private double time = 0;
         private ObjScore objScore;
         private int life = 3;
+        private Game game;
 
         public int Life { get => life; set => life = value; }
 
-        public Player(double x, double y, Game g)
-            : base(x, y, g, "Ship_1.png")
+        public Player(double x, double y, Game g) : base(x, y, g, "Ship_1.png")
         {
-            objScore = new ObjScore(0, 10, 10, g);
-            TheGame.AddItem(objScore);
+            /*objScore = new ObjScore(0, 10, 10, g);
+            TheGame.AddItem(objScore);*/
+
+            this.game = g;
         }
         public override string TypeName => "Player";
 
@@ -28,17 +30,27 @@ namespace SpaceShooter.model.Space
 
         public void Animate(TimeSpan dt)
         {
-            if (compte)
+            if(this.Top <= 0)
             {
-                time += dt.TotalMilliseconds;
-                if (time > 500)
-                    compte = false;
+                this.Top = 0;
+            }
+            if(this.Left <= 0)
+            {
+                this.Left = 0;
+            }
+            if(this.Left > this.GameWidth-30) 
+            {
+                this.Left = this.GameWidth-30;
+            }
+            if(this.Top > this.game.Screen.Height-30)
+            {
+                this.Top = this.game.Screen.Height-30;
             }
         }
 
         public override void CollideEffect(GameItem other)
         {
-            if (!compte)
+            /*if (!compte)
             {
                 // Score à changer ainsi que la limite 
                 objScore.Score++;
@@ -46,9 +58,9 @@ namespace SpaceShooter.model.Space
                     TheGame.Win();
                 compte = true;
                 time = 0;
-                /*PlaySound("music.mp3");*/
+                /*PlaySound("music.mp3");
             }
-            /*if (other.GetType() == typeof(Shoot))
+            if (other.GetType() == typeof(Shoot))
             {
 
             }
@@ -80,17 +92,18 @@ namespace SpaceShooter.model.Space
                     MoveXY(10, 0); break;
                 case Key.Up:
                     MoveXY(0, -10); break;
-                case Key.Down:
+                case Key.Down :
                     MoveXY(0, 10); break;
                 case Key.S: 
                     Shoot(); break;
+                
 
             }
         }
 
         public void KeyUp(Key key)
         {
-
+            KeyDown( key);
         }
     }
 }

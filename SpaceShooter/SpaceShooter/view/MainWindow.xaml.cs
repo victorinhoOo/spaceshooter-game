@@ -1,6 +1,7 @@
 ﻿using IUTGame;
 using IUTGame.WPF;
 using SpaceShooter.model;
+using SpaceShooter.view;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,20 +24,21 @@ namespace IHM
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TheGame game;
+        private Game game;
         public MainWindow()
         {
             InitializeComponent();
-            WPFScreen screen = new WPFScreen(this.canvas);
-            this.game = new TheGame(screen);
-            this.game.Run();
+
         }
 
-        public void Play()
-        {
-            WPFScreen screen = new WPFScreen(this.canvas);
-            this.game = new TheGame(screen);
-            this.game.Run();
+        public void Play(object sender, KeyEventArgs e)
+        { 
+            if(e.Key == Key.Space)
+            {
+                WPFScreen screen = new WPFScreen(this.canvas);
+                this.game = new TheGame(screen);
+                this.game.Run();
+            }
         }
     }
 }

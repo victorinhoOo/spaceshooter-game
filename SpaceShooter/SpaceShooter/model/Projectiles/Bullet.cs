@@ -26,7 +26,33 @@ namespace SpaceShooter.model.Projectiles
 
         public override void Animate(TimeSpan dt)
         {
+            if (waiting > TimeSpan.Zero)
+            {
+                waiting = waiting - dt;
+            }
+            if (this.Top < 0)
+            {
+                TheGame.RemoveItem(this);
 
+
+            }
+            else if (Bottom > GameHeight)
+            {
+                TheGame.RemoveItem(this);
+                
+            }
+            else if (Left < 0)
+            {
+                
+                Left = 0;
+                TheGame.RemoveItem(this);
+            }
+            else if (Right > GameWidth)
+            {
+                
+                Right = GameWidth;
+                TheGame.RemoveItem(this);
+            }
             MoveDA(Vitesse * dt.TotalSeconds, 270);
         }
     }
