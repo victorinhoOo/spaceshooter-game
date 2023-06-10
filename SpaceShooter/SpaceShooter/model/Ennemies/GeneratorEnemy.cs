@@ -2,9 +2,8 @@
 using System.Reflection.Metadata;
 using System.Windows;
 using IUTGame;
-using SpaceShooter.model.Space.Enemy;
 
-namespace SpaceShooter.model.Vaisseaux.Enemi
+namespace SpaceShooter.model.Ennemies
 {
     public class GeneratorEnemy : GameItem, IAnimable
     {

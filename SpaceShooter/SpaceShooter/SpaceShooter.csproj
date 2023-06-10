@@ -8,27 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-    <None Remove="Sounds\music.mp3" />
-    <None Remove="Sprites\bullet.png" />
-=======
-    <None Remove="Sounds\backGroundMusic.mp3" />
-    <None Remove="Sprites\Asteroid.png" />
->>>>>>> b133812e5ed216d854f4bca102f59051a9c7a5f8
-    <None Remove="Sprites\enemy-big.png" />
-    <None Remove="Sprites\enemy-medium.png" />
-    <None Remove="Sprites\enemy-small.png" />
-    <None Remove="Sprites\explosion.png" />
-    <None Remove="Sprites\flaming_asteroid.png" />
-    <None Remove="Sprites\laser-bolts.png" />
-    <None Remove="Sprites\player_bullet.png" />
-    <None Remove="Sprites\power-up.png" />
-    <None Remove="Sprites\Ship_1.png" />
-    <None Remove="Sprites\Ship_3.png" />
-    <None Remove="Sprites\Ship_5.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Page Remove="view\App.xaml" />
   </ItemGroup>
 
@@ -42,17 +21,10 @@
     <Reference Include="IUTGame">
       <HintPath>IUTGame.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-<<<<<<< HEAD
-    <Resource Include="Sprites\bullet.png" />
-=======
     <Content Include="Sounds\backGroundMusic.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Sprites\Asteroid.png" />
->>>>>>> b133812e5ed216d854f4bca102f59051a9c7a5f8
     <Resource Include="Sprites\enemy-medium.png" />
     <Resource Include="Sprites\enemy-small.png" />
     <Resource Include="Sprites\explosion.png" />

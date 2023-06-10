@@ -1,5 +1,4 @@
 ﻿using IUTGame;
-using SpaceShooter.model.Space.Enemy;
 using System;
 using System.Collections.Generic;
 using System.Linq;

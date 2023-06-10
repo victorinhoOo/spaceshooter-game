@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceShooter.model.Space.Enemy
+namespace SpaceShooter.model.Ennemies
 {
     public class Soldier : Enemy
     {

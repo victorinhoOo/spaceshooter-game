@@ -65,7 +65,7 @@ namespace SpaceShooter.model.Space
 
             }
             */
-            if (other is Enemy.Enemy)
+            if (other is Ennemies.Enemy)
             {
                 Life -= 1;
                 if (Life == 0)

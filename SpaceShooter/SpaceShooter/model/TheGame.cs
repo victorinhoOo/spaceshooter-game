@@ -1,4 +1,5 @@
 ﻿using IUTGame;
+using SpaceShooter.model.Ennemies;
 using SpaceShooter.model.Space;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace SpaceShooter.model
     {
         public TheGame(IScreen screen) : base(screen, "Sprites", "Sounds")
         {
-            
+
         }
 
         protected override void InitItems()
@@ -21,7 +22,7 @@ namespace SpaceShooter.model
             double x = this.Screen.Width / 2;
             Player player = new Player(x, y, this);
             AddItem(player);
-            AddItem(new GeneratorEnemy(this));
+            //AddItem(new GeneratorEnemy(this));
             //PlayBackgroundMusic("backGroundMusic.mp3");
 
         }
