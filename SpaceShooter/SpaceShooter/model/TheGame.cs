@@ -22,7 +22,8 @@ namespace SpaceShooter.model
             double x = this.Screen.Width / 2;
             Player player = new Player(x, y, this);
             AddItem(player);
-            //AddItem(new GeneratorEnemy(this));
+            AddItem(new GeneratorEnemy(this));
+
             //PlayBackgroundMusic("backGroundMusic.mp3");
 
         }

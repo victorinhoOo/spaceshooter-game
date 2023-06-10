@@ -13,10 +13,19 @@ namespace SpaceShooter.model.Ennemies
         public double Speed { get => speed; set => speed = value; }
 
 
-        private static int amount = 0;
+        private double angle = 100;
+        public double Angle { get=> angle; set => angle = value; }
+
+
+        private int amount = 0;
+        public int Amount { get=> amount; set => amount = value; }
+
+
         private TimeSpan waiting = TimeSpan.Zero;
-        private bool touched = false;
         public TimeSpan Waiting { get => waiting; set => waiting = value; }
+
+
+        private bool touched = false;
         public bool Touched { get => touched; set => touched = value; }
 
 
@@ -44,25 +53,19 @@ namespace SpaceShooter.model.Ennemies
             }
             if (other.TypeName == "Player")
             {
-
+                TheGame.RemoveItem(this);
             }
-            else if (other.TypeName == "Projectile")
+            else if (other.TypeName == "PlayerBullet")
             {
-
-            }
-
-            else if (other.TypeName == TypeName)
-            {
-
+                //this.ChangeSprite("explosion.png");
+                TheGame.RemoveItem(this);
+                --amount;
             }
 
 
 
         }
-
-        abstract public void Animate(TimeSpan dt);
-
-
+        public abstract void Animate(TimeSpan dt);
     }
 }
     

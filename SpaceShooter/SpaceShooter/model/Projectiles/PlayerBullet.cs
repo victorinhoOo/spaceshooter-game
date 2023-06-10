@@ -24,6 +24,13 @@ namespace SpaceShooter.model.Projectiles
         public override string TypeName => "PlayerBullet";
 
 
+        public override void CollideEffect(GameItem other)
+        {
+            if (other.TypeName == "Asteroid")
+            {
+                TheGame.RemoveItem(this);
+            }
+        }
 
 
         public override void Animate(TimeSpan dt)

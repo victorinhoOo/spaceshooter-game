@@ -28,7 +28,7 @@ namespace SpaceShooter.model.Ennemies
                 double x = r.NextDouble() * GameWidth;
                 double y = r.NextDouble() * GameHeight / 2;
 
-                Soldier b = new Soldier(x, y, TheGame);
+                Asteroid b = new Asteroid(x, y, TheGame);
                 TheGame.AddItem(b);
                 double ms = r.NextDouble() * 5000 + 1000;
                 timeToCreate = new TimeSpan(0, 0, 0, 0, (int)ms);
@@ -44,8 +44,8 @@ namespace SpaceShooter.model.Ennemies
 
                 double x = GameWidth / 2;
                 double y = GameHeight / 2;
-                Officer officer = new Officer(x, y, TheGame);
-                TheGame.AddItem(officer);
+                Soldier soldier = new Soldier(x, y, TheGame);
+                TheGame.AddItem(soldier);
 
 
             }
