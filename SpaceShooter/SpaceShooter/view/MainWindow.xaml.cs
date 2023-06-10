@@ -24,21 +24,18 @@ namespace IHM
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Game game;
+        private GameWindow gameWindow;
         public MainWindow()
         {
             InitializeComponent();
 
         }
 
-        public void Play(object sender, KeyEventArgs e)
-        { 
-            if(e.Key == Key.Space)
-            {
-                WPFScreen screen = new WPFScreen(this.canvas);
-                this.game = new TheGame(screen);
-                this.game.Run();
-            }
+        public void Play(object sender, RoutedEventArgs e)
+        {
+            this.gameWindow = new GameWindow();
+            this.gameWindow.Show();
+            this.Close();
         }
     }
 }

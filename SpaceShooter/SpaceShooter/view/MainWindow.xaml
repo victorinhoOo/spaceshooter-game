@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IHM"
         mc:Ignorable="d"
-        Keyboard.KeyDown="Play"
+        Background="Black"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Canvas x:Name="canvas" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Button Width="200" Height="50" Content="Jouer" Foreground="White" Background="Black" BorderBrush="White" Click="Play"/>
     </Grid>
 </Window>
