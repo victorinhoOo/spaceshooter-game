@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceShooter.model.Space.Enemy
+namespace SpaceShooter.model.Ennemies
 {
     public abstract class Enemy : GameItem, IAnimable
     {
         private double speed = 200;
         public double Speed { get => speed; set => speed = value; }
-        
-        
+
+
         private static int amount = 0;
         private TimeSpan waiting = TimeSpan.Zero;
         private bool touched = false;
@@ -27,9 +27,9 @@ namespace SpaceShooter.model.Space.Enemy
             ++amount;
         }
 
-        public override string TypeName => "Ship";
+        public override string TypeName => "Enemy";
 
-        
+
 
         public override void CollideEffect(GameItem other)
         {
@@ -44,7 +44,7 @@ namespace SpaceShooter.model.Space.Enemy
             }
             if (other.TypeName == "Player")
             {
-                
+
             }
             else if (other.TypeName == "Projectile")
             {
@@ -61,7 +61,8 @@ namespace SpaceShooter.model.Space.Enemy
         }
 
         abstract public void Animate(TimeSpan dt);
-      
-        
+
+
     }
 }
+    

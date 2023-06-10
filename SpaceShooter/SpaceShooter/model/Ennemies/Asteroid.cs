@@ -1,5 +1,4 @@
 ﻿using IUTGame;
-using SpaceShooter.model.Space.Enemy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +9,8 @@ namespace SpaceShooter.model.Ennemies
 {
     public class Asteroid : Enemy
     {
-        public Asteroid(double x, double y, Game g, string name = "Asteroid.png") : base(x, y, g, name, -100)
+        public Asteroid(double x, double y, Game g, string name = "flaming_astertoid.png") : base(x, y, g, name, -100)
         {
-
-
 
         }
         override public void Animate(TimeSpan dt)

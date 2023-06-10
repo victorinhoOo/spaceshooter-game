@@ -1,16 +1,11 @@
 ﻿using IUTGame;
-using SpaceShooter.model.Space.Projectile;
 using System;
-using System.Reflection.Metadata;
 
-namespace PetitJeu
+namespace SpaceShooter.model.Projectiles
 {
     public class Bullet : Projectile
     {
-        private double vitesse = 200;
-        public double Vitesse { get => vitesse; set => vitesse = value; }
-        
-        
+            
         private TimeSpan waiting = TimeSpan.Zero;
         private bool touched = false;
 
@@ -19,7 +14,8 @@ namespace PetitJeu
         public Bullet(double x, double y, Game g, string name = "SpriteBullet", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
-            
+            ChangeSprite("bullet.png");
+            base.Vitesse = 200;
         }
 
         
