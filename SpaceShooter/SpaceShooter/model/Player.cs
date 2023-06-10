@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Windows.Input;
 using IUTGame;
 using PetitJeu;
+using SpaceShooter.model.Projectiles;
 
 namespace SpaceShooter.model.Space
 {
@@ -65,7 +66,7 @@ namespace SpaceShooter.model.Space
         }
         public void Shoot()
         {
-            Bullet bullet = new Bullet(this.Left, this.Top -30, this.TheGame);
+            PlayerBullet bullet = new PlayerBullet(this.Left, this.Top -30, this.TheGame);
             TheGame.AddItem(bullet);
         }
 

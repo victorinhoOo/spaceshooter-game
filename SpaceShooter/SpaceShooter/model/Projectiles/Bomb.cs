@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceShooter.model.Space.Projectile
+namespace SpaceShooter.model.Projectiles
 {
     public class Bomb : Projectile
     {

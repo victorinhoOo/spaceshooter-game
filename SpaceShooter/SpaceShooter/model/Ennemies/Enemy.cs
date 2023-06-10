@@ -27,7 +27,7 @@ namespace SpaceShooter.model.Space.Enemy
             ++amount;
         }
 
-        public override string TypeName => "Ship";
+        public override string TypeName => "Enemy";
 
         
 

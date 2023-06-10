@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceShooter.model.Space.Projectile
+namespace SpaceShooter.model.Projectiles
 {
     abstract public class Projectile : GameItem, IAnimable
     {
@@ -17,7 +17,7 @@ namespace SpaceShooter.model.Space.Projectile
         public bool Touched { get => touched; set => touched = value; }
 
         public Projectile(double x, double y, Game g, string name , int zindex = 0) :
-            base(x, y, g, "laser-bolts.png", zindex)
+            base(x, y, g, "player_bullet.png", zindex)
         {
 
         }

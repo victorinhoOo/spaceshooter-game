@@ -1,12 +1,11 @@
 ﻿using IUTGame;
-using SpaceShooter.model.Space.Projectile;
 using System;
 
-namespace PetitJeu
+namespace SpaceShooter.model.Projectiles
 {
-    public class Missile : Projectile
+    public class PlayerBullet : Projectile
     {
-        private double vitesse = 200;
+        private double vitesse = 400;
         public double Vitesse { get => vitesse; set => vitesse = value; }
 
 
@@ -15,14 +14,14 @@ namespace PetitJeu
 
 
 
-        public Missile(double x, double y, Game g, string name = "SpriteBullet", int zindex = 0) :
+        public PlayerBullet(double x, double y, Game g, string name = "SpritePlayerBullet", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
 
         }
 
 
-        public override string TypeName => "Bullet";
+        public override string TypeName => "PlayerBullet";
 
 
 
@@ -30,7 +29,8 @@ namespace PetitJeu
         public override void Animate(TimeSpan dt)
         {
 
-
+            MoveDA(Vitesse * dt.TotalSeconds, 270);
         }
     }
 }
+

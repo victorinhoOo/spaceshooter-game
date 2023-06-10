@@ -9,11 +9,14 @@
 
   <ItemGroup>
     <None Remove="Sounds\music.mp3" />
+    <None Remove="Sprites\bullet.png" />
     <None Remove="Sprites\enemy-big.png" />
     <None Remove="Sprites\enemy-medium.png" />
     <None Remove="Sprites\enemy-small.png" />
     <None Remove="Sprites\explosion.png" />
+    <None Remove="Sprites\flaming_asteroid.png" />
     <None Remove="Sprites\laser-bolts.png" />
+    <None Remove="Sprites\player_bullet.png" />
     <None Remove="Sprites\power-up.png" />
     <None Remove="Sprites\Ship_1.png" />
     <None Remove="Sprites\Ship_3.png" />
@@ -41,10 +44,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Sprites\bullet.png" />
     <Resource Include="Sprites\enemy-medium.png" />
     <Resource Include="Sprites\enemy-small.png" />
     <Resource Include="Sprites\explosion.png" />
+    <Resource Include="Sprites\flaming_asteroid.png" />
     <Resource Include="Sprites\laser-bolts.png" />
+    <Resource Include="Sprites\player_bullet.png" />
     <Resource Include="Sprites\power-up.png" />
     <Resource Include="Sprites\Ship_1.png" />
     <Resource Include="Sprites\Ship_3.png" />

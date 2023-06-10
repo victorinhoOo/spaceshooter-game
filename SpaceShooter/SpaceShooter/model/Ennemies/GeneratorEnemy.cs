@@ -11,7 +11,9 @@ namespace SpaceShooter.model.Vaisseaux.Enemi
         private TimeSpan timeToCreate;
         public GeneratorEnemy(Game g) : base(0, 0, g)
         {
-            timeToCreate = new TimeSpan(0, 0, 2);
+            Random random = new Random();
+            int alea = random.Next(10) + 2;
+            timeToCreate = new TimeSpan(0, 0, alea);
         }
         public override string TypeName => "generator";
 
@@ -43,7 +45,7 @@ namespace SpaceShooter.model.Vaisseaux.Enemi
 
                 double x = GameWidth / 2;
                 double y = GameHeight / 2;
-                Officer officer = new Officer(x, y, TheGame, "Shi^p_5.png");
+                Officer officer = new Officer(x, y, TheGame);
                 TheGame.AddItem(officer);
 
 

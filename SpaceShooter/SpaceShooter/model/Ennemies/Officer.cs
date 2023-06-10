@@ -9,7 +9,7 @@ namespace SpaceShooter.model.Space.Enemy
 {
     public class Officer : Enemy
     {
-        public Officer(double x, double y, Game g, string name = "Ship_5.png") : base(x, y, g, name, -100)
+        public Officer(double x, double y, Game g, string name = "Ship_3.png") : base(x, y, g, name, -100)
         {
 
 

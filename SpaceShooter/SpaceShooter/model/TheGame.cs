@@ -1,5 +1,6 @@
 ﻿using IUTGame;
 using SpaceShooter.model.Space;
+using SpaceShooter.model.Vaisseaux.Enemi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace SpaceShooter.model
             double y = this.Screen.Height / 2;
             Player player = new Player(x, y, this);
             AddItem(player);
+            AddItem(new GeneratorEnemy(this));
         }
 
         protected override void RunWhenLoose()
