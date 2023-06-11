@@ -1,4 +1,5 @@
 ﻿using IUTGame;
+using SpaceShooter.model.Bonus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,6 @@ namespace SpaceShooter.model.Ennemies
     {
         private double speed = 200;
         public double Speed { get => speed; set => speed = value; }
-
 
         private double angle = 100;
         public double Angle { get=> angle; set => angle = value; }
@@ -42,15 +42,6 @@ namespace SpaceShooter.model.Ennemies
 
         public override void CollideEffect(GameItem other)
         {
-            if (touched == false)
-            {
-                waiting = new TimeSpan(0, 0, 0, 600);
-                touched = true;
-            }
-            else if (touched == true && waiting <= TimeSpan.Zero)
-            {
-                touched = false;
-            }
             if (other.TypeName == "Player")
             {
                 TheGame.RemoveItem(this);
@@ -59,6 +50,7 @@ namespace SpaceShooter.model.Ennemies
             {
                 //this.ChangeSprite("explosion.png");
                 TheGame.RemoveItem(this);
+                this.GenerateBonus();
                 --amount;
             }
             if (other.TypeName == "Enemy")
@@ -72,6 +64,31 @@ namespace SpaceShooter.model.Ennemies
 
 
         }
+
+
+        public void GenerateBonus()
+        {
+            List<BonusType> bonusTypes = new List<BonusType>();
+            BonusType type;
+            Random random = new Random();
+            int index;
+            foreach (BonusType t in Enum.GetValues(typeof(BonusType)))
+            {
+                bonusTypes.Add(t);
+            }
+
+            index = random.Next(bonusTypes.Count);
+            type = bonusTypes[index];
+
+            switch (type)
+            {
+                case BonusType.Speed: new BonusSpeed(this.Left, this.Top, TheGame); break;
+            }
+
+
+        }
+
+
         public abstract void Animate(TimeSpan dt);
     }
 }

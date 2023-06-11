@@ -25,7 +25,7 @@ namespace SpaceShooter.model.Projectiles
         {
 
         }
-        abstract public void Animate(TimeSpan dt);
+         public abstract void Animate(TimeSpan dt);
         
         public override string TypeName => "Projectile";
     }

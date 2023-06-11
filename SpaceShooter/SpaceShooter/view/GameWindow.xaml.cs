@@ -24,24 +24,19 @@ namespace SpaceShooter.view
     public partial class GameWindow : Window
     {
         private TheGame game;
+
+        public TheGame pGame { get => game; }
         public GameWindow()
         {
             InitializeComponent();
+            this.Loaded += Play;
         }
 
-        public void Play(object sender, KeyEventArgs e)
+        public void Play(object sender, RoutedEventArgs e)
         {
-            if(e.Key == Key.Space) 
-            {
-                WPFScreen screen = new WPFScreen(this.canvas);
-                this.game = new TheGame(screen);
-                this.game.Run();
-            }
-            if(e.Key == Key.Escape)
-            {
-                new MainWindow().Show();
-                this.Close();
-            }
+            WPFScreen screen = new WPFScreen(this.canvas);
+            this.game = new TheGame(screen);
+            this.game.Run();
         }
     }
 }

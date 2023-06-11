@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Sprites\bullet.png" />
+    <None Remove="Sprites\speed.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,10 +41,7 @@
     <Resource Include="Sprites\Ship_1.png" />
     <Resource Include="Sprites\Ship_3.png" />
     <Resource Include="Sprites\Ship_5.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="model\Bonus\" />
+    <Resource Include="Sprites\speed.png" />
   </ItemGroup>
 
 </Project>
