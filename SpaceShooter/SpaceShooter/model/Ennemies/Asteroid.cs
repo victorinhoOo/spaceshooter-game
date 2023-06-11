@@ -13,7 +13,7 @@ namespace SpaceShooter.model.Ennemies
     {
         public Asteroid(double x, double y, Game g, string name = "flaming_asteroid.png") : base(x, y, g, name, 0)
         {
-            base.Speed= 250;
+            base.Speed= 320;
         }
 
         public override string TypeName => "Asteroid";

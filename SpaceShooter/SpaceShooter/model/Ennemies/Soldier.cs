@@ -1,4 +1,5 @@
 ﻿using IUTGame;
+using SpaceShooter.model.Projectiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,35 @@ using System.Threading.Tasks;
 namespace SpaceShooter.model.Ennemies
 {
     public class Soldier : Enemy
-    {        
+    {
+
+        private TimeSpan shootInterval = TimeSpan.FromSeconds(0.5); // Intervalle de 0.5 secondes entre les tirs
+        private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
+
+        /// <summary>
+        /// Créé un soldat, lui attribut un angle aléatoire entre -20 et 20
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="g"></param>
+        /// <param name="name"></param>
+        /// <author> Victor Duboz </author>
         public Soldier(double x, double y, Game g, string name = "Ship_5.png") : base(x, y, g, name, -100)
         {
-
-
-
+            Random random = new Random();
+            double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
+            base.Angle = randomAngle;
         }
-        
-        public override string TypeName => "Soldier";
+
+
         public void Shoot()
         {
+            Bullet bullet = new Bullet(this.Left, this.Bottom-25, this.TheGame);
+            TheGame.AddItem(bullet);
 
         }
+
+
         public override void Animate(TimeSpan dt)
         {
             if (this.Top < 0)
@@ -47,6 +64,13 @@ namespace SpaceShooter.model.Ennemies
                 Right = GameWidth;
             }
             MoveDA(Speed * dt.TotalSeconds, Angle);
+            timeSinceLastShot += dt;
+
+            if (timeSinceLastShot >= shootInterval) 
+            {
+                Shoot(); 
+                timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps 
+            }
             TimeSpan test = new TimeSpan(0, 0, 0, 0, 0);
             if (Waiting >= test) { Waiting -= dt; }
         }

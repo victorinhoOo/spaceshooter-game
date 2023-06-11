@@ -55,12 +55,19 @@ namespace SpaceShooter.model.Ennemies
             {
                 TheGame.RemoveItem(this);
             }
-            else if (other.TypeName == "PlayerBullet")
+            if (other.TypeName == "PlayerBullet")
             {
                 //this.ChangeSprite("explosion.png");
                 TheGame.RemoveItem(this);
                 --amount;
             }
+            if (other.TypeName == "Enemy")
+            {
+                Angle = (360 + 180 - Angle) % 360;
+            }
+
+
+
 
 
 

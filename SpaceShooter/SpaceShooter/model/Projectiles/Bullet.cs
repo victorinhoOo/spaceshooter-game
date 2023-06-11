@@ -7,15 +7,14 @@ namespace SpaceShooter.model.Projectiles
     {
             
         private TimeSpan waiting = TimeSpan.Zero;
-        private bool touched = false;
 
         
 
-        public Bullet(double x, double y, Game g, string name = "SpriteBullet", int zindex = 0) :
+        public Bullet(double x, double y, Game g, string name = "bullet.png", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
-            ChangeSprite("bullet.png");
-            base.Vitesse = 200;
+            ChangeSprite(name);
+            base.Vitesse = 100;
         }
 
         
@@ -53,7 +52,7 @@ namespace SpaceShooter.model.Projectiles
                 Right = GameWidth;
                 TheGame.RemoveItem(this);
             }
-            MoveDA(Vitesse * dt.TotalSeconds, 270);
+            MoveDA(Vitesse * dt.TotalSeconds, 100);
         }
     }
 }

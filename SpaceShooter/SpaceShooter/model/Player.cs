@@ -17,6 +17,9 @@ namespace SpaceShooter.model.Space
 
         public int Life { get => life; set => life = value; }
 
+        private TimeSpan timeSinceLastShot = TimeSpan.Zero;
+        private TimeSpan shootRecoveryTime = TimeSpan.FromSeconds(0.2); // Temps de récupération entre les tirs
+
         public Player(double x, double y, Game g) : base(x, y, g, "Ship_1.png")
         {
             /*objScore = new ObjScore(0, 10, 10, g);
@@ -24,28 +27,30 @@ namespace SpaceShooter.model.Space
 
             this.game = g;
         }
-        public override string TypeName => "Player";
 
-        
+        public override string TypeName => "Player";
 
         public void Animate(TimeSpan dt)
         {
-            if(this.Top <= 0)
+            if (this.Top <= 0)
             {
                 this.Top = 0;
             }
-            if(this.Left <= 0)
+            if (this.Left <= 0)
             {
                 this.Left = 0;
             }
-            if(this.Left > this.GameWidth-30) 
+            if (this.Left > this.GameWidth - 30)
             {
-                this.Left = this.GameWidth-30;
+                this.Left = this.GameWidth - 30;
             }
-            if(this.Top > this.game.Screen.Height-30)
+            if (this.Top > this.game.Screen.Height - 30)
             {
-                this.Top = this.game.Screen.Height-30;
+                this.Top = this.game.Screen.Height - 30;
             }
+
+            // Met à jour le temps écoulé depuis le dernier tir
+            timeSinceLastShot += dt;
         }
 
         public override void CollideEffect(GameItem other)
@@ -73,12 +78,11 @@ namespace SpaceShooter.model.Space
                     TheGame.Loose();
                 }
             }
-
-
         }
+
         public void Shoot()
         {
-            PlayerBullet bullet = new PlayerBullet(this.Left, this.Top -30, this.TheGame);
+            PlayerBullet bullet = new PlayerBullet(this.Left, this.Top - 30, this.TheGame);
             TheGame.AddItem(bullet);
         }
 
@@ -87,23 +91,30 @@ namespace SpaceShooter.model.Space
             switch (key)
             {
                 case Key.Left:
-                    MoveXY(-10, 0); break;
+                    MoveXY(-10, 0);
+                    break;
                 case Key.Right:
-                    MoveXY(10, 0); break;
+                    MoveXY(10, 0);
+                    break;
                 case Key.Up:
-                    MoveXY(0, -10); break;
-                case Key.Down :
-                    MoveXY(0, 10); break;
-                case Key.S: 
-                    Shoot(); break;
-                
-
+                    MoveXY(0, -10);
+                    break;
+                case Key.Down:
+                    MoveXY(0, 10);
+                    break;
+                case Key.S:
+                    if (timeSinceLastShot >= shootRecoveryTime)
+                    {
+                        Shoot();
+                        timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps écoulé depuis le dernier tir
+                    }
+                    break;
             }
         }
 
         public void KeyUp(Key key)
         {
-            KeyDown( key);
+            KeyDown(key);
         }
     }
 }

@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Sprites\bullet.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Remove="view\App.xaml" />
   </ItemGroup>
 
@@ -25,6 +29,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Sprites\Asteroid.png" />
+    <Resource Include="Sprites\bullet.png" />
     <Resource Include="Sprites\enemy-medium.png" />
     <Resource Include="Sprites\enemy-small.png" />
     <Resource Include="Sprites\explosion.png" />

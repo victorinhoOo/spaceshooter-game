@@ -10,7 +10,6 @@ namespace SpaceShooter.model.Projectiles
 
 
         private TimeSpan waiting = TimeSpan.Zero;
-        private bool touched = false;
 
 
 
