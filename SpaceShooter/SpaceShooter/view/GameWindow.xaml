@@ -8,6 +8,17 @@
         Keyboard.KeyDown="Play"
         Title="GameWindow" Height="450" Width="800">
     <Grid>
-        <Canvas x:Name="canvas" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Canvas x:Name="canvas" Background="Black" Grid.Row="0" Grid.Column="0"/>
+
+        <TextBlock x:Name="scoreTextBlock" Text="{Binding Path=Score, Mode=TwoWay}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"/>
     </Grid>
 </Window>

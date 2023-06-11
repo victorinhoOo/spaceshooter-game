@@ -2,29 +2,38 @@
 using System.Diagnostics;
 using System.Windows.Input;
 using IUTGame;
-using PetitJeu;
 using SpaceShooter.model.Projectiles;
 
-namespace SpaceShooter.model.Space
+namespace SpaceShooter.model
 {
     class Player : GameItem, IAnimable, IKeyboardInteract
     {
-        private bool compte = false;
-        private double time = 0;
-        private ObjScore objScore;
-        private int life = 3;
-        private Game game;
+        private static int score;
 
+
+        /// <summary>
+        /// Propriété qui permet l'accès et la modification du score du joueur
+        /// </summary>
+        /// <author>Victor Duboz</author>
+        public static int Score { get { return score; } set { score = value; } }
+
+        private int life = 3;
         public int Life { get => life; set => life = value; }
 
+        private Game game;
+
         private TimeSpan timeSinceLastShot = TimeSpan.Zero;
-        private TimeSpan shootRecoveryTime = TimeSpan.FromSeconds(0.5); // Temps de récupération entre les tirs
+
+        private TimeSpan shootRecoveryTime = TimeSpan.FromSeconds(0.5); 
+
+        /// <summary>
+        /// Propriété qui permet l'accès et la modification du délai de récupération entre les tirs du joueur
+        /// </summary>
+        /// <author>Victor Duboz</author>
+        public TimeSpan ShootRecoveryTime { get => shootRecoveryTime; set => shootRecoveryTime = value; }
 
         public Player(double x, double y, Game g) : base(x, y, g, "Ship_1.png")
         {
-            /*objScore = new ObjScore(0, 10, 10, g);
-            TheGame.AddItem(objScore);*/
-
             this.game = g;
         }
 

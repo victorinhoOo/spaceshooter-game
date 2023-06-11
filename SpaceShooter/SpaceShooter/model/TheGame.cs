@@ -1,6 +1,6 @@
 ﻿using IUTGame;
 using SpaceShooter.model.Ennemies;
-using SpaceShooter.model.Space;
+using SpaceShooter.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -24,6 +24,7 @@ namespace SpaceShooter.view
     public partial class GameWindow : Window
     {
         private TheGame game;
+
         public GameWindow()
         {
             InitializeComponent();

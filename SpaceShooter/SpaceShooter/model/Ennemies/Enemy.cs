@@ -1,4 +1,5 @@
 ﻿using IUTGame;
+using SpaceShooter.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,17 +66,13 @@ namespace SpaceShooter.model.Ennemies
                 //this.ChangeSprite("explosion.png");
                 TheGame.RemoveItem(this);
                 TheGame.RemoveItem(other);
+                Player.Score += 1;
                 --amount;
             }
             if (other.TypeName == "Enemy")
             {
                 Angle = (360 + 180 - Angle) % 360;
             }
-
-
-
-
-
 
         }
         public abstract void Animate(TimeSpan dt);
