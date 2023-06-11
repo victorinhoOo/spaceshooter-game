@@ -18,13 +18,13 @@ namespace SpaceShooter.model
 
         protected override void InitItems()
         {
-            double y = this.Screen.Height / 2;
-            double x = this.Screen.Width / 2;
+            double y = 350;
+            double x = this.Screen.Width / 2 -10;
             Player player = new Player(x, y, this);
             AddItem(player);
             AddItem(new GeneratorEnemy(this));
 
-            //PlayBackgroundMusic("backGroundMusic.mp3");
+            //PlayBackgroundMusic("mainMusic.mp3");
 
         }
 

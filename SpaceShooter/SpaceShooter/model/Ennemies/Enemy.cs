@@ -77,18 +77,23 @@ namespace SpaceShooter.model.Ennemies
             List<BonusType> bonusTypes = new List<BonusType>();
             BonusType type;
             Random random = new Random();
-            int index;
-            foreach (BonusType t in Enum.GetValues(typeof(BonusType)))
+            int dropRate = random.Next(1,100);
+            if (dropRate >= 1 && dropRate <= 25)
             {
-                bonusTypes.Add(t);
-            }
+                int index;
+                foreach (BonusType t in Enum.GetValues(typeof(BonusType)))
+                {
+                    bonusTypes.Add(t);
+                }
 
-            index = random.Next(bonusTypes.Count);
-            type = bonusTypes[index];
+                index = random.Next(bonusTypes.Count);
+                type = bonusTypes[index];
 
-            switch (type)
-            {
-                case BonusType.Speed: TheGame.AddItem(new BonusSpeed(this.Left, this.Top, TheGame)); break;
+                switch (type)
+                {
+                    case BonusType.Speed: TheGame.AddItem(new BonusSpeed(this.Left, this.Top, TheGame)); break;
+                    case BonusType.Shoot: TheGame.AddItem(new BonusShoot(this.Left, this.Top, TheGame)); break;
+                }
             }
 
 

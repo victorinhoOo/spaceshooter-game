@@ -8,6 +8,7 @@ namespace SpaceShooter.model.Bonus
 {
     public enum BonusType
     {
-        Speed
+        Speed,
+        Shoot
     }
 }

@@ -72,10 +72,23 @@ namespace SpaceShooter.model.Space
             }
             */
 
-            if(other.TypeName == "Speed")
+            if(other is Bonus.Bonus)
             {
-                this.speed *= 1.1;
+                PlaySound("bonusSound.mp3");
+                if (other.TypeName == "Speed")
+                {
+                    this.speed *= 1.1;
+                }
+
+                if (other.TypeName == "Shoot")
+                {
+                    this.shootRecoveryTime -= TimeSpan.FromSeconds(0.1);
+                }
             }
+
+            
+
+            
 
             if (other is Ennemies.Enemy)
             {

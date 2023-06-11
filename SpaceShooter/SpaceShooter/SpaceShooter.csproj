@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Sounds\bonusSound.mp3" />
+    <None Remove="Sounds\mainMusic.mp3" />
     <None Remove="Sprites\bullet.png" />
     <None Remove="Sprites\laser.png" />
+    <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
   </ItemGroup>
 
@@ -30,6 +33,12 @@
     <Content Include="Sounds\backGroundMusic.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sounds\bonusSound.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\mainMusic.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Sprites\Asteroid.png" />
     <Resource Include="Sprites\bullet.png" />
     <Resource Include="Sprites\enemy-medium.png" />
@@ -43,11 +52,8 @@
     <Resource Include="Sprites\Ship_1.png" />
     <Resource Include="Sprites\Ship_3.png" />
     <Resource Include="Sprites\Ship_5.png" />
+    <Resource Include="Sprites\shoot.png" />
     <Resource Include="Sprites\speed.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="model\Bonus\" />
   </ItemGroup>
 
 </Project>
