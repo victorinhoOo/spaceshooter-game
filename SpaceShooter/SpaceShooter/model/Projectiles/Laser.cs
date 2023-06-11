@@ -7,25 +7,25 @@ namespace SpaceShooter.model.Projectiles
     /// Gère les balles tirées par les ennemis
     /// </summary>
     /// <author>Théo Cornu</author>
-    public class Bullet : Projectile
+    public class Laser : Projectile
     {
-            
+
         private TimeSpan waiting = TimeSpan.Zero;
 
-        
 
-        public Bullet(double x, double y, Game g, string name = "bullet.png", int zindex = 0) :
+
+        public Laser(double x, double y, Game g, string name = "laser.png", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
             ChangeSprite(name);
-            base.Speed = 150;
+            base.Speed = 650;
         }
 
-        
-        public override string TypeName => "Bullet";
+
+        public override string TypeName => "Laser";
 
 
-        
+
 
         public override void Animate(TimeSpan dt)
         {
@@ -42,17 +42,17 @@ namespace SpaceShooter.model.Projectiles
             else if (Bottom > GameHeight)
             {
                 TheGame.RemoveItem(this);
-                
+
             }
             else if (Left < 0)
             {
-                
+
                 Left = 0;
                 TheGame.RemoveItem(this);
             }
             else if (Right > GameWidth)
             {
-                
+
                 Right = GameWidth;
                 TheGame.RemoveItem(this);
             }
@@ -60,3 +60,4 @@ namespace SpaceShooter.model.Projectiles
         }
     }
 }
+

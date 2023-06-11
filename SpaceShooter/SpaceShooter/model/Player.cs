@@ -18,7 +18,7 @@ namespace SpaceShooter.model.Space
         public int Life { get => life; set => life = value; }
 
         private TimeSpan timeSinceLastShot = TimeSpan.Zero;
-        private TimeSpan shootRecoveryTime = TimeSpan.FromSeconds(0.2); // Temps de récupération entre les tirs
+        private TimeSpan shootRecoveryTime = TimeSpan.FromSeconds(0.5); // Temps de récupération entre les tirs
 
         public Player(double x, double y, Game g) : base(x, y, g, "Ship_1.png")
         {
