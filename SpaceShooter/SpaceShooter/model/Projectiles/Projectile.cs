@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Projectiles
 {
+    /// <summary>
+    /// Gère les projectiles du jeu
+    /// </summary>
+    /// <author>Théo Cornu</author>
     abstract public class Projectile : GameItem, IAnimable
     {
         private double vitesse = 200;
@@ -16,6 +20,10 @@ namespace SpaceShooter.model.Projectiles
         public TimeSpan Waiting { get => waiting; set => waiting = value; }
         public bool Touched { get => touched; set => touched = value; }
 
+        /// <summary>
+        /// Créé un projectile
+        /// </summary>
+        ///<author>Théo Cornu</author>
         public Projectile(double x, double y, Game g, string name , int zindex = 0) :
             base(x, y, g, "player_bullet.png", zindex)
         {
@@ -27,6 +35,9 @@ namespace SpaceShooter.model.Projectiles
         }
         abstract public void Animate(TimeSpan dt);
         
+        /// <summary>
+        /// Renvoi le type de projectile
+        /// </summary>
         public override string TypeName => "Projectile";
     }
 }

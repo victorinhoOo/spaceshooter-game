@@ -3,6 +3,10 @@ using System;
 
 namespace SpaceShooter.model.Projectiles
 {
+    /// <summary>
+    /// Gère les balles tirées par les ennemis
+    /// </summary>
+    /// <author>Théo Cornu</author>
     public class Bullet : Projectile
     {
             

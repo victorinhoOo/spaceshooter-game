@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Ennemies
 {
+    /// <summary>
+    /// Gère les ennemis du joueur
+    /// </summary>
+    /// <author>Théo Cornu</author>
+    /// <author>Victor Duboz</author>
     public abstract class Enemy : GameItem, IAnimable
     {
         private double speed = 200;

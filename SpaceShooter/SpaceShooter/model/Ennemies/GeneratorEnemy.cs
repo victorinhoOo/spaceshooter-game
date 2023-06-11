@@ -3,12 +3,22 @@ using IUTGame;
 
 namespace SpaceShooter.model.Ennemies
 {
+    /// <summary>
+    /// Gère la fabrique d'ennemis.
+    /// </summary>
+    /// <author>Victor Duboz</author>
+    /// <author>Théo Cornu</author>
     public class GeneratorEnemy : GameItem, IAnimable
     {
         private TimeSpan timeToCreate;
         private TimeSpan soldierInterval;
         private Random random;
 
+        /// <summary>
+        /// Constructeur de la fabrique d'ennemis
+        /// </summary>
+        /// <param name="g">Le jeu</param>
+        /// <author>Victor Duboz</author>
         public GeneratorEnemy(Game g) : base(0, 0, g)
         {
             random = new Random();
@@ -16,8 +26,16 @@ namespace SpaceShooter.model.Ennemies
             soldierInterval = TimeSpan.FromSeconds(10); // Intervalle entre les apparitions de soldats
         }
 
+        /// <summary>
+        /// Propriété qui renvoi le type de la fabrique d'ennemi.
+        /// </summary>
         public override string TypeName => "generator";
 
+        /// <summary>
+        /// Effectue la génération d'ennemis
+        /// </summary>
+        /// <param name="dt">durée écoulée depuis la dernière génération</param>
+        /// <author>Victor Duboz</author>
         public void Animate(TimeSpan dt)
         {
             timeToCreate -= dt;
@@ -28,7 +46,7 @@ namespace SpaceShooter.model.Ennemies
                 timeToCreate = GetRandomTimeToCreate();
             }
 
-            // Vérifier si il est temps de faire apparaître un soldat
+            // Vérifie s'il est temps de faire apparaître un soldat
             soldierInterval -= dt;
             if (soldierInterval.TotalMilliseconds < 0)
             {
@@ -62,13 +80,14 @@ namespace SpaceShooter.model.Ennemies
 
         private TimeSpan AdjustSoldierInterval()
         {
-            // Augmenter l'intervalle entre les apparitions de soldats au fil du temps
+            // Augmente l'intervalle entre les apparitions de soldats au fil du temps
             soldierInterval += TimeSpan.FromSeconds(2);
             return soldierInterval;
         }
 
         public override void CollideEffect(GameItem other)
         {
+   
         }
     }
 }
