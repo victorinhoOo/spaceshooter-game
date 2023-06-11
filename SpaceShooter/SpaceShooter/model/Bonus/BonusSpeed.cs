@@ -15,8 +15,5 @@ namespace SpaceShooter.model.Bonus
         }
 
         public override string TypeName => "Speed";
-
-
-
     }
 }

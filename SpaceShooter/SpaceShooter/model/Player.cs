@@ -14,6 +14,7 @@ namespace SpaceShooter.model.Space
         private ObjScore objScore;
         private int life = 3;
         private Game game;
+        private double speed = 10;
 
         public int Life { get => life; set => life = value; }
 
@@ -70,6 +71,12 @@ namespace SpaceShooter.model.Space
 
             }
             */
+
+            if(other.TypeName == "Speed")
+            {
+                this.speed *= 1.1;
+            }
+
             if (other is Ennemies.Enemy)
             {
                 Life -= 1;
@@ -91,16 +98,16 @@ namespace SpaceShooter.model.Space
             switch (key)
             {
                 case Key.Left:
-                    MoveXY(-10, 0);
+                    MoveXY(-this.speed, 0);
                     break;
                 case Key.Right:
-                    MoveXY(10, 0);
+                    MoveXY(this.speed, 0);
                     break;
                 case Key.Up:
-                    MoveXY(0, -10);
+                    MoveXY(0, -this.speed) ;
                     break;
                 case Key.Down:
-                    MoveXY(0, 10);
+                    MoveXY(0, this.speed);
                     break;
                 case Key.S:
                     if (timeSinceLastShot >= shootRecoveryTime)

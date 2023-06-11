@@ -55,6 +55,7 @@ namespace SpaceShooter.model.Ennemies
             {
                 //this.ChangeSprite("explosion.png");
                 TheGame.RemoveItem(this);
+                this.GenerateBonus();
                 TheGame.RemoveItem(other);
                 --amount;
             }
@@ -87,7 +88,7 @@ namespace SpaceShooter.model.Ennemies
 
             switch (type)
             {
-                case BonusType.Speed: new BonusSpeed(this.Left, this.Top, TheGame); break;
+                case BonusType.Speed: TheGame.AddItem(new BonusSpeed(this.Left, this.Top, TheGame)); break;
             }
 
 
