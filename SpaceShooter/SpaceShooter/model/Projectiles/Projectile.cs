@@ -33,7 +33,7 @@ namespace SpaceShooter.model.Projectiles
         {
 
         }
-        abstract public void Animate(TimeSpan dt);
+         public abstract void Animate(TimeSpan dt);
         
         /// <summary>
         /// Renvoi le type de projectile
