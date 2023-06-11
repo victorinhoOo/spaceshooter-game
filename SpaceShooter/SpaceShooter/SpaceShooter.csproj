@@ -11,6 +11,11 @@
     <None Remove="Sounds\bonusSound.mp3" />
     <None Remove="Sounds\mainMusic.mp3" />
     <None Remove="Sprites\bullet.png" />
+    <None Remove="Sprites\explosion1.png" />
+    <None Remove="Sprites\explosion2.png" />
+    <None Remove="Sprites\explosion3.png" />
+    <None Remove="Sprites\explosion4.png" />
+    <None Remove="Sprites\explosion5.png" />
     <None Remove="Sprites\laser.png" />
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
@@ -44,6 +49,11 @@
     <Resource Include="Sprites\enemy-medium.png" />
     <Resource Include="Sprites\enemy-small.png" />
     <Resource Include="Sprites\explosion.png" />
+    <Resource Include="Sprites\explosion1.png" />
+    <Resource Include="Sprites\explosion2.png" />
+    <Resource Include="Sprites\explosion3.png" />
+    <Resource Include="Sprites\explosion4.png" />
+    <Resource Include="Sprites\explosion5.png" />
     <Resource Include="Sprites\flaming_asteroid.png" />
     <Resource Include="Sprites\laser-bolts.png" />
     <Resource Include="Sprites\laser.png" />

@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpaceShooter.view"
         mc:Ignorable="d"
+        Loaded="Play"
         Title="GameWindow" Height="450" Width="800">
+
     <Grid>
-        <Canvas x:Name="canvas" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Canvas x:Name="canvas" Background="Black"/>
+        <Label x:Name="scoreLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Foreground="white" Content="Score : "/>
     </Grid>
 </Window>

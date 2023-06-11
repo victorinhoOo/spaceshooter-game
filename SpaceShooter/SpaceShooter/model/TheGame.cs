@@ -1,11 +1,12 @@
 ﻿using IUTGame;
 using SpaceShooter.model.Ennemies;
-using SpaceShooter.model.Space;
+using SpaceShooter.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace SpaceShooter.model
 {

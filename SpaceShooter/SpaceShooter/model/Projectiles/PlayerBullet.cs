@@ -1,4 +1,5 @@
 ﻿using IUTGame;
+using SpaceShooter.model.Ennemies;
 using System;
 
 namespace SpaceShooter.model.Projectiles
@@ -35,7 +36,6 @@ namespace SpaceShooter.model.Projectiles
         /// <param name="other">autre item du jeu</param>
         public override void CollideEffect(GameItem other)
         {
-            
         }
 
         /// <summary>

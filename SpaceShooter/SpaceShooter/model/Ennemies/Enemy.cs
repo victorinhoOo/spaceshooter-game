@@ -1,5 +1,4 @@
 ﻿using IUTGame;
-using SpaceShooter.model.Bonus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,17 +56,13 @@ namespace SpaceShooter.model.Ennemies
                 TheGame.RemoveItem(this);
                 this.GenerateBonus();
                 TheGame.RemoveItem(other);
+                Player.Score += 1;
                 --amount;
             }
             if (other.TypeName == "Enemy")
             {
                 Angle = (360 + 180 - Angle) % 360;
             }
-
-
-
-
-
 
         }
 
