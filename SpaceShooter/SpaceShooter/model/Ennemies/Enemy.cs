@@ -64,6 +64,7 @@ namespace SpaceShooter.model.Ennemies
             {
                 //this.ChangeSprite("explosion.png");
                 TheGame.RemoveItem(this);
+                TheGame.RemoveItem(other);
                 --amount;
             }
             if (other.TypeName == "Enemy")

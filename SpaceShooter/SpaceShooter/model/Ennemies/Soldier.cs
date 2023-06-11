@@ -16,7 +16,7 @@ namespace SpaceShooter.model.Ennemies
     public class Soldier : Enemy
     {
 
-        private TimeSpan shootInterval = TimeSpan.FromSeconds(0.5); // Intervalle de 0.5 secondes entre les tirs
+        private TimeSpan shootInterval = TimeSpan.FromSeconds(1); // Intervalle de 0.5 secondes entre les tirs
         private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace SpaceShooter.model.Ennemies
         /// <author>Victor Duboz</author>
         public void Shoot()
         {
-            Bullet bullet = new Bullet(this.Left, this.Bottom - 25, this.TheGame);
+            Bullet bullet = new Bullet(this.Left, this.Bottom - 10, this.TheGame);
             TheGame.AddItem(bullet);
         }
 
@@ -54,10 +54,10 @@ namespace SpaceShooter.model.Ennemies
                 Top = 0;
                 Angle = 360 - Angle;
             }
-            else if (Bottom > GameHeight)
+            else if (Bottom > GameHeight -100)
             {
-                TheGame.RemoveItem(this);
-                --Amount;
+                Bottom = GameHeight - 100;
+                Angle = 360 - Angle;
             }
             else if (Left < 0)
             {

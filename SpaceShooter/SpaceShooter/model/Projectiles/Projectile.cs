@@ -13,8 +13,8 @@ namespace SpaceShooter.model.Projectiles
     /// <author>Théo Cornu</author>
     abstract public class Projectile : GameItem, IAnimable
     {
-        private double vitesse = 200;
-        public double Vitesse { get => vitesse; set => vitesse = value; }
+        private double speed = 200;
+        public double Speed { get => speed; set => speed = value; }
         private TimeSpan waiting = TimeSpan.Zero;
         private bool touched = false;
         public TimeSpan Waiting { get => waiting; set => waiting = value; }

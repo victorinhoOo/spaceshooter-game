@@ -63,12 +63,7 @@ namespace SpaceShooter.model.Ennemies
         /// <author>Victor Duboz</author>
         public override void Animate(TimeSpan dt)
         {
-            if (this.Top < 0)
-            {
-                Top = 0;
-                Angle = 360 - Angle;
-            }
-            else if (Bottom > GameHeight)
+            if (Bottom > GameHeight)
             {
                 TheGame.RemoveItem(this);
                 --Amount;

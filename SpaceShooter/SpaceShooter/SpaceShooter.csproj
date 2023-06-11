@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="model\Bonus\**" />
+    <EmbeddedResource Remove="model\Bonus\**" />
+    <None Remove="model\Bonus\**" />
+    <Page Remove="model\Bonus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Sprites\bullet.png" />
+    <None Remove="Sprites\laser.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,15 +43,12 @@
     <Resource Include="Sprites\explosion.png" />
     <Resource Include="Sprites\flaming_asteroid.png" />
     <Resource Include="Sprites\laser-bolts.png" />
+    <Resource Include="Sprites\laser.png" />
     <Resource Include="Sprites\player_bullet.png" />
     <Resource Include="Sprites\power-up.png" />
     <Resource Include="Sprites\Ship_1.png" />
     <Resource Include="Sprites\Ship_3.png" />
     <Resource Include="Sprites\Ship_5.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="model\Bonus\" />
   </ItemGroup>
 
 </Project>
