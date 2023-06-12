@@ -1,8 +1,4 @@
-﻿using IUTGame;
-using IUTGame.WPF;
-using SpaceShooter.model;
-using SpaceShooter.view;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,24 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IHM
+namespace SpaceShooter.view
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour LooseWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LooseWindow : Window
     {
         private GameWindow gameWindow;
-        private HighScoresWindow highScoresWindow;
-        public MainWindow()
+        public LooseWindow()
         {
             InitializeComponent();
-
         }
-
         public void Play(object sender, RoutedEventArgs e)
         {
             this.gameWindow = new GameWindow();
@@ -39,10 +31,10 @@ namespace IHM
             this.Close();
         }
 
-        public void OpenHighScoresWindow(object sender, RoutedEventArgs e)
+        public void Quit(object sender, RoutedEventArgs e)
         {
-            this.highScoresWindow = new HighScoresWindow();
-            this.highScoresWindow.Show();
+
+
             this.Close();
         }
     }

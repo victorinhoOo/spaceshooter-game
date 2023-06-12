@@ -1,5 +1,6 @@
 ﻿using IUTGame;
 using SpaceShooter.model.Projectiles;
+using SpaceShooter.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

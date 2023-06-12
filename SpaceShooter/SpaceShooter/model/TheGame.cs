@@ -46,7 +46,11 @@ namespace SpaceShooter.model
 
         protected override void RunWhenLoose()
         {
-            throw new NotImplementedException();
+            
+            LooseWindow loose = new LooseWindow();
+            loose.Show();
+            gameWindow.Close();
+
         }
 
         protected override void RunWhenWin()

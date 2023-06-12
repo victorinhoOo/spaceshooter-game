@@ -23,11 +23,12 @@ namespace SpaceShooter.model.Bonus
 
         public void Animate(TimeSpan dt)
         {
-            this.delay -= dt;
+           this.delay -= dt;
            if(this.delay <= TimeSpan.Zero)
             {
                 TheGame.RemoveItem(this);
             }
+            MoveDA(100 * dt.TotalSeconds, 90);
         }
 
 
