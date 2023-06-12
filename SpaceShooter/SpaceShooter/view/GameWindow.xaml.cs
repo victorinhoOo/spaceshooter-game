@@ -37,6 +37,12 @@ namespace SpaceShooter.view
             this.game = new TheGame(screen, this);
             this.game.Run();
         }
+
+        public void UpdateScore()
+        {
+            this.scoreLabel.Content = "Score : ";
+            this.scoreLabel.Content += game.Score.ToString();
+        }
        
     }
 }

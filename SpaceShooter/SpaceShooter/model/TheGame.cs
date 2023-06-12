@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using SpaceShooter.model.Vaisseaux.Enemi;
-using SpaceShooter.model.Space;
+using SpaceShooter.view;
 
 namespace SpaceShooter.model
 {
@@ -50,7 +49,8 @@ namespace SpaceShooter.model
             
             LooseWindow loose = new LooseWindow();
             loose.Show();
-            
+            gameWindow.Close();
+
         }
 
         protected override void RunWhenWin()
