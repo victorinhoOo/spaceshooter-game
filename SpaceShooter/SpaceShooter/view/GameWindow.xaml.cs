@@ -28,14 +28,20 @@ namespace SpaceShooter.view
         {
             InitializeComponent();
             this.Loaded += Play;
-            this.scoreLabel.Content += Player.Score.ToString();
+
         }
 
         public void Play(object sender, RoutedEventArgs e)
         {
             WPFScreen screen = new WPFScreen(this.canvas);
-            this.game = new TheGame(screen);
+            this.game = new TheGame(screen, this);
             this.game.Run();
+        }
+
+        public void UpdateScore()
+        {
+            this.scoreLabel.Content = "Score : ";
+            this.scoreLabel.Content += game.Score.ToString();
         }
        
     }

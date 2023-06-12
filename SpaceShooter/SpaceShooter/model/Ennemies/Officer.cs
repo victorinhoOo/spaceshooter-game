@@ -13,12 +13,15 @@ namespace SpaceShooter.model.Ennemies
 
         private TimeSpan shootInterval = TimeSpan.FromSeconds(2); // Intervalle de 2 secondes entre les tirs
         private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
+
+        private TheGame g;
         public Officer(double x, double y, Game g, string name = "Ship_3.png") : base(x, y, g, name, -100)
         {
             Random random = new Random();
             double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
             base.Angle = randomAngle;
             base.Speed = 400;
+            this.g = (TheGame) g;
         }
         public override string TypeName => "Officer";
         public void ShootLaser()
@@ -87,7 +90,7 @@ namespace SpaceShooter.model.Ennemies
                 TheGame.RemoveItem(this);
                 this.GenerateBonus();
                 TheGame.RemoveItem(other);
-                Player.Score += 1;
+                g.Score += 1;
                 --Amount;
             }
             if (other.TypeName == "Enemy")
