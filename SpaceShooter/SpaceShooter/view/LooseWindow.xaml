@@ -5,10 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpaceShooter.view"
         mc:Ignorable="d"
-        Background="Black"
-        Title="MainWindow" Height="450" Width="800">
+        Title="LooseWindow" Height="450" Width="800">
     <Grid>
-        <Button Width="200" Height="50" Content="Quitter" Foreground="White" Background="Black" BorderBrush="White" Click="Quit" Margin="400,192,100,192"/>
-        <Button Width="200" Height="50" Content="Rejouer" Foreground="White" Background="Black" BorderBrush="White" Click="Play" Margin="100,192,400,192"/>
+        
     </Grid>
 </Window>
