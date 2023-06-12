@@ -1,9 +1,11 @@
 ﻿using IUTGame;
+using SpaceShooter.model.Bonus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SpaceShooter.model.Ennemies
 {
@@ -46,23 +48,7 @@ namespace SpaceShooter.model.Ennemies
 
         public override void CollideEffect(GameItem other)
         {
-            if (other.TypeName == "Player")
-            {
-                TheGame.RemoveItem(this);
-            }
-            if (other.TypeName == "PlayerBullet")
-            {
-                //this.ChangeSprite("explosion.png");
-                TheGame.RemoveItem(this);
-                this.GenerateBonus();
-                TheGame.RemoveItem(other);
-                Player.Score += 1;
-                --amount;
-            }
-            if (other.TypeName == "Enemy")
-            {
-                Angle = (360 + 180 - Angle) % 360;
-            }
+
 
         }
 

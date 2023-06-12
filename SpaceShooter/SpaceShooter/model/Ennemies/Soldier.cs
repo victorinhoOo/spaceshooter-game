@@ -54,7 +54,7 @@ namespace SpaceShooter.model.Ennemies
                 Top = 0;
                 Angle = 360 - Angle;
             }
-            else if (Bottom > GameHeight -100)
+            else if (Bottom > GameHeight - 100)
             {
                 Bottom = GameHeight - 100;
                 Angle = 360 - Angle;
@@ -83,5 +83,27 @@ namespace SpaceShooter.model.Ennemies
             if (Waiting >= test) { Waiting -= dt; }
         }
 
+        public override void CollideEffect(GameItem other)
+        {
+            if (other.TypeName == "Player")
+            {
+                TheGame.RemoveItem(this);
+            }
+            if (other.TypeName == "PlayerBullet")
+            {
+
+                //this.ChangeSprite("explosion.png");
+                TheGame.RemoveItem(this);
+                this.GenerateBonus();
+                TheGame.RemoveItem(other);
+                Player.Score += 1;
+                --Amount;
+            }
+            if (other.TypeName == "Enemy")
+            {
+                Angle = (360 + 180 - Angle) % 360;
+            }
+
+        }
     }
 }
