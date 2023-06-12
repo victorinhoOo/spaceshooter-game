@@ -1,0 +1,87 @@
+﻿<Window x:Class="SpaceShooter.view.ParametersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpaceShooter.view"
+        mc:Ignorable="d"
+        Background="Black"
+        Title="ParametersWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="checkBullet" TargetType="CheckBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <Border x:Name="checkBackground" Width="60" Height="20" CornerRadius="10" Background="Gray" />
+                            <TextBlock x:Name="checkLabel" HorizontalAlignment="Right" Margin="12,0,12,0" TextWrapping="Wrap" Text="Off" VerticalAlignment="Center" TextBlock.Foreground="White"/>
+                            <Ellipse x:Name="checkMark" HorizontalAlignment="Left" Height="Auto" Margin="1,1,1,1" Fill="White" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                                <Ellipse.RenderTransform>
+                                    <TranslateTransform X="0"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="checkLabel" Property="Text" Value="On"/>
+                                <Setter TargetName="checkLabel" Property="HorizontalAlignment" Value="Left"/>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="checkMark" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" To="40" Duration="00:00:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="checkMark" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" To="0" Duration="00:00:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Button Content="Menu" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Foreground="White" Background="Black" Click="BackMenu"/>
+        <Label Content="Paramètres" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
+
+        <Label Content="Son" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Foreground="White" FontSize="15"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Slider x:Name="soundLevel" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="200" Minimum="0" Maximum="100" Value="100"/>
+            <CheckBox x:Name="soundCheckBox" Style="{StaticResource checkBullet}" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <Label Content="Musique" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Foreground="White" FontSize="15"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Slider x:Name="musicLevel" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="200" Minimum="0" Maximum="100" Value="100" ValueChanged="SliderMusic_ValueChanged"/>
+            <CheckBox x:Name="musicCheckBox" Style="{StaticResource checkBullet}"  Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

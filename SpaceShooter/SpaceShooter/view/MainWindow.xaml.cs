@@ -26,6 +26,7 @@ namespace IHM
     {
         private GameWindow gameWindow;
         private HighScoresWindow highScoresWindow;
+        private ParametersWindow parametersWindow;
         public MainWindow()
         {
             InitializeComponent();
@@ -45,6 +46,14 @@ namespace IHM
             this.highScoresWindow.Show();
             this.Close();
         }
+
+        public void OpenParametersWindow(object sender, RoutedEventArgs e)
+        {
+            this.parametersWindow = new ParametersWindow();
+            this.parametersWindow.Show();
+            this.Close();
+        }
+
         public void Quit(object sender, RoutedEventArgs e)
         {
             
