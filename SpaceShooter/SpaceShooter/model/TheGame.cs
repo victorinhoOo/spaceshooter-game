@@ -7,15 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using SpaceShooter.view;
 
 namespace SpaceShooter.model
 {
     public class TheGame : IUTGame.Game
     {
-        public TheGame(IScreen screen) : base(screen, "Sprites", "Sounds")
+        public TheGame(IScreen screen, GameWindow gameWindow) : base(screen, "Sprites", "Sounds")
         {
-
+            this.gameWindow = gameWindow;
         }
+
+        private GameWindow gameWindow;
+        private int score;
+
+        /// <summary>
+        /// Propriété qui permet l'accès et la modification du score
+        /// </summary>
+        /// <author>Victor Duboz</author>
+        public int Score { get { return score; } set { score = value; UpdateScore(); } }
 
         protected override void InitItems()
         {
@@ -29,9 +39,18 @@ namespace SpaceShooter.model
 
         }
 
+        public void UpdateScore()
+        {
+            gameWindow.UpdateScore();
+        }
+
         protected override void RunWhenLoose()
         {
-            throw new NotImplementedException();
+            
+            LooseWindow loose = new LooseWindow();
+            loose.Show();
+            gameWindow.Close();
+
         }
 
         protected override void RunWhenWin()

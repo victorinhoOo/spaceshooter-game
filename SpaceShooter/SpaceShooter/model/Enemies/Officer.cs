@@ -3,47 +3,35 @@ using SpaceShooter.model.Projectiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Ennemies
 {
-    /// <summary>
-    /// Gère les soldats
-    /// </summary>
-    /// <author>Victor Duboz</author>
-    public class Soldier : Enemy
+    public class Officer : Enemy
     {
 
-        private TimeSpan shootInterval = TimeSpan.FromSeconds(1); // Intervalle de 0.5 secondes entre les tirs
+        private TimeSpan shootInterval = TimeSpan.FromSeconds(2); // Intervalle de 2 secondes entre les tirs
         private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
 
-        /// <summary>
-        /// Créé un soldat, lui attribut un angle aléatoire entre -20 et 20
-        /// </summary>
-        /// <author> Victor Duboz </author>
-        public Soldier(double x, double y, Game g, string name = "Ship_5.png") : base(x, y, g, name, -100)
+        private TheGame g;
+        public Officer(double x, double y, Game g, string name = "Ship_3.png") : base(x, y, g, name, -100)
         {
             Random random = new Random();
             double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
             base.Angle = randomAngle;
+            base.Speed = 400;
+            this.g = (TheGame) g;
         }
-
-
-        /// <summary>
-        /// Tire une balle
-        /// </summary>
-        /// <author>Victor Duboz</author>
-        public void Shoot()
+        public override string TypeName => "Officer";
+        public void ShootLaser()
         {
-            Bullet bullet = new Bullet(this.Left, this.Bottom - 10, this.TheGame);
-            TheGame.AddItem(bullet);
+            Laser laser = new Laser(this.Left, this.Bottom - 10, this.TheGame);
+            TheGame.AddItem(laser);
         }
 
-
         /// <summary>
-        /// Effectue l'animation du soldat
+        /// Effectue l'animation de l'officer
         /// </summary>
         /// <param name="dt">durée écoulée depuis la dernière animation</param>
         /// <author>Victor Duboz</author>
@@ -75,7 +63,7 @@ namespace SpaceShooter.model.Ennemies
 
             if (timeSinceLastShot >= shootInterval)
             {
-                Shoot();
+                ShootLaser();
                 timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps écoulé depuis le dernier tir
             }
 
@@ -84,7 +72,7 @@ namespace SpaceShooter.model.Ennemies
         }
 
         /// <summary>
-        /// Gère les collisions du soldat avec les autres items du jeu
+        /// Gère les collisions de l'officier avec les autres items du jeu
         /// </summary>
         /// <param name="other">autre item</param>
         /// <author>Victor Duboz</author>
@@ -95,7 +83,6 @@ namespace SpaceShooter.model.Ennemies
                 //other.ChangeSprite("explosion.png");
                 TheGame.Loose();
             }
-
             if (other.TypeName == "PlayerBullet")
             {
 
@@ -103,14 +90,15 @@ namespace SpaceShooter.model.Ennemies
                 TheGame.RemoveItem(this);
                 this.GenerateBonus();
                 TheGame.RemoveItem(other);
-                Player.Score += 1;
+                g.Score += 1;
                 --Amount;
             }
-
             if (other.TypeName == "Enemy")
             {
                 Angle = (360 + 180 - Angle) % 360;
             }
+
         }
+
     }
 }

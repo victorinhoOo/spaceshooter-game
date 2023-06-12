@@ -8,19 +8,15 @@ namespace SpaceShooter.model
 {
     class Player : GameItem, IAnimable, IKeyboardInteract
     {
-        private static int score;
 
 
-        /// <summary>
-        /// Propriété qui permet l'accès et la modification du score du joueur
-        /// </summary>
-        /// <author>Victor Duboz</author>
-        public static int Score { get { return score; } set { score = value; } }
+        private Game game;
+
+
 
         private int life = 3;
         public int Life { get => life; set => life = value; }
 
-        private Game game;
         private double speed = 10;
 
         private TimeSpan timeSinceLastShot = TimeSpan.Zero;
