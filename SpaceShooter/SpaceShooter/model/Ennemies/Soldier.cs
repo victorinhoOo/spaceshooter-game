@@ -3,9 +3,10 @@ using SpaceShooter.model.Projectiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+
+
 
 namespace SpaceShooter.model.Ennemies
 {
@@ -15,22 +16,31 @@ namespace SpaceShooter.model.Ennemies
     /// <author>Victor Duboz</author>
     public class Soldier : Enemy
     {
-
-        private TimeSpan shootInterval = TimeSpan.FromSeconds(1); // Intervalle de 0.5 secondes entre les tirs
+        private TimeSpan shootInterval = TimeSpan.FromSeconds(1); // Intervalle de 1 seconde entre les tirs
         private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
 
+        private List<string> explosionSprites; // Liste des sprites d'explosion
+        private int currentExplosionIndex; // index de l'explosion du soldat
+        private bool isExploding; // soldat en train d'exploser ou non
         private TheGame g;
 
-        /// <summary>
-        /// Créé un soldat, lui attribut un angle aléatoire entre -20 et 20
-        /// </summary>
-        /// <author> Victor Duboz </author>
         public Soldier(double x, double y, Game g, string name = "Ship_5.png") : base(x, y, g, name, -100)
         {
             Random random = new Random();
             double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
             base.Angle = randomAngle;
             this.g = (TheGame)g;
+
+            explosionSprites = new List<string>()
+            {
+                "explosion1.png",
+                "explosion2.png",
+                "explosion3.png",
+                "explosion4.png",
+                "explosion5.png"
+            };
+            currentExplosionIndex = 0;
+            isExploding = false;
         }
 
 
@@ -44,7 +54,6 @@ namespace SpaceShooter.model.Ennemies
             TheGame.AddItem(bullet);
         }
 
-
         /// <summary>
         /// Effectue l'animation du soldat
         /// </summary>
@@ -52,6 +61,23 @@ namespace SpaceShooter.model.Ennemies
         /// <author>Victor Duboz</author>
         public override void Animate(TimeSpan dt)
         {
+            if (isExploding)
+            {
+                if (currentExplosionIndex < explosionSprites.Count)
+                {
+                    this.ChangeSprite(explosionSprites[currentExplosionIndex]);
+                    currentExplosionIndex++;
+                    if (currentExplosionIndex >= explosionSprites.Count)
+                    { 
+                        TheGame.RemoveItem(this);
+                        this.GenerateBonus();
+                        g.Score += 1;
+                        --Amount;
+                    }
+                }
+                return;
+            }
+
             if (this.Top < 0)
             {
                 Top = 0;
@@ -86,6 +112,7 @@ namespace SpaceShooter.model.Ennemies
             if (Waiting >= test) { Waiting -= dt; }
         }
 
+
         /// <summary>
         /// Gère les collisions du soldat avec les autres items du jeu
         /// </summary>
@@ -95,21 +122,21 @@ namespace SpaceShooter.model.Ennemies
         {
             if (other.TypeName == "Player")
             {
-                //other.ChangeSprite("explosion.png");
-                TheGame.Loose();
+                TheGame.RemoveItem(this);
             }
-
             if (other.TypeName == "PlayerBullet")
             {
+               
+                if (!isExploding)
+                {
+                    isExploding = true;
+                    currentExplosionIndex = 0;
+                    TheGame.RemoveItem(other);
+                    return;
+                }
 
-                //this.ChangeSprite("explosion.png");
-                TheGame.RemoveItem(this);
-                this.GenerateBonus();
-                TheGame.RemoveItem(other);
-                g.Score += 1;
-                --Amount;
+
             }
-
             if (other.TypeName == "Enemy")
             {
                 Angle = (360 + 180 - Angle) % 360;
