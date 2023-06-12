@@ -1,5 +1,4 @@
-﻿using IHM;
-using IUTGame;
+﻿using IUTGame;
 using IUTGame.WPF;
 using SpaceShooter.model;
 using System;

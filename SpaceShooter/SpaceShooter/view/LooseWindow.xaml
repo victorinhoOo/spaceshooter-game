@@ -15,7 +15,7 @@
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Width="200" Height="50" Content="Quitter" Foreground="White" Background="Black" BorderBrush="White" Click="Quit" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Width="200" Height="50" Content="Menu" Foreground="White" Background="Black" BorderBrush="White" Click="Menu" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button Width="200" Height="50" Content="Rejouer" Foreground="White" Background="Black" BorderBrush="White" Click="Play" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Window>
