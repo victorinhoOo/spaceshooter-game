@@ -38,6 +38,11 @@ namespace SpaceShooter.model.Ennemies
             isExploding = false;
         }
         public override string TypeName => "Officer";
+
+        /// <summary>
+        /// Tire un laser
+        /// </summary>
+        /// <author>Victor Duboz</author>
         public void ShootLaser()
         {
             Laser laser = new Laser(this.Left, this.Bottom - 10, this.TheGame);
