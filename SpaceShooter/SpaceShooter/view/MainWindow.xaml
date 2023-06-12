@@ -8,6 +8,18 @@
         Background="Black"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Width="200" Height="50" Content="Jouer" Foreground="White" Background="Black" BorderBrush="White" Click="Play"/>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Button Content="Jouer" Grid.Row="1" Width="200" Height="50" Foreground="White" Background="Black" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="White" Click="Play"/>
+        <Button Content="High Scores" Grid.Row="2" Width="180" Height="45" Foreground="White" Background="Black" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="White" Click="OpenHighScoresWindow"/>
+        <Button Content="Paramètres" Grid.Row="3" Width="160" Height="40" Foreground="White" Background="Black" VerticalAlignment="Top" HorizontalAlignment="Center"  BorderBrush="White" />
+            
     </Grid>
 </Window>
