@@ -40,19 +40,21 @@ namespace SpaceShooter.model.Ennemies
         /// <author>Victor Duboz</author>
         public override void CollideEffect(GameItem other)
         {
-            if (Touched == false)
-            {
-                Waiting = new TimeSpan(0, 0, 0, 600);
-                Touched = true;
-            }
-            else if (Touched == true && Waiting <= TimeSpan.Zero)
-            {
-                Touched = false;
-            }
-
             if (other.TypeName == "Player")
             {
-                TheGame.RemoveItem(this);
+                //other.ChangeSprite("explosion.png");
+                TheGame.Loose();
+            }
+
+            if (other.TypeName == "Enemy")
+            {
+                //other.ChangeSprite("explosion.png");
+                TheGame.RemoveItem(other);
+            }
+
+            if (other.TypeName == "Projectile")
+            {
+                TheGame.RemoveItem(other);
             }
         }
 

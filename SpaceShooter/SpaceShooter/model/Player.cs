@@ -65,21 +65,6 @@ namespace SpaceShooter.model
 
         public override void CollideEffect(GameItem other)
         {
-            /*if (!compte)
-            {
-                // Score à changer ainsi que la limite 
-                objScore.Score++;
-                if (objScore.Score >= 10)
-                    TheGame.Win();
-                compte = true;
-                time = 0;
-                /*PlaySound("music.mp3");
-            }
-            if (other.GetType() == typeof(Shoot))
-            {
-
-            }
-            */
 
             if(other is Bonus.Bonus)
             {

@@ -4,9 +4,9 @@ using System;
 namespace SpaceShooter.model.Projectiles
 {
     /// <summary>
-    /// Gère les balles tirées par les ennemis
+    /// Gère les lasers tirées par les ennemis
     /// </summary>
-    /// <author>Théo Cornu</author>
+    /// <author>Victor Duboz</author>
     public class Laser : Projectile
     {
 
@@ -57,6 +57,16 @@ namespace SpaceShooter.model.Projectiles
                 TheGame.RemoveItem(this);
             }
             MoveDA(Speed * dt.TotalSeconds, 100);
+        }
+
+        public override void CollideEffect(GameItem other)
+        {
+            if (other.TypeName == "Player")
+            {
+                //other.ChangeSprite("explosion.png");
+                TheGame.Loose();
+            }
+
         }
     }
 }

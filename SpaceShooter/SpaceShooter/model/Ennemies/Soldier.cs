@@ -83,12 +83,19 @@ namespace SpaceShooter.model.Ennemies
             if (Waiting >= test) { Waiting -= dt; }
         }
 
+        /// <summary>
+        /// Gère les collisions du soldat avec les autres items du jeu
+        /// </summary>
+        /// <param name="other">autre item</param>
+        /// <author>Victor Duboz</author>
         public override void CollideEffect(GameItem other)
         {
             if (other.TypeName == "Player")
             {
-                TheGame.RemoveItem(this);
+                //other.ChangeSprite("explosion.png");
+                TheGame.Loose();
             }
+
             if (other.TypeName == "PlayerBullet")
             {
 
@@ -99,11 +106,11 @@ namespace SpaceShooter.model.Ennemies
                 Player.Score += 1;
                 --Amount;
             }
+
             if (other.TypeName == "Enemy")
             {
                 Angle = (360 + 180 - Angle) % 360;
             }
-
         }
     }
 }

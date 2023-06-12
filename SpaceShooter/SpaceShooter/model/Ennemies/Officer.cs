@@ -68,11 +68,17 @@ namespace SpaceShooter.model.Ennemies
             if (Waiting >= test) { Waiting -= dt; }
         }
 
+        /// <summary>
+        /// Gère les collisions de l'officier avec les autres items du jeu
+        /// </summary>
+        /// <param name="other">autre item</param>
+        /// <author>Victor Duboz</author>
         public override void CollideEffect(GameItem other)
         {
             if (other.TypeName == "Player")
             {
-                TheGame.RemoveItem(this);
+                //other.ChangeSprite("explosion.png");
+                TheGame.Loose();
             }
             if (other.TypeName == "PlayerBullet")
             {

@@ -31,7 +31,6 @@ namespace SpaceShooter.model.Projectiles
         }
         public override void CollideEffect(GameItem other)
         {
-
         }
          public abstract void Animate(TimeSpan dt);
         
