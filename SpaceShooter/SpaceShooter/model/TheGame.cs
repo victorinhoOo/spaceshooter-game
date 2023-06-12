@@ -7,9 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using SpaceShooter.model.Vaisseaux.Enemi;
-using SpaceShooter.model.Space;
-
+using SpaceShooter.view;
 namespace SpaceShooter.model
 {
     public class TheGame : IUTGame.Game
@@ -33,7 +31,10 @@ namespace SpaceShooter.model
 
         protected override void RunWhenLoose()
         {
-            throw new NotImplementedException();
+            
+            LooseWindow loose = new LooseWindow();
+            loose.Show();
+            
         }
 
         protected override void RunWhenWin()

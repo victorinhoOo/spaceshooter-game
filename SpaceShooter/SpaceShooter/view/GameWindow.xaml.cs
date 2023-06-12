@@ -37,6 +37,7 @@ namespace SpaceShooter.view
             this.game = new TheGame(screen);
             this.game.Run();
         }
-       
+        
+
     }
 }
