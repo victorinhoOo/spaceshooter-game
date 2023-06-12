@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using SpaceShooter.view;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace SpaceShooter.model
 {
