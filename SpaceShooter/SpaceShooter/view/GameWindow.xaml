@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="GameWindow" Height="450" Width="800">
     <Grid>
-        <Canvas x:Name="canvas" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Label x:Name="scoreLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Foreground="white" Content="Score : "/>
+        <Canvas x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/view/background.png" />
+            </Canvas.Background>
+        </Canvas>
+        <Label x:Name="scoreLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Foreground="White" Content="Score : "/>
     </Grid>
+
 </Window>
