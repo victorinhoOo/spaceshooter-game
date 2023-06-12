@@ -114,10 +114,6 @@ namespace SpaceShooter.model.Ennemies
         /// <author>Victor Duboz</author>
         public override void CollideEffect(GameItem other)
         {
-            if (other.TypeName == "Player")
-            {
-                TheGame.RemoveItem(this);
-            }
             if (other.TypeName == "PlayerBullet")
             {
 
@@ -136,6 +132,5 @@ namespace SpaceShooter.model.Ennemies
                 Angle = (360 + 180 - Angle) % 360;
             }
         }
-
     }
 }

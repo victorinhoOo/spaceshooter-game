@@ -34,20 +34,6 @@ namespace SpaceShooter.model.Ennemies
         public override string TypeName => "Asteroid";
 
         /// <summary>
-        /// Effet de collision de l'astéroïde avec un autre élément du jeu
-        /// </summary>
-        /// <param name="other">élément avec lequel l'astéroïde entre en collision</param>
-        /// <author>Victor Duboz</author>
-        public override void CollideEffect(GameItem other)
-        {
-            if (other.TypeName == "Player")
-            {
-                //other.ChangeSprite("explosion.png");
-                TheGame.Loose();
-            }
-        }
-
-        /// <summary>
         /// Effectue l'animation de l'astéroïde
         /// </summary>
         /// <param name="dt">durée écoulée depuis la dernière animation</param>

@@ -58,15 +58,8 @@ namespace SpaceShooter.model.Projectiles
             }
             MoveDA(Speed * dt.TotalSeconds, 100);
         }
-
         public override void CollideEffect(GameItem other)
         {
-            if (other.TypeName == "Player")
-            {
-                //other.ChangeSprite("explosion.png");
-                TheGame.Loose();
-            }
-
         }
     }
 }

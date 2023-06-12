@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Input;
 using IUTGame;
@@ -29,15 +30,43 @@ namespace SpaceShooter.model
         /// <author>Victor Duboz</author>
         public TimeSpan ShootRecoveryTime { get => shootRecoveryTime; set => shootRecoveryTime = value; }
 
+
+        private List<string> explosionSprites; // Liste des sprites d'explosion
+        private int currentExplosionIndex; // index de l'explosion du joueur
+        private bool isExploding; // joueur en train d'exploser ou non
+
         public Player(double x, double y, Game g) : base(x, y, g, "Ship_1.png")
         {
             this.game = g;
+            explosionSprites = new List<string>()
+            {
+                "explosion1.png",
+                "explosion2.png",
+                "explosion3.png",
+                "explosion4.png",
+                "explosion5.png"
+            };
+            currentExplosionIndex = 0;
+            isExploding = false;
         }
 
         public override string TypeName => "Player";
 
         public void Animate(TimeSpan dt)
         {
+            if (isExploding)
+            {
+                if (currentExplosionIndex < explosionSprites.Count)
+                {
+                    this.ChangeSprite(explosionSprites[currentExplosionIndex]);
+                    currentExplosionIndex++;
+                    if (currentExplosionIndex >= explosionSprites.Count)
+                    {
+                        TheGame.Loose();
+                    }
+                }
+                return;
+            }
             if (this.Top <= 0)
             {
                 this.Top = 0;
@@ -74,18 +103,15 @@ namespace SpaceShooter.model
                 {
                     this.shootRecoveryTime -= TimeSpan.FromSeconds(0.1);
                 }
-            }
+            }          
 
-            
-
-            
-
-            if (other is Ennemies.Enemy)
+            if ((other.TypeName == "Enemy")||(other.TypeName == "Bullet") || (other.TypeName =="Laser"))
             {
-                Life -= 1;
-                if (Life == 0)
+                if (!isExploding)
                 {
-                    TheGame.Loose();
+                    isExploding = true;
+                    currentExplosionIndex = 0;
+                    TheGame.RemoveItem(other);
                 }
             }
         }
