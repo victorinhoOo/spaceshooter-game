@@ -19,6 +19,7 @@
     <None Remove="Sprites\laser.png" />
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
+    <None Remove="view\background.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +65,9 @@
     <Resource Include="Sprites\Ship_5.png" />
     <Resource Include="Sprites\shoot.png" />
     <Resource Include="Sprites\speed.png" />
+    <Resource Include="view\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
