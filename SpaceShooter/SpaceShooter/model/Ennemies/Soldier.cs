@@ -20,6 +20,8 @@ namespace SpaceShooter.model.Ennemies
         private TimeSpan shootInterval = TimeSpan.FromSeconds(1); // Intervalle de 0.5 secondes entre les tirs
         private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
 
+        private TheGame g;
+
         /// <summary>
         /// Créé un soldat, lui attribut un angle aléatoire entre -20 et 20
         /// </summary>
@@ -29,6 +31,7 @@ namespace SpaceShooter.model.Ennemies
             Random random = new Random();
             double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
             base.Angle = randomAngle;
+            this.g = (TheGame)g;
         }
 
 
@@ -104,7 +107,7 @@ namespace SpaceShooter.model.Ennemies
                 TheGame.RemoveItem(this);
                 this.GenerateBonus();
                 TheGame.RemoveItem(other);
-                Player.Score += 1;
+                g.Score += 1;
                 --Amount;
             }
 
