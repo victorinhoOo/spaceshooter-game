@@ -19,9 +19,23 @@ namespace SpaceShooter.view
     /// </summary>
     public partial class LooseWindow : Window
     {
+        private GameWindow gameWindow;
         public LooseWindow()
         {
             InitializeComponent();
+        }
+        public void Play(object sender, RoutedEventArgs e)
+        {
+            this.gameWindow = new GameWindow();
+            this.gameWindow.Show();
+            this.Close();
+        }
+
+        public void Quit(object sender, RoutedEventArgs e)
+        {
+
+
+            this.Close();
         }
     }
 }
