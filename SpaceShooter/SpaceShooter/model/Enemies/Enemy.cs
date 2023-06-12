@@ -59,7 +59,7 @@ namespace SpaceShooter.model.Ennemies
             BonusType type;
             Random random = new Random();
             int dropRate = random.Next(1,100);
-            if (dropRate >= 1 && dropRate <= 25)
+            if (dropRate >= 1 && dropRate <= 15)
             {
                 int index;
                 foreach (BonusType t in Enum.GetValues(typeof(BonusType)))
