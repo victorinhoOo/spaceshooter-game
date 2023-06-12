@@ -22,5 +22,10 @@ namespace SpaceShooter.model.Projectiles
         {
             throw new NotImplementedException();
         }
+
+        public override void CollideEffect(GameItem other)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
