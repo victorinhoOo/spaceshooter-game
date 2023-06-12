@@ -45,17 +45,6 @@ namespace SpaceShooter.model.Ennemies
                 //other.ChangeSprite("explosion.png");
                 TheGame.Loose();
             }
-
-            if (other.TypeName == "Enemy")
-            {
-                //other.ChangeSprite("explosion.png");
-                TheGame.RemoveItem(other);
-            }
-
-            if (other.TypeName == "Projectile")
-            {
-                TheGame.RemoveItem(other);
-            }
         }
 
         /// <summary>

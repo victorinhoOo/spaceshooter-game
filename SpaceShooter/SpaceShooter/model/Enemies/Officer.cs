@@ -13,6 +13,9 @@ namespace SpaceShooter.model.Ennemies
 
         private TimeSpan shootInterval = TimeSpan.FromSeconds(2); // Intervalle de 2 secondes entre les tirs
         private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
+        private List<string> explosionSprites;
+        private int currentExplosionIndex;
+        private bool isExploding;
 
         private TheGame g;
         public Officer(double x, double y, Game g, string name = "Ship_3.png") : base(x, y, g, name, -100)
@@ -22,8 +25,24 @@ namespace SpaceShooter.model.Ennemies
             base.Angle = randomAngle;
             base.Speed = 400;
             this.g = (TheGame) g;
+
+            explosionSprites = new List<string>()
+            {
+                "explosion1.png",
+                "explosion2.png",
+                "explosion3.png",
+                "explosion4.png",
+                "explosion5.png"
+            };
+            currentExplosionIndex = 0;
+            isExploding = false;
         }
         public override string TypeName => "Officer";
+
+        /// <summary>
+        /// Tire un laser
+        /// </summary>
+        /// <author>Victor Duboz</author>
         public void ShootLaser()
         {
             Laser laser = new Laser(this.Left, this.Bottom - 10, this.TheGame);
@@ -37,6 +56,23 @@ namespace SpaceShooter.model.Ennemies
         /// <author>Victor Duboz</author>
         public override void Animate(TimeSpan dt)
         {
+            if (isExploding)
+            {
+                if (currentExplosionIndex < explosionSprites.Count)
+                {
+                    this.ChangeSprite(explosionSprites[currentExplosionIndex]);
+                    currentExplosionIndex++;
+                    if (currentExplosionIndex >= explosionSprites.Count)
+                    {
+                        TheGame.RemoveItem(this);
+                        this.GenerateBonus();
+                        g.Score += 1;
+                        --Amount;
+                    }
+                }
+                return;
+            }
+
             if (this.Top < 0)
             {
                 Top = 0;
@@ -80,24 +116,25 @@ namespace SpaceShooter.model.Ennemies
         {
             if (other.TypeName == "Player")
             {
-                //other.ChangeSprite("explosion.png");
-                TheGame.Loose();
+                TheGame.RemoveItem(this);
             }
             if (other.TypeName == "PlayerBullet")
             {
 
-                //this.ChangeSprite("explosion.png");
-                TheGame.RemoveItem(this);
-                this.GenerateBonus();
-                TheGame.RemoveItem(other);
-                g.Score += 1;
-                --Amount;
+                if (!isExploding)
+                {
+                    isExploding = true;
+                    currentExplosionIndex = 0;
+                    TheGame.RemoveItem(other);
+                    return;
+                }
+
+
             }
             if (other.TypeName == "Enemy")
             {
                 Angle = (360 + 180 - Angle) % 360;
             }
-
         }
 
     }
