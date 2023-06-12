@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using IHM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,7 @@ namespace SpaceShooter.view
     public partial class LooseWindow : Window
     {
         private GameWindow gameWindow;
+        private MainWindow mainWindow;
         public LooseWindow()
         {
             InitializeComponent();
@@ -31,10 +34,10 @@ namespace SpaceShooter.view
             this.Close();
         }
 
-        public void Quit(object sender, RoutedEventArgs e)
+        public void Menu(object sender, RoutedEventArgs e)
         {
-
-
+            this.mainWindow = new MainWindow();
+            this.mainWindow.Show();
             this.Close();
         }
     }

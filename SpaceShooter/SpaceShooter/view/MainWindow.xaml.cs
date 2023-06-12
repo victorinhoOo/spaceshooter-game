@@ -45,5 +45,10 @@ namespace IHM
             this.highScoresWindow.Show();
             this.Close();
         }
+        public void Quit(object sender, RoutedEventArgs e)
+        {
+            
+            this.Close();
+        }
     }
 }
