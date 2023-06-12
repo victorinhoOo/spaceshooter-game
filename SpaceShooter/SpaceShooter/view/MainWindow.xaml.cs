@@ -25,6 +25,7 @@ namespace IHM
     public partial class MainWindow : Window
     {
         private GameWindow gameWindow;
+        private HighScoresWindow highScoresWindow;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +36,13 @@ namespace IHM
         {
             this.gameWindow = new GameWindow();
             this.gameWindow.Show();
+            this.Close();
+        }
+
+        public void OpenHighScoresWindow(object sender, RoutedEventArgs e)
+        {
+            this.highScoresWindow = new HighScoresWindow();
+            this.highScoresWindow.Show();
             this.Close();
         }
     }
