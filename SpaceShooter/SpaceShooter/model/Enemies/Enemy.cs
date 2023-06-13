@@ -27,15 +27,6 @@ namespace SpaceShooter.model.Ennemies
         public int Amount { get=> amount; set => amount = value; }
 
 
-        private TimeSpan waiting = TimeSpan.Zero;
-        public TimeSpan Waiting { get => waiting; set => waiting = value; }
-
-
-        private bool touched = false;
-        public bool Touched { get => touched; set => touched = value; }
-
-
-
         public Enemy(double x, double y, Game g, string name = "", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
@@ -43,7 +34,6 @@ namespace SpaceShooter.model.Ennemies
         }
 
         public override string TypeName => "Enemy";
-
 
 
         public override void CollideEffect(GameItem other)

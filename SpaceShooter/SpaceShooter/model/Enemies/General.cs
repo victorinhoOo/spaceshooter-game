@@ -28,31 +28,6 @@ namespace SpaceShooter.model.Ennemies
         }
         public override void Animate(TimeSpan dt)
         {
-            if (Waiting > TimeSpan.Zero)
-            {
-                Waiting = Waiting - dt;
-            }
-            if (Top < 0)
-            {
-                Top = 0;
-
-
-            }
-            else if (Bottom > GameHeight)
-            {
-                TheGame.RemoveItem(this);
-                
-
-            }
-            else if (Touched)
-            {
-                TheGame.RemoveItem(this);
-                
-                //peut etre rajouter une option qui fais que quand le spaceship est touché 
-                //alors son sprite change en exploision puis l'item disparait
-            }
-
-
 
         }
     }

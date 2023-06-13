@@ -102,9 +102,6 @@ namespace SpaceShooter.model.Ennemies
                 ShootLaser();
                 timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps écoulé depuis le dernier tir
             }
-
-            TimeSpan test = new TimeSpan(0, 0, 0, 0, 0);
-            if (Waiting >= test) { Waiting -= dt; }
         }
 
         /// <summary>
