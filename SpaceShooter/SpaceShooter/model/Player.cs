@@ -15,14 +15,19 @@ namespace SpaceShooter.model
 
         private double speed = 10;
 
+        public double Speed { get => speed; set => value = speed; }
+
         private TimeSpan timeSinceLastShot = TimeSpan.Zero;
 
-        private TimeSpan shootRecoveryTime = TimeSpan.FromSeconds(0.5); 
+        private TimeSpan shootRecoveryTime = TimeSpan.FromSeconds(0.5);
+        public TimeSpan ShootRecoveryTime { get => shootRecoveryTime; set => shootRecoveryTime = value; }
 
 
         private List<string> explosionSprites; // Liste des sprites d'explosion
         private int currentExplosionIndex; // index de l'explosion du joueur
+
         private bool isExploding; // joueur en train d'exploser ou non
+        public bool IsExploding { get => isExploding; set => isExploding = value; }
 
         public Player(double x, double y, Game g) : base(x, y, g, "Ship_1.png")
         {
@@ -41,7 +46,7 @@ namespace SpaceShooter.model
 
         public override string TypeName => "Player";
 
-        public bool IsExploding { get => isExploding; set => isExploding = value; }
+
 
 
         /// <author>Clément Boutet</author>
@@ -92,12 +97,12 @@ namespace SpaceShooter.model
                 PlaySound("bonusSound.mp3");
                 if (other.TypeName == "Speed")
                 {
-                    this.speed *= 1.1;
+                    this.Speed *= 1.1;
                 }
 
                 if (other.TypeName == "Shoot")
                 {
-                    this.shootRecoveryTime -= TimeSpan.FromSeconds(0.1);
+                    this.ShootRecoveryTime -= TimeSpan.FromSeconds(0.1);
                 }
             }          
 
@@ -125,19 +130,19 @@ namespace SpaceShooter.model
             switch (key)
             {
                 case Key.Left:
-                    MoveXY(-this.speed, 0);
+                    MoveXY(-this.Speed, 0);
                     break;
                 case Key.Right:
-                    MoveXY(this.speed, 0);
+                    MoveXY(this.Speed, 0);
                     break;
                 case Key.Up:
-                    MoveXY(0, -this.speed) ;
+                    MoveXY(0, -this.Speed) ;
                     break;
                 case Key.Down:
-                    MoveXY(0, this.speed);
+                    MoveXY(0, this.Speed);
                     break;
                 case Key.S:
-                    if (timeSinceLastShot >= shootRecoveryTime)
+                    if (timeSinceLastShot >= ShootRecoveryTime)
                     {
                         Shoot();
                         timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps écoulé depuis le dernier tir
