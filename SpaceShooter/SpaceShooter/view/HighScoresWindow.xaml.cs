@@ -1,4 +1,6 @@
 ﻿using IHM;
+using IUTGame;
+using SpaceShooter.model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SpaceShooter.view;
 
 namespace SpaceShooter.view
 {
@@ -46,18 +49,15 @@ namespace SpaceShooter.view
 
             if (!File.Exists(scoresFilePath))
             {
-                // Créer le fichier scores.txt s'il n'existe pas
                 using (StreamWriter writer = File.CreateText(scoresFilePath))
                 {
-                    // Écrire des données dans le fichier (exemple)
-                    writer.WriteLine("ThéoTheKiller,2677600");
-                    writer.WriteLine("TheGoatAlex89,2424500");
+                    writer.WriteLine("ThéoTheKiller,2997600");
+                    writer.WriteLine("TheGoatAlex89,2999500");
+                    writer.WriteLine("RockerBabyClem,2997829");
                     writer.WriteLine("Victorihnooo,2975400");
-                    writer.WriteLine("RockerBabyClem,2797829");
                 }
             }
 
-            // Charger les scores à partir du fichier
             string[] lines = File.ReadAllLines(scoresFilePath);
 
             foreach (string line in lines)
@@ -71,6 +71,31 @@ namespace SpaceShooter.view
                     listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
                 }
             }
+        }
+
+        private void AddScore(string playerName, int score)
+        {
+            string chemin = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string scoresFilePath = System.IO.Path.Combine(chemin, "scores.txt");
+
+            // Ajouter le nouveau score au fichier
+            using (StreamWriter writer = File.AppendText(scoresFilePath))
+            {
+                writer.WriteLine($"{playerName},{score}");
+            }
+
+            // Ajouter le nouveau score à la liste des scores affichée
+            listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
+        }
+
+        private void SubmitScore(object sender, RoutedEventArgs e)
+        {
+            // Obtenir le nom du joueur et le score depuis le formulaire
+            string playerName = txtPlayerName.Text;
+            int score = 2; 
+
+            // Ajouter le score
+            AddScore(playerName, score);
         }
     }
 }

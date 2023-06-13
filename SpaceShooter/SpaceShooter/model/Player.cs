@@ -41,6 +41,8 @@ namespace SpaceShooter.model
 
         public override string TypeName => "Player";
 
+        public bool IsExploding { get => isExploding; set => isExploding = value; }
+
 
         /// <author>Clément Boutet</author>
         /// <author>Victor Duboz</author>
