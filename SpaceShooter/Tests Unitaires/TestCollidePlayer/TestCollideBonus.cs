@@ -46,7 +46,7 @@ namespace Tests_Unitaires.TestCollidePlayer
             player = new Player(100, 100, game);
             player.CollideEffect(bonus);
 
-            Assert.Equal(player.Speed, 11);
+            Assert.Equal(11, player.Speed);
         }
 
         [Fact]

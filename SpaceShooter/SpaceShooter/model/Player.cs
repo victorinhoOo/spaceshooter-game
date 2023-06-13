@@ -15,7 +15,7 @@ namespace SpaceShooter.model
 
         private double speed = 10;
 
-        public double Speed { get => speed; set => value = speed; }
+        public double Speed { get => speed; }
 
         private TimeSpan timeSinceLastShot = TimeSpan.Zero;
 
@@ -97,7 +97,7 @@ namespace SpaceShooter.model
                 PlaySound("bonusSound.mp3");
                 if (other.TypeName == "Speed")
                 {
-                    this.Speed *= 1.1;
+                    this.speed *= 1.1;
                 }
 
                 if (other.TypeName == "Shoot")
