@@ -53,12 +53,6 @@ namespace SpaceShooter.model.Ennemies
             }
 
             MoveDA(Speed * dt.TotalSeconds, Angle);
-
-            TimeSpan test = new TimeSpan(0, 0, 0, 0, 0);
-            if (Waiting >= test)
-            {
-                Waiting -= dt;
-            }
         }
     }
 }

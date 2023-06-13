@@ -91,7 +91,7 @@ namespace SpaceShooter.model
             timeSinceLastShot += dt;
         }
 
-
+        ///<author>Victor Duboz</author>
         /// <author>Clément Boutet</author>
         public override void CollideEffect(GameItem other)
         {
