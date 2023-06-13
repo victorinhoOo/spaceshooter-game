@@ -27,6 +27,8 @@ namespace SpaceShooter.model
         /// <author>Victor Duboz</author>
         public int Score { get { return score; } set { score = value; UpdateScore(); } }
 
+
+        /// <author>Clément Boutet</author>
         protected override void InitItems()
         {
             double y = 350;

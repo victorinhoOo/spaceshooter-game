@@ -7,7 +7,7 @@ using SpaceShooter.model.Projectiles;
 
 namespace SpaceShooter.model
 {
-    class Player : GameItem, IAnimable, IKeyboardInteract
+    public class Player : GameItem, IAnimable, IKeyboardInteract
     {
 
 
@@ -52,6 +52,9 @@ namespace SpaceShooter.model
 
         public override string TypeName => "Player";
 
+
+        /// <author>Clément Boutet</author>
+        /// <author>Victor Duboz</author>
         public void Animate(TimeSpan dt)
         {
             if (isExploding)
@@ -88,6 +91,8 @@ namespace SpaceShooter.model
             timeSinceLastShot += dt;
         }
 
+
+        /// <author>Clément Boutet</author>
         public override void CollideEffect(GameItem other)
         {
 
@@ -122,6 +127,8 @@ namespace SpaceShooter.model
             TheGame.AddItem(bullet);
         }
 
+        /// <author>Clément Boutet</author>
+        /// <author>Théo Cornu</author>
         public void KeyDown(Key key)
         {
             switch (key)

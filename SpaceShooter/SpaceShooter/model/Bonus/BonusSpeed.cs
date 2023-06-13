@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Bonus
 {
+    /// <author>Clément Boutet</author>
     public class BonusSpeed : Bonus
     {
+
         public BonusSpeed(double x, double y, Game game, string spriteName = "speed.png", int zindex = 0) : base(x, y, game, spriteName, zindex)
         {
             base.ChangeSprite(spriteName);

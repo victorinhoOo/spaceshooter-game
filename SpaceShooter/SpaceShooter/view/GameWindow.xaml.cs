@@ -23,6 +23,7 @@ namespace SpaceShooter.view
     {
         private TheGame game;
 
+        /// <author>Clément Boutet</author>
         public GameWindow()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace SpaceShooter.view
 
         }
 
+        /// <author>Clément Boutet</author>
         public void Play(object sender, RoutedEventArgs e)
         {
             WPFScreen screen = new WPFScreen(this.canvas);

@@ -33,6 +33,7 @@ namespace IHM
 
         }
 
+        /// <author>Clément Boutet</author>
         public void Play(object sender, RoutedEventArgs e)
         {
             this.gameWindow = new GameWindow();
