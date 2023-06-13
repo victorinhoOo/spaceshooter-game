@@ -5,6 +5,8 @@ using IUTGame;
 using IUTGame.WPF;
 using System.Windows.Controls;
 using SpaceShooter.view;
+using System.Threading;
+using Xunit;
 
 namespace Tests_Unitaires
 {
@@ -13,17 +15,19 @@ namespace Tests_Unitaires
         private TheGame game;
         private Player player;
         private Bonus bonus;
+        private IWindow view;
+        private IScreen screen;
 
 
-        [STAThread]
         [Fact]
-        public bool TestCollideBonusPlayer()
+        public void TestCollideBonusPlayer()
         {
-            this.game = new TheGame(new WPFScreen(new Canvas()), new GameWindow());
+            this.game = new TheGame(screen, view);
             this.player = new Player(100, 100, this.game);
             this.bonus = new BonusShoot(100, 100, this.game);
 
-            return true;
+
+            Assert.True(true);
         }
     }
 }

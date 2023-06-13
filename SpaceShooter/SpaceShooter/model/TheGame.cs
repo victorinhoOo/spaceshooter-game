@@ -13,19 +13,19 @@ namespace SpaceShooter.model
 {
     public class TheGame : IUTGame.Game
     {
-        public TheGame(IScreen screen, GameWindow gameWindow) : base(screen, "Sprites", "Sounds")
+        public TheGame(IScreen screen, IWindow view) : base(screen, "Sprites", "Sounds")
         {
-            this.gameWindow = gameWindow;
+            this.view = view;
         }
 
-        private GameWindow gameWindow;
+        private IWindow view;
         private int score;
 
         /// <summary>
         /// Propriété qui permet l'accès et la modification du score
         /// </summary>
         /// <author>Victor Duboz</author>
-        public int Score { get { return score; } set { score = value; UpdateScore(); } }
+        public int Score { get { return score; } set { score = value; UpdateScore(score); } }
 
 
         /// <author>Clément Boutet</author>
@@ -41,9 +41,9 @@ namespace SpaceShooter.model
 
         }
 
-        public void UpdateScore()
+        public void UpdateScore(int score)
         {
-            gameWindow.UpdateScore();
+            view.UpdateScore(score);
         }
 
         protected override void RunWhenLoose()
@@ -51,7 +51,7 @@ namespace SpaceShooter.model
             
             LooseWindow loose = new LooseWindow();
             loose.Show();
-            gameWindow.Close();
+            view.CloseWindow();
 
         }
 
