@@ -19,7 +19,7 @@ namespace SpaceShooter.view
     /// <summary>
     /// Logique d'interaction pour GameWindow.xaml
     /// </summary>
-    public partial class GameWindow : Window
+    public partial class GameWindow : Window, IWindow
     {
         private TheGame game;
 
@@ -31,21 +31,25 @@ namespace SpaceShooter.view
 
         }
 
-        public TheGame Game { get => game; set => game = value; }
-
         /// <author>Clément Boutet</author>
         public void Play(object sender, RoutedEventArgs e)
         {
             WPFScreen screen = new WPFScreen(this.canvas);
-            this.Game = new TheGame(screen, this);
-            this.Game.Run();
+            this.game = new TheGame(screen, this);
+            this.game.Run();
         }
 
-        public void UpdateScore()
+  
+
+        public void UpdateScore(int score)
         {
             this.scoreLabel.Content = "Score : ";
-            this.scoreLabel.Content += Game.Score.ToString();
+            this.scoreLabel.Content += score.ToString();
         }
-       
+
+        public void CloseWindow()
+        {
+            this.Close();
+        }
     }
 }

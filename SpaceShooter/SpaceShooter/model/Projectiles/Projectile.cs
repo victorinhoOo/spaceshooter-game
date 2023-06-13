@@ -15,8 +15,6 @@ namespace SpaceShooter.model.Projectiles
     {
         private double speed = 200;
         public double Speed { get => speed; set => speed = value; }
-        private TimeSpan waiting = TimeSpan.Zero;
-        private bool touched = false;
 
 
         /// <summary>
