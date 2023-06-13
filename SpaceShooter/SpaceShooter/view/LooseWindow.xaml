@@ -30,9 +30,9 @@
                 <TextBlock Text="Game Over" Foreground="Red" FontSize="120" FontFamily="Algerian"/>
             </Label.Content>
         </Label>-->
-        <Canvas x:Name="canvs" Width="200" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <Image Source="/view/Image/Game_over.png" HorizontalAlignment="Center"  VerticalAlignment="Center" />
-        </Canvas>
+
+        <Image Source="/view/Image/Game_over.png" Grid.ColumnSpan="3" Grid.RowSpan="2" Width="800" Height="450"  HorizontalAlignment="Center"  VerticalAlignment="Center" Panel.ZIndex="-1"/>
+        
 
     </Grid>
 </Window>
