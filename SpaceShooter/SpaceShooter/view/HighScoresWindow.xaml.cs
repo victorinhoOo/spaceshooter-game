@@ -41,22 +41,34 @@ namespace SpaceShooter.view
         }
         private void LoadScores()
         {
-            if (File.Exists("scores.txt"))
+            string chemin = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string scoresFilePath = System.IO.Path.Combine(chemin, "scores.txt");
+
+            if (!File.Exists(scoresFilePath))
             {
-                string[] lines = File.ReadAllLines("scores.txt");
-
-                foreach (string line in lines)
+                // Créer le fichier scores.txt s'il n'existe pas
+                using (StreamWriter writer = File.CreateText(scoresFilePath))
                 {
-                    // Splitter la ligne en nom du joueur et score
-                    string[] parts = line.Split(',');
-                    if (parts.Length == 2)
-                    {
-                        string playerName = parts[0];
-                        int score = int.Parse(parts[1]);
+                    // Écrire des données dans le fichier (exemple)
+                    writer.WriteLine("ThéoTheKiller,2677600");
+                    writer.WriteLine("TheGoatAlex89,2424500");
+                    writer.WriteLine("Victorihnooo,2975400");
+                    writer.WriteLine("RockerBabyClem,2797829");
+                }
+            }
 
-                        // Créer un nouvel objet ScoreItem et l'ajouter à la ListBox
-                        listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
-                    }
+            // Charger les scores à partir du fichier
+            string[] lines = File.ReadAllLines(scoresFilePath);
+
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(',');
+                if (parts.Length == 2)
+                {
+                    string playerName = parts[0];
+                    int score = int.Parse(parts[1]);
+
+                    listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
                 }
             }
         }
