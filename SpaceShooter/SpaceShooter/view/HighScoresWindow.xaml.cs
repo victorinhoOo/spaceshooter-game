@@ -1,6 +1,7 @@
 ﻿using IHM;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace SpaceShooter.view
         public HighScoresWindow()
         {
             InitializeComponent();
+            LoadScores();
         }
 
         public void BackMenu(object sender, RoutedEventArgs e)
@@ -31,6 +33,32 @@ namespace SpaceShooter.view
             this.menu = new MainWindow();
             this.menu.Show();
             this.Close();
+        }
+        public class ScoreItem
+        {
+            public string PlayerName { get; set; }
+            public int Score { get; set; }
+        }
+        private void LoadScores()
+        {
+            if (File.Exists("scores.txt"))
+            {
+                string[] lines = File.ReadAllLines("scores.txt");
+
+                foreach (string line in lines)
+                {
+                    // Splitter la ligne en nom du joueur et score
+                    string[] parts = line.Split(',');
+                    if (parts.Length == 2)
+                    {
+                        string playerName = parts[0];
+                        int score = int.Parse(parts[1]);
+
+                        // Créer un nouvel objet ScoreItem et l'ajouter à la ListBox
+                        listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
+                    }
+                }
+            }
         }
     }
 }
