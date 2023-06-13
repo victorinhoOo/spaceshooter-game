@@ -20,6 +20,7 @@
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
     <None Remove="view\background.png" />
+    <None Remove="view\Image\Game_over.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,6 +69,7 @@
     <Resource Include="view\background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="view\Image\Game_over.png" />
   </ItemGroup>
 
 </Project>
