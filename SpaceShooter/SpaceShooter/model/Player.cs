@@ -13,22 +13,11 @@ namespace SpaceShooter.model
 
         private Game game;
 
-
-
-        private int life = 3;
-        public int Life { get => life; set => life = value; }
-
         private double speed = 10;
 
         private TimeSpan timeSinceLastShot = TimeSpan.Zero;
 
         private TimeSpan shootRecoveryTime = TimeSpan.FromSeconds(0.5); 
-
-        /// <summary>
-        /// Propriété qui permet l'accès et la modification du délai de récupération entre les tirs du joueur
-        /// </summary>
-        /// <author>Victor Duboz</author>
-        public TimeSpan ShootRecoveryTime { get => shootRecoveryTime; set => shootRecoveryTime = value; }
 
 
         private List<string> explosionSprites; // Liste des sprites d'explosion

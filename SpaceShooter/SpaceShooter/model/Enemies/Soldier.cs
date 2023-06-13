@@ -71,9 +71,9 @@ namespace SpaceShooter.model.Ennemies
                     if (currentExplosionIndex >= explosionSprites.Count)
                     { 
                         TheGame.RemoveItem(this);
+                        --Amount;
                         this.GenerateBonus();
                         g.Score += 1;
-                        --Amount;
                     }
                 }
                 return;
@@ -100,14 +100,14 @@ namespace SpaceShooter.model.Ennemies
                 Right = GameWidth;
             }
 
-            MoveDA(Speed * dt.TotalSeconds, Angle);
-            timeSinceLastShot += dt;
-
             if (timeSinceLastShot >= shootInterval)
             {
                 Shoot();
                 timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps écoulé depuis le dernier tir
             }
+
+            MoveDA(Speed * dt.TotalSeconds, Angle);
+            timeSinceLastShot += dt;
 
         }
 

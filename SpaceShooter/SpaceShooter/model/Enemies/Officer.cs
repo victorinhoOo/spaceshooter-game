@@ -37,7 +37,6 @@ namespace SpaceShooter.model.Ennemies
             currentExplosionIndex = 0;
             isExploding = false;
         }
-        public override string TypeName => "Officer";
 
         /// <summary>
         /// Tire un laser

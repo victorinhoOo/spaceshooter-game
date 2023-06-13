@@ -10,7 +10,6 @@ namespace SpaceShooter.model.Projectiles
     public class Laser : Projectile
     {
 
-        private TimeSpan waiting = TimeSpan.Zero;
 
 
         /// <summary>
@@ -37,32 +36,10 @@ namespace SpaceShooter.model.Projectiles
         /// <author>Victor Duboz</author>
         public override void Animate(TimeSpan dt)
         {
-            if (waiting > TimeSpan.Zero)
-            {
-                waiting = waiting - dt;
-            }
-            if (this.Top < 0)
+            if (Bottom > GameHeight)
             {
                 TheGame.RemoveItem(this);
 
-
-            }
-            else if (Bottom > GameHeight)
-            {
-                TheGame.RemoveItem(this);
-
-            }
-            else if (Left < 0)
-            {
-
-                Left = 0;
-                TheGame.RemoveItem(this);
-            }
-            else if (Right > GameWidth)
-            {
-
-                Right = GameWidth;
-                TheGame.RemoveItem(this);
             }
             MoveDA(Speed * dt.TotalSeconds, 100);
         }
