@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Tests_Unitaires</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -20,6 +21,16 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpaceShooter\SpaceShooter.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IUTGame">
+      <HintPath>..\SpaceShooter\IUTGame.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
