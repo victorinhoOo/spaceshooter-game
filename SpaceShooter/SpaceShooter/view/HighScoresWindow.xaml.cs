@@ -1,4 +1,6 @@
 ﻿using IHM;
+using IUTGame;
+using SpaceShooter.model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SpaceShooter.view;
 
 namespace SpaceShooter.view
 {
@@ -89,7 +92,7 @@ namespace SpaceShooter.view
         {
             // Obtenir le nom du joueur et le score depuis le formulaire
             string playerName = txtPlayerName.Text;
-            int score = int.Parse(txtScore.Text);
+            int score = 2; 
 
             // Ajouter le score
             AddScore(playerName, score);
