@@ -1,0 +1,4 @@
+John Doe,500
+Jane Smith,750
+Bob Johnson,600
+Alice Williams,900
