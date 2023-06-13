@@ -31,18 +31,20 @@ namespace SpaceShooter.view
 
         }
 
+        public TheGame Game { get => game; set => game = value; }
+
         /// <author>Clément Boutet</author>
         public void Play(object sender, RoutedEventArgs e)
         {
             WPFScreen screen = new WPFScreen(this.canvas);
-            this.game = new TheGame(screen, this);
-            this.game.Run();
+            this.Game = new TheGame(screen, this);
+            this.Game.Run();
         }
 
         public void UpdateScore()
         {
             this.scoreLabel.Content = "Score : ";
-            this.scoreLabel.Content += game.Score.ToString();
+            this.scoreLabel.Content += Game.Score.ToString();
         }
        
     }
