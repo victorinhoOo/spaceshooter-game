@@ -22,12 +22,14 @@ namespace SpaceShooter.view
     /// <summary>
     /// Logique d'interaction pour HighScores.xaml
     /// </summary>
-    public partial class HighScoresWindow : Window
+    public partial class HighScoresWindow : Window, IWindow
     {
+        private TheGame game;
         private MainWindow menu;
         public HighScoresWindow()
         {
             InitializeComponent();
+            
             LoadScores();
         }
 
@@ -73,7 +75,7 @@ namespace SpaceShooter.view
             }
         }
 
-        private void AddScore(string playerName, int score)
+        public void AddScore(string playerName, int score)
         {
             string chemin = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string scoresFilePath = System.IO.Path.Combine(chemin, "scores.txt");
@@ -88,14 +90,20 @@ namespace SpaceShooter.view
             listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
         }
 
-        private void SubmitScore(object sender, RoutedEventArgs e)
+        public void AddScoreFromGame(int score)
         {
-            // Obtenir le nom du joueur et le score depuis le formulaire
-            string playerName = txtPlayerName.Text;
-            int score = 2; 
-
-            // Ajouter le score
+            string playerName = "Nom du joueur"; 
             AddScore(playerName, score);
+        }
+
+        public void UpdateScore(int score)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CloseWindow()
+        {
+            throw new NotImplementedException();
         }
     }
 }

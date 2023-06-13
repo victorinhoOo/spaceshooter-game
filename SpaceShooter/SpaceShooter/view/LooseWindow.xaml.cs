@@ -1,5 +1,6 @@
 ﻿
 using IHM;
+using SpaceShooter.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,17 @@ namespace SpaceShooter.view
     /// <summary>
     /// Logique d'interaction pour LooseWindow.xaml
     /// </summary>
-    public partial class LooseWindow : Window
+    public partial class LooseWindow : Window,IWindow
     {
         private GameWindow gameWindow;
         private MainWindow mainWindow;
-        public LooseWindow()
+        private int score;
+        private TheGame game;
+
+        public LooseWindow(int score)
         {
             InitializeComponent();
+            this.score = score;
         }
         public void Play(object sender, RoutedEventArgs e)
         {
@@ -39,6 +44,23 @@ namespace SpaceShooter.view
             this.mainWindow = new MainWindow();
             this.mainWindow.Show();
             this.Close();
+        }
+        private void ShowHighScores()
+        {
+            HighScoresWindow highScores = new HighScoresWindow();
+            highScores.AddScore("Nom du joueur", score);  // Appeler la méthode AddScore de la fenêtre HighScoresWindow pour ajouter le score
+            highScores.Show();
+            this.Close();
+        }
+
+        void IWindow.UpdateScore(int score)
+        {
+            
+        }
+
+        void IWindow.CloseWindow()
+        {
+           
         }
     }
 }

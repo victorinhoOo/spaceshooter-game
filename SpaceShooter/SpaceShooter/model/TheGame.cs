@@ -48,11 +48,17 @@ namespace SpaceShooter.model
 
         protected override void RunWhenLoose()
         {
-            
-            LooseWindow loose = new LooseWindow();
-            loose.Show();
-            view.CloseWindow();
+            int score = this.Score;
 
+            if (view is GameWindow gameWindow)
+            {
+                gameWindow.ShowHighScoresWindow(score);
+            }
+
+            LooseWindow loose = new LooseWindow(score); // Passer le score en tant qu'argument lors de la création de la fenêtre LooseWindow
+            loose.Show();
+
+            view.CloseWindow();
         }
 
         protected override void RunWhenWin()

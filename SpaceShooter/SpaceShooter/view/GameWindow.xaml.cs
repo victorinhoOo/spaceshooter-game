@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace SpaceShooter.view
 {
@@ -51,5 +52,13 @@ namespace SpaceShooter.view
         {
             this.Close();
         }
+        public void ShowHighScoresWindow(int score)
+        {
+            HighScoresWindow highScores = new HighScoresWindow();
+            highScores.AddScore("Nom du joueur", score); // Remplacez "Nom du joueur" par le nom du joueur réel ou obtenez-le à partir de l'utilisateur
+            
+            this.Close();
+        }
+
     }
 }
