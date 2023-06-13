@@ -27,7 +27,7 @@
         <!--<Image  Height="200" Grid.ColumnSpan="2" Grid.Column="1" VerticalAlignment="Center" Source="Image/Game_over.png" HorizontalAlignment="Center"/>-->
         <Label Grid.ColumnSpan="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Bahnschrift">
             <Label.Content>
-                <TextBlock Text="Game Over" Foreground="White" FontSize="120" FontFamily="Algerian"/>
+                <TextBlock Text="Game Over" Foreground="Red" FontSize="120" FontFamily="Algerian"/>
             </Label.Content>
         </Label>
 
