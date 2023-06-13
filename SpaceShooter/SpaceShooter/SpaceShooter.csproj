@@ -20,7 +20,12 @@
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
     <None Remove="view\background.png" />
+    <None Remove="view\Image\Fond.png" />
     <None Remove="view\Image\Game_over.png" />
+    <None Remove="view\Image\Quit.png" />
+    <None Remove="view\Image\Settings.png" />
+    <None Remove="view\Image\Space_Shooter.png" />
+    <None Remove="view\Image\Start.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -69,7 +74,12 @@
     <Resource Include="view\background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="view\Image\Fond.png" />
     <Resource Include="view\Image\Game_over.png" />
+    <Resource Include="view\Image\Quit.png" />
+    <Resource Include="view\Image\Settings.png" />
+    <Resource Include="view\Image\Space_Shooter.png" />
+    <Resource Include="view\Image\Start.png" />
   </ItemGroup>
 
 </Project>
