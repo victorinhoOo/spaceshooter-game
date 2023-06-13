@@ -18,6 +18,8 @@ namespace SpaceShooter.model
         private int life = 3;
         public int Life { get => life; set => life = value; }
 
+        public double Speed {get => speed; }
+
         private double speed = 10;
 
         private TimeSpan timeSinceLastShot = TimeSpan.Zero;
@@ -51,6 +53,8 @@ namespace SpaceShooter.model
         }
 
         public override string TypeName => "Player";
+
+        public bool IsExploding { get => isExploding; set => isExploding = value; }
 
 
         /// <author>Clément Boutet</author>
