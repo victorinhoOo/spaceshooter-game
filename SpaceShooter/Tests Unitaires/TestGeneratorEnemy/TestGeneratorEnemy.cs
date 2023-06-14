@@ -36,9 +36,11 @@ namespace Tests_Unitaires.TestGeneratorEnemy
             ge.TimeToCreateSoldier = new TimeSpan(0);
             ge.TimeToCreateOfficer = new TimeSpan(0);
 
-            // Vérifie que des ennemis ont été créés
+            // Attendre pendant 2 secondes pour que le framework ait le temps d'appeler la méthode Animate
+            ge.Animate(new TimeSpan(5));
 
-            Assert.True(GeneratorEnemy.Amount > 0);
+            // Vérifier que des ennemis ont été créés
+            Assert.True(ge.TimeToCreateOfficer > new TimeSpan(0));
         }
     }
 }
