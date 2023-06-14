@@ -27,13 +27,19 @@ namespace SpaceShooter.view
     {
         private MainWindow menu;
         private double volumeSound;
-        public double VolumeSound { get; set; }
+
+        /// <summary>
+        /// Constructeur d'une fenêtre de paramètres
+        /// </summary>
         public ParametersWindow()
         {
             InitializeComponent();
             Loaded += Window_Loaded;
         }
 
+        /// <summary>
+        /// Click bouton qui nous ramène au menu
+        /// </summary>
         public void BackMenu(object sender, RoutedEventArgs e)
         {
             this.menu = new MainWindow();
