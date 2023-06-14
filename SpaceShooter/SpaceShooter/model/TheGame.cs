@@ -15,6 +15,7 @@ namespace SpaceShooter.model
     /// Classe qui représente le jeu avec toutes les méthodes
     /// </summary>
     /// <author>Théo Cornu</author>
+    /// <author>Victor Duboz</author>
     public class TheGame : IUTGame.Game
     {
         public TheGame(IScreen screen, IWindow view) : base(screen, "Sprites", "Sounds")
@@ -45,6 +46,11 @@ namespace SpaceShooter.model
 
         }
 
+        /// <summary>
+        /// Met à jour le score du joueur
+        /// </summary>
+        /// <param name="score">score du joueur</param>
+        /// <author>Victor Duboz</author>
         public void UpdateScore(int score)
         {
             view.UpdateScore(score);

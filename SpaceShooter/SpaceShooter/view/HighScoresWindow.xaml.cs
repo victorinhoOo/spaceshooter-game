@@ -25,7 +25,7 @@ namespace SpaceShooter.view
     /// <author>Théo Cornu</author>
     public partial class HighScoresWindow : Window, IWindow
     {
-        private TheGame game;
+        
         private MainWindow menu;
         private int bestScore; // Variable pour stocker le meilleur score
 
@@ -61,6 +61,7 @@ namespace SpaceShooter.view
             {
                 using (StreamWriter writer = File.CreateText(scoresFilePath))
                 {
+                    writer.WriteLine("ThéoTheKiller,2997600");
                     writer.WriteLine("ThéoTheKiller,2997600");
                     writer.WriteLine("TheGoatAlex89,2999500");
                     writer.WriteLine("RockerBabyClem,2997829");

@@ -14,7 +14,7 @@ namespace SpaceShooter.model.Ennemies
     /// <summary>
     /// Gère les soldats
     /// </summary>
-    /// <author>Victor Duboz, Théo Cornu</author>
+    /// <author>Victor Duboz</author>
     public class Soldier : Enemy
     {
         private TimeSpan shootInterval = TimeSpan.FromSeconds(1); // Intervalle de 1 seconde entre les tirs
