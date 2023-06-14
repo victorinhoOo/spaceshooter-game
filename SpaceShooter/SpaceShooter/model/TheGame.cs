@@ -42,7 +42,7 @@ namespace SpaceShooter.model
             AddItem(player);
             AddItem(new GeneratorEnemy(this));
 
-            //PlayBackgroundMusic("mainMusic.mp3");
+            PlayBackgroundMusic("mainMusic.mp3");
 
         }
 

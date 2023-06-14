@@ -34,16 +34,16 @@ namespace IHM
         {
             InitializeComponent();
         }
-
+        
         // Méthode pour démarrer une nouvelle partie
         /// <author>Clément Boutet</author>
-        public void Play(object sender, RoutedEventArgs e)
+        public void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             this.gameWindow = new GameWindow();
             this.gameWindow.Show();
             this.Close();
         }
-
+        
         // Méthode pour ouvrir la fenêtre des meilleurs scores
         public void OpenHighScoresWindow(object sender, RoutedEventArgs e)
         {
@@ -51,19 +51,23 @@ namespace IHM
             this.highScoresWindow.Show();
             this.Close();
         }
-
+        
         // Méthode pour ouvrir la fenêtre des paramètres
-        public void OpenParametersWindow(object sender, RoutedEventArgs e)
+        public void OpenParametersButton_Click(object sender, RoutedEventArgs e)
         {
             this.parametersWindow = new ParametersWindow();
             this.parametersWindow.Show();
             this.Close();
         }
-
+        
         // Méthode pour quitter l'application
         public void Quit(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        ///Ouvre une fenetre ParametersWindow et cache la fenêtre MainMenu
+        /// <author>Alexandre Hugot</author>
+        
     }
 }
