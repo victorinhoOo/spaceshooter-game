@@ -12,7 +12,8 @@ namespace SpaceShooter.model.Ennemies
     /// <summary>
     /// Gère les astéroïdes.
     /// </summary>
-    /// <author>Victor Duboz, Théo Cornu</author>
+    /// <author>Victor Duboz</author>
+    /// <author>Théo Cornu</author>
     public class Asteroid : Enemy
     {
         /// <summary>
