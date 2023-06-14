@@ -19,8 +19,9 @@ namespace SpaceShooter.model.Ennemies
         private TimeSpan officerIntervalMin;
         private Random random;
 
+        private static int amount;
 
-        public static int Amount { get => Amount; set => Amount = value; }
+        public static int Amount { get => amount; set => amount = value; }
 
 
         /// <summary>
