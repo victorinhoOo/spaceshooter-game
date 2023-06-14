@@ -69,7 +69,7 @@ namespace SpaceShooter.model.Ennemies
                     {
                         TheGame.RemoveItem(this);
                         this.GenerateBonus();
-                        g.Score += 1;
+                        g.Score += 2;
                         --Amount;
                     }
                 }

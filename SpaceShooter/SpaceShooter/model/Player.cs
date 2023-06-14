@@ -106,7 +106,7 @@ namespace SpaceShooter.model
                 }
             }          
 
-            if ((other.TypeName == "Enemy")||(other.TypeName == "Bullet") || (other.TypeName =="Laser"))
+            if ((other.TypeName == "Enemy")||(other.TypeName == "Projectile")||(other.TypeName=="Asteroid"))
             {
                 if (!isExploding)
                 {

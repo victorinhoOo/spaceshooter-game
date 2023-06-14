@@ -28,6 +28,7 @@ namespace SpaceShooter.model.Ennemies
             base.Speed = 350;
         }
 
+        public override string TypeName => "Asteroid";
 
         /// <summary>
         /// Effectue l'animation de l'astéroïde

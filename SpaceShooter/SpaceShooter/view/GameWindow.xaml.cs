@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Formats.Asn1.AsnWriter;
+using SpaceShooter.Res;
 
 namespace SpaceShooter.view
 {
@@ -41,10 +42,14 @@ namespace SpaceShooter.view
         }
 
   
-
+        /// <summary>
+        /// Met à jour le score du joueur sur la fenêtre
+        /// </summary>
+        /// <param name="score">score du joueur</param>
+        /// <author>Victor Duboz</author>
         public void UpdateScore(int score)
         {
-            this.scoreLabel.Content = "Score : ";
+            this.scoreLabel.Content = Res.Strings.Score;
             this.scoreLabel.Content += score.ToString();
         }
 
