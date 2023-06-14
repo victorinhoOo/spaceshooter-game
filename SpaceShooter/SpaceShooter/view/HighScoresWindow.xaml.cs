@@ -25,7 +25,7 @@ namespace SpaceShooter.view
     /// <author>Théo Cornu</author>
     public partial class HighScoresWindow : Window, IWindow
     {
-        private TheGame game;
+        
         private MainWindow menu;
         private int bestScore; // Variable pour stocker le meilleur score
 
