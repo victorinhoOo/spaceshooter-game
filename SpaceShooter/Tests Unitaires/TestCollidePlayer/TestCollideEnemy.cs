@@ -93,6 +93,24 @@ namespace Tests_Unitaires.TestCollidePlayer
             Assert.True(player.IsExploding);
         }
 
+        [Fact]
+        public void TestCollideAsteroid()
+        {
+            w = new FakeWindow();
+            s = new FakeScreen();
+
+
+            game = new TheGame(s, w);
+            player = new Player(100, 100, game);
+            projectile = new Laser(100, 100, game);
+
+            Assert.True(player.IsCollide(projectile));
+
+            player.CollideEffect(projectile);
+
+            Assert.True(player.IsExploding);
+        }
+
 
     }
 }

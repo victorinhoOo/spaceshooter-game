@@ -50,9 +50,9 @@ namespace SpaceShooter.model
         {
             int score = this.Score;
 
-            if (view is GameWindow gameWindow)
+            if (view is GameWindow)
             {
-                gameWindow.ShowHighScoresWindow(score);
+                view.ShowHighScoresWindow(score);
             }
 
             LooseWindow loose = new LooseWindow(score); // Passer le score en tant qu'argument lors de la création de la fenêtre LooseWindow
