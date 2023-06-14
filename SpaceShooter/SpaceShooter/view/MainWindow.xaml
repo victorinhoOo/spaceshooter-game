@@ -32,7 +32,7 @@
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2" Color="DarkBlue" Opacity="1" BlurRadius="2"/>
+                            <DropShadowEffect ShadowDepth="2" Color="#1570AC" Opacity="1" BlurRadius="2"/>
                         </TextBlock.Effect>
                     </TextBlock>
                 </DataTemplate>
@@ -43,7 +43,7 @@
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2" Color="DarkBlue" Opacity="1" BlurRadius="2"/>
+                            <DropShadowEffect ShadowDepth="2" Color="#1570AC" Opacity="1" BlurRadius="2"/>
                         </TextBlock.Effect>
                     </TextBlock>
                 </DataTemplate>
@@ -54,7 +54,7 @@
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2" Color="DarkBlue" Opacity="1" BlurRadius="2"/>
+                            <DropShadowEffect ShadowDepth="2" Color="#1570AC" Opacity="1" BlurRadius="2"/>
                         </TextBlock.Effect>
                     </TextBlock>
                 </DataTemplate>
@@ -65,7 +65,7 @@
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2" Color="DarkBlue" Opacity="1" BlurRadius="2"/>
+                            <DropShadowEffect ShadowDepth="2" Color="#1570AC" Opacity="1" BlurRadius="2"/>
                         </TextBlock.Effect>
                     </TextBlock>
                 </DataTemplate>
