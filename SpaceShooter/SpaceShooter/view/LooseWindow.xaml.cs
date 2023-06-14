@@ -24,7 +24,7 @@ namespace SpaceShooter.view
     {
         private GameWindow gameWindow;
         private MainWindow mainWindow;
-        )
+        
 
         public LooseWindow(int score)
         {

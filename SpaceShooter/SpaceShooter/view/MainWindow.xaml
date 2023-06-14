@@ -25,7 +25,7 @@
             <ColumnDefinition Width="*"/>
             
         </Grid.ColumnDefinitions>
-        <Image Source="/view/Image/Fond.png" Grid.ColumnSpan="4" Grid.RowSpan="7" Stretch="UniformToFill" />
+        <Image Source="/view/Image/Fond2.png" Grid.ColumnSpan="4" Grid.RowSpan="7" Stretch="UniformToFill" />
 
         <Button Content="{x:Static res:Strings.Play}" Grid.Row="1" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="Play" FontSize="14">
             <Button.ContentTemplate>
