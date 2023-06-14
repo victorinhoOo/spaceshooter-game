@@ -62,6 +62,7 @@ namespace SpaceShooter.view
                 using (StreamWriter writer = File.CreateText(scoresFilePath))
                 {
                     writer.WriteLine("ThéoTheKiller,2997600");
+                    writer.WriteLine("ThéoTheKiller,2997600");
                     writer.WriteLine("TheGoatAlex89,2999500");
                     writer.WriteLine("RockerBabyClem,2997829");
                     writer.WriteLine("Victorihnooo,2975400");
