@@ -23,14 +23,11 @@ namespace SpaceShooter.model.Ennemies
         public double Angle { get=> angle; set => angle = value; }
 
 
-        private int amount = 0;
-        public int Amount { get=> amount; set => amount = value; }
-
 
         public Enemy(double x, double y, Game g, string name = "", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
-            ++amount;
+            ++GeneratorEnemy.Amount;
         }
 
         public override string TypeName => "Enemy";
