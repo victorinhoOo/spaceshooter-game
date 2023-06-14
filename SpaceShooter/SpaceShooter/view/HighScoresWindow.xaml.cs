@@ -150,11 +150,6 @@ namespace SpaceShooter.view
             }
         }
 
-        public void AddScoreFromGame(int score)
-        {
-            string playerName = "Votre Score";
-            AddScore(playerName, score);
-        }
 
         public void UpdateScore(int score)
         {
