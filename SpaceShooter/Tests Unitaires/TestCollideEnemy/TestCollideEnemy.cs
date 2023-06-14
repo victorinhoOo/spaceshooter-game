@@ -45,6 +45,7 @@ namespace Tests_Unitaires.TestCollideEnemy
 
 
             officer.CollideEffect(soldier);
+            soldier.CollideEffect(officer);
 
             Assert.Equal((360 + 180 - 40) % 360, soldier.Angle);
             Assert.Equal((360 + 180 - 20) % 360, officer.Angle);
@@ -67,6 +68,7 @@ namespace Tests_Unitaires.TestCollideEnemy
             soldier2.Angle = 30;
 
             soldier.CollideEffect(soldier2);
+            soldier2.CollideEffect(soldier);
 
             Assert.Equal((360 + 180 - 80) % 360, soldier.Angle);
             Assert.Equal((360 + 180 - 30) % 360, soldier2.Angle);
@@ -89,6 +91,8 @@ namespace Tests_Unitaires.TestCollideEnemy
             officer2.Angle = 50;
 
             officer.CollideEffect(officer2);
+            officer2.CollideEffect(officer);
+
 
             Assert.Equal((360 + 180 - 100) % 360, officer.Angle);
             Assert.Equal((360 + 180 - 50) % 360, officer2.Angle);

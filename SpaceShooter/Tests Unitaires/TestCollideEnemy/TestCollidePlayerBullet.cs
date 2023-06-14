@@ -12,7 +12,7 @@ using System.Numerics;
 namespace Tests_Unitaires.TestCollideEnemy
 {
     /// <summary>
-    /// Test unitaires des collisions entre les balles du joueurs et les ennemis
+    /// Test unitaires des collisions entre les balles du joueur et les ennemis
     /// </summary>
     /// <author>Victor Duboz</author>
     public class TestCollidePlayerBullet
