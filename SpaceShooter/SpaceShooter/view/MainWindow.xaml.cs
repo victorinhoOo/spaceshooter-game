@@ -22,19 +22,20 @@ namespace IHM
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    ///<author>Alexandre Hugot,Théo Cornu,Clément Boutet,Victor Duboz</author>
+    ///<author>Alexandre Hugot, Théo Cornu, Clément Boutet, Victor Duboz</author>
     public partial class MainWindow : Window
     {
         private GameWindow gameWindow;
         private HighScoresWindow highScoresWindow;
         private ParametersWindow parametersWindow;
         private TheGame game;
+
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
+        // Méthode pour démarrer une nouvelle partie
         /// <author>Clément Boutet</author>
         public void Play(object sender, RoutedEventArgs e)
         {
@@ -43,6 +44,7 @@ namespace IHM
             this.Close();
         }
 
+        // Méthode pour ouvrir la fenêtre des meilleurs scores
         public void OpenHighScoresWindow(object sender, RoutedEventArgs e)
         {
             this.highScoresWindow = new HighScoresWindow();
@@ -50,6 +52,7 @@ namespace IHM
             this.Close();
         }
 
+        // Méthode pour ouvrir la fenêtre des paramètres
         public void OpenParametersWindow(object sender, RoutedEventArgs e)
         {
             this.parametersWindow = new ParametersWindow();
@@ -57,9 +60,9 @@ namespace IHM
             this.Close();
         }
 
+        // Méthode pour quitter l'application
         public void Quit(object sender, RoutedEventArgs e)
         {
-            
             this.Close();
         }
     }

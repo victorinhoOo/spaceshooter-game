@@ -19,7 +19,7 @@ namespace SpaceShooter.view
     /// <summary>
     /// Logique d'interaction pour ParametersWindow.xaml
     /// </summary>
-    /// /// <author>Alexandre Hugot</author>
+    /// <author>Alexandre Hugot</author>
     public partial class ParametersWindow : Window
     {
         private TheGame game;
