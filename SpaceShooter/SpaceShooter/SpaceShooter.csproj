@@ -19,6 +19,7 @@
     <None Remove="Sprites\laser.png" />
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
+    <None Remove="view\Image\background2.png" />
     <None Remove="view\Image\espace.jpg" />
     <None Remove="view\Image\Fond2.png" />
     <None Remove="view\Image\Game_over.png" />
@@ -67,6 +68,7 @@
     <Resource Include="Sprites\Ship_5.png" />
     <Resource Include="Sprites\shoot.png" />
     <Resource Include="Sprites\speed.png" />
+    <Resource Include="view\Image\background2.png" />
     <Resource Include="view\Image\espace.jpg" />
     <Resource Include="view\Image\Fond2.png" />
     <Resource Include="view\Image\Game_over.png" />
