@@ -27,6 +27,7 @@ namespace IHM
         private GameWindow gameWindow;
         private HighScoresWindow highScoresWindow;
         private ParametersWindow parametersWindow;
+        private TheGame game;
         public MainWindow()
         {
             InitializeComponent();
