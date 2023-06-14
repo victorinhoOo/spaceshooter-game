@@ -45,13 +45,6 @@ namespace SpaceShooter.view
             this.mainWindow.Show();
             this.Close();
         }
-        private void ShowHighScores()
-        {
-            HighScoresWindow highScores = new HighScoresWindow();
-            highScores.AddScore("Nom du joueur", score);  // Appeler la méthode AddScore de la fenêtre HighScoresWindow pour ajouter le score
-            highScores.Show();
-            this.Close();
-        }
 
         void IWindow.UpdateScore(int score)
         {
@@ -61,6 +54,11 @@ namespace SpaceShooter.view
         void IWindow.CloseWindow()
         {
            
+        }
+
+        public void ShowHighScoresWindow(int score)
+        {
+            throw new NotImplementedException();
         }
     }
 }
