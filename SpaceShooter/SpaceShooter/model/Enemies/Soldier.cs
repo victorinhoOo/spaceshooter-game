@@ -23,6 +23,8 @@ namespace SpaceShooter.model.Ennemies
         private List<string> explosionSprites; // Liste des sprites d'explosion
         private int currentExplosionIndex; // index de l'explosion du soldat
         private bool isExploding; // soldat en train d'exploser ou non
+        public bool IsExploding { get => isExploding; set => isExploding = value; }
+
         private TheGame g;
 
         public Soldier(double x, double y, Game g, string name = "Ship_5.png") : base(x, y, g, name, -100)
@@ -41,7 +43,7 @@ namespace SpaceShooter.model.Ennemies
                 "explosion5.png"
             };
             currentExplosionIndex = 0;
-            isExploding = false;
+            IsExploding = false;
         }
 
 
@@ -62,7 +64,7 @@ namespace SpaceShooter.model.Ennemies
         /// <author>Victor Duboz</author>
         public override void Animate(TimeSpan dt)
         {
-            if (isExploding)
+            if (IsExploding)
             {
                 if (currentExplosionIndex < explosionSprites.Count)
                 {
@@ -122,9 +124,9 @@ namespace SpaceShooter.model.Ennemies
             if (other.TypeName == "PlayerBullet")
             {
                
-                if (!isExploding)
+                if (!IsExploding)
                 {
-                    isExploding = true;
+                    IsExploding = true;
                     currentExplosionIndex = 0;
                     TheGame.RemoveItem(other);
                     return;

@@ -16,6 +16,7 @@ namespace SpaceShooter.model.Ennemies
         private List<string> explosionSprites;
         private int currentExplosionIndex;
         private bool isExploding;
+        public bool IsExploding { get => isExploding; set => isExploding = value; }
 
         private TheGame g;
         public Officer(double x, double y, Game g, string name = "Ship_3.png") : base(x, y, g, name, -100)
