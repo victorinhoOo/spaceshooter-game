@@ -55,7 +55,7 @@ namespace SpaceShooter.view
         public void ShowHighScoresWindow(int score)
         {
             HighScoresWindow highScores = new HighScoresWindow();
-            highScores.AddScore("Nom du joueur", score); // Remplacez "Nom du joueur" par le nom du joueur réel ou obtenez-le à partir de l'utilisateur
+            highScores.AddScore("Votre Score", score); 
             
             this.Close();
         }

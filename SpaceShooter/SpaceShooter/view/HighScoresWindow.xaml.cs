@@ -26,10 +26,11 @@ namespace SpaceShooter.view
     {
         private TheGame game;
         private MainWindow menu;
+        private int bestScore; // Variable pour stocker le meilleur score
+
         public HighScoresWindow()
         {
             InitializeComponent();
-            
             LoadScores();
         }
 
@@ -39,11 +40,13 @@ namespace SpaceShooter.view
             this.menu.Show();
             this.Close();
         }
+
         public class ScoreItem
         {
             public string PlayerName { get; set; }
             public int Score { get; set; }
         }
+
         private void LoadScores()
         {
             string chemin = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -57,10 +60,13 @@ namespace SpaceShooter.view
                     writer.WriteLine("TheGoatAlex89,2999500");
                     writer.WriteLine("RockerBabyClem,2997829");
                     writer.WriteLine("Victorihnooo,2975400");
+                    writer.WriteLine("Votre Score,0");
                 }
             }
 
             string[] lines = File.ReadAllLines(scoresFilePath);
+
+            bool isFirstScoreAdded = false; // Variable pour suivre si le premier score du joueur a été ajouté
 
             foreach (string line in lines)
             {
@@ -71,7 +77,32 @@ namespace SpaceShooter.view
                     int score = int.Parse(parts[1]);
 
                     listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
+
+                    if (!isFirstScoreAdded && playerName == "Votre Score")
+                    {
+                        // Ajouter le premier score du joueur pour la comparaison future
+                        bestScore = score;
+                        isFirstScoreAdded = true;
+                    }
+                    else
+                    {
+                        // Mettre à jour le meilleur score actuel si nécessaire
+                        if (score > bestScore)
+                        {
+                            RemoveBestScore();
+                            bestScore = score;
+                        }
+                    }
                 }
+            }
+
+            if (!isFirstScoreAdded)
+            {
+                // Ajouter le premier score du joueur s'il n'est pas déjà présent dans la liste
+                string playerName = "Votre Score";
+                int initialScore = 0;
+                listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = initialScore });
+                bestScore = initialScore;
             }
         }
 
@@ -80,19 +111,48 @@ namespace SpaceShooter.view
             string chemin = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string scoresFilePath = System.IO.Path.Combine(chemin, "scores.txt");
 
-            // Ajouter le nouveau score au fichier
-            using (StreamWriter writer = File.AppendText(scoresFilePath))
+            // Vérifier si le score est supérieur au meilleur score actuel
+            if (score > bestScore)
             {
-                writer.WriteLine($"{playerName},{score}");
+                // Supprimer l'ancien meilleur score de la liste
+                RemoveBestScore();
+
+                // Mettre à jour le meilleur score actuel
+                bestScore = score;
+
+                // Ajouter le nouveau meilleur score au fichier
+                using (StreamWriter writer = File.AppendText(scoresFilePath))
+                {
+                    writer.WriteLine($"{playerName},{score}");
+                }
+
+                // Ajouter le nouveau meilleur score à la liste des scores affichée
+                listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
+            }
+        }
+
+        private void RemoveBestScore()
+        {
+            ScoreItem bestScoreItem = null;
+
+            foreach (ScoreItem item in listHighScores.Items)
+            {
+                if (item.Score == bestScore)
+                {
+                    bestScoreItem = item;
+                    break;
+                }
             }
 
-            // Ajouter le nouveau score à la liste des scores affichée
-            listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
+            if (bestScoreItem != null)
+            {
+                listHighScores.Items.Remove(bestScoreItem);
+            }
         }
 
         public void AddScoreFromGame(int score)
         {
-            string playerName = "Nom du joueur"; 
+            string playerName = "Votre Score";
             AddScore(playerName, score);
         }
 
