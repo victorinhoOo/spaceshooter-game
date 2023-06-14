@@ -65,15 +65,18 @@
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/view/Image/espace.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
 
 
-        <Button Content="{x:Static res:Strings.Menu}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Foreground="White" Background="Black" Click="BackMenu"/>
+        <Button Content="{x:Static res:Strings.Menu}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Foreground="White" Background="#00000000" Click="BackMenu"/>
         <Label Content="{x:Static res:Strings.ParametersTitle}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
 
         <Label Content="{x:Static res:Strings.Sound}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Foreground="White" FontSize="15"/>
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Slider x:Name="SoundLevelSlider" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="200" Minimum="0" Maximum="100" Value="{Binding volumeSound, Mode=TwoWay}" ValueChanged="SoundLevelSlider_ValueChanged"/>
-            <!--CheckBox x:Name="musicCheckBox" Style="{StaticResource checkBullet}"  Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center"/-->
+            
         </StackPanel>
 
     </Grid>
