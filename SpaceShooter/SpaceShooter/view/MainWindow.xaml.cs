@@ -22,6 +22,7 @@ namespace IHM
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    ///<author>Alexandre Hugot,Théo Cornu,Clément Boutet,Victor Duboz</author>
     public partial class MainWindow : Window
     {
         private GameWindow gameWindow;

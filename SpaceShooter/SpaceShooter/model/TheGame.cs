@@ -11,6 +11,10 @@ using SpaceShooter.view;
 
 namespace SpaceShooter.model
 {
+    /// <summary>
+    /// Classe qui représente le jeu avec toutes les méthodes
+    /// </summary>
+    /// <author>Théo Cornu</author>
     public class TheGame : IUTGame.Game
     {
         public TheGame(IScreen screen, IWindow view) : base(screen, "Sprites", "Sounds")

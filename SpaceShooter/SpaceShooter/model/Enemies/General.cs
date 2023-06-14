@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Ennemies
 {
+    /// <summary>
+    /// Classe qui représente les généraux avec toutes ses méthodes
+    /// </summary>
+    /// <author>Théo Cornu</author>
     public class General : Enemy
     {
         public General(double x, double y, Game g, string name = "Ship_5.png") : base(x, y, g, name, -100)

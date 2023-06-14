@@ -7,6 +7,10 @@ using SpaceShooter.model.Projectiles;
 
 namespace SpaceShooter.model
 {
+    /// <summary>
+    /// Classe qui représente le joueur avec toutes ses méthodes
+    /// </summary>
+    /// <author>Théo Cornu</author>
     public class Player : GameItem, IAnimable, IKeyboardInteract
     {
 

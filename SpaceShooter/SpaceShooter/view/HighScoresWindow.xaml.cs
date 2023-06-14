@@ -22,6 +22,7 @@ namespace SpaceShooter.view
     /// <summary>
     /// Logique d'interaction pour HighScores.xaml
     /// </summary>
+    /// <author>Théo Cornu</author>
     public partial class HighScoresWindow : Window, IWindow
     {
         private TheGame game;

@@ -11,9 +11,9 @@ using System.Windows;
 namespace SpaceShooter.model.Bonus
 {
     /// <summary>
-    /// 
+    /// Classe qui représente les bonus avec toutes ses méthodes
     /// </summary>
-    /// <author>Clément Boutet</author>
+    /// <author>Clément Boutet, Théo Cornu</author>
     public abstract class Bonus : GameItem, IAnimable
     {
 

@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Ennemies
 {
+    /// <summary>
+    /// Classe qui représente les officiers avec toutes ses méthodes
+    /// </summary>
+    /// <author>Théo Cornu</author>
     public class Officer : Enemy
     {
 

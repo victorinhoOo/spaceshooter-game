@@ -20,6 +20,7 @@ namespace SpaceShooter.view
     /// <summary>
     /// Logique d'interaction pour GameWindow.xaml
     /// </summary>
+    /// <author>Théo Cornu,Clément Boutet,Victor Duboz</author>
     public partial class GameWindow : Window, IWindow
     {
         private TheGame game;
