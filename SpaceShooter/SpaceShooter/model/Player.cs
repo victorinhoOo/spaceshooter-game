@@ -111,7 +111,7 @@ namespace SpaceShooter.model
                 TheGame.RemoveItem(other);
             }          
 
-            if ((other.TypeName == "Enemy")||(other.TypeName == "Bullet") || (other.TypeName =="Laser"))
+            if ((other.TypeName == "Enemy")||(other.TypeName == "Projectile")||(other.TypeName=="Asteroid"))
             {
                 if (!isExploding)
                 {

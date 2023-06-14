@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpaceShooter.view"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800">
+        xmlns:res="clr-namespace:SpaceShooter.Res"
+        Title="{x:Static res:Strings.GameWindow}" Height="450" Width="800">
     <Grid>
         <Canvas x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Canvas.Background>
                 <ImageBrush ImageSource="/view/background.png" />
             </Canvas.Background>
         </Canvas>
-        <Label x:Name="scoreLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Foreground="White" Content="Score : "/>
+        <Label x:Name="scoreLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Foreground="White" Content="{x:Static res:Strings.Score}"/>
     </Grid>
 
 </Window>
