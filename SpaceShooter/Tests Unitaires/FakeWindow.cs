@@ -14,6 +14,11 @@ namespace Tests_Unitaires
 
         }
 
+        public void ShowHighScoresWindow(int score)
+        {
+
+        }
+
         public void UpdateScore(int score)
         {
 

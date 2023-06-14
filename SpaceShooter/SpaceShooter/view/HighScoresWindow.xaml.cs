@@ -160,5 +160,10 @@ namespace SpaceShooter.view
         {
             throw new NotImplementedException();
         }
+
+        public void ShowHighScoresWindow(int score)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

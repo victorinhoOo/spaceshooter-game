@@ -40,10 +40,6 @@ namespace SpaceShooter.model.Bonus
 
         public override void CollideEffect(GameItem other)
         {
-            if (other.TypeName == "Player")
-            {
-                TheGame.RemoveItem(this);
-            }
         }
 
 

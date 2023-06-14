@@ -102,8 +102,9 @@ namespace SpaceShooter.model
 
                 if (other.TypeName == "Shoot")
                 {
-                    this.ShootRecoveryTime -= TimeSpan.FromSeconds(0.1);
+                    this.shootRecoveryTime -= TimeSpan.FromSeconds(0.1);
                 }
+                TheGame.RemoveItem(other);
             }          
 
             if ((other.TypeName == "Enemy")||(other.TypeName == "Bullet") || (other.TypeName =="Laser"))
