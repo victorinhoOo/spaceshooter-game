@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:res="clr-namespace:SpaceShooter.Res"
         xmlns:local="clr-namespace:SpaceShooter.view"
+        xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
         mc:Ignorable="d"
-        Background="Black"
         Title="{x:Static res:Strings.HighScores}" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <media:ImageBrush x:Key="BackgroundBrush" ImageSource="/view/Image/espace.jpg" />
+        <media:ImageBrush x:Key="ListBoxBackgroundBrush"  />
+       
+    </Window.Resources>
+    <Grid Background="{StaticResource BackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20*"/>
@@ -21,10 +26,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-
-        <Button Content="{x:Static res:Strings.Menu}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Foreground="White" Background="Black" Click="BackMenu"/>
+        <Button Content="{x:Static res:Strings.Menu}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Foreground="White" Background="#00000000" Click="BackMenu"/>
         <Label Content="{x:Static res:Strings.HighScores}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
-        <ListBox x:Name="listHighScores" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Black" Foreground="White">
+
+        <ListBox x:Name="listHighScores" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource ListBoxBackgroundBrush}" Foreground="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

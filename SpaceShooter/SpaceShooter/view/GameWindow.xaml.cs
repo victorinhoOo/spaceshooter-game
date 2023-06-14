@@ -60,10 +60,11 @@ namespace SpaceShooter.view
             this.Close();
         }
         // Méthode non implémentée de l'interface IWindow pour afficher la fenêtre des meilleurs scores
+        /// <author>Théo Cornu</author>
         public void ShowHighScoresWindow(int score)
         {
             HighScoresWindow highScores = new HighScoresWindow();
-            highScores.AddScore("Votre Score", score); 
+            highScores.AddScore(Res.Strings.Score, score); 
             
             this.Close();
         }

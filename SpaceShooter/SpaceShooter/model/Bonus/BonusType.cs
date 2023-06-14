@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Bonus
 {
-    /// <author>Clément Boutet</author>
+    /// <summary>
+    /// Enumération des types de bonus
+    /// </summary>
+    /// <author>Clément Bonus</author>
     public enum BonusType
     {
         Speed,

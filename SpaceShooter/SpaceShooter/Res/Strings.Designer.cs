@@ -167,5 +167,14 @@ namespace SpaceShooter.Res {
                 return ResourceManager.GetString("TitleMainWindow", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Your score.
+        /// </summary>
+        public static string YourScore {
+            get {
+                return ResourceManager.GetString("YourScore", resourceCulture);
+            }
+        }
     }
 }

@@ -153,4 +153,7 @@
   <data name="TitleMainWindow" xml:space="preserve">
     <value>Menu principal</value>
   </data>
+  <data name="YourScore" xml:space="preserve">
+    <value>Votre score</value>
+  </data>
 </root>

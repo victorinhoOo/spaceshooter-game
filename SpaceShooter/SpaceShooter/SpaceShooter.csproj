@@ -19,13 +19,10 @@
     <None Remove="Sprites\laser.png" />
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
-    <None Remove="view\background.png" />
-    <None Remove="view\Image\Fond.png" />
+    <None Remove="view\Image\background2.png" />
+    <None Remove="view\Image\espace.jpg" />
+    <None Remove="view\Image\Fond2.png" />
     <None Remove="view\Image\Game_over.png" />
-    <None Remove="view\Image\Quit.png" />
-    <None Remove="view\Image\Settings.png" />
-    <None Remove="view\Image\Space_Shooter.png" />
-    <None Remove="view\Image\Start.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -71,15 +68,10 @@
     <Resource Include="Sprites\Ship_5.png" />
     <Resource Include="Sprites\shoot.png" />
     <Resource Include="Sprites\speed.png" />
-    <Resource Include="view\background.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="view\Image\Fond.png" />
+    <Resource Include="view\Image\background2.png" />
+    <Resource Include="view\Image\espace.jpg" />
+    <Resource Include="view\Image\Fond2.png" />
     <Resource Include="view\Image\Game_over.png" />
-    <Resource Include="view\Image\Quit.png" />
-    <Resource Include="view\Image\Settings.png" />
-    <Resource Include="view\Image\Space_Shooter.png" />
-    <Resource Include="view\Image\Start.png" />
   </ItemGroup>
 
   <ItemGroup>
