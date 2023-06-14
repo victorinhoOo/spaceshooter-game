@@ -106,7 +106,7 @@ namespace Tests_Unitaires
 
         public double Width => canvas.ActualWidth;
 
-        public double Height => canvas.ActualHeight;
+        public double Height => 0.1;
 
         public FakeScreen()
         {

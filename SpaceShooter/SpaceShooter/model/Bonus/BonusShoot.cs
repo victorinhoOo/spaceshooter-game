@@ -8,12 +8,21 @@ using System.Threading.Tasks;
 namespace SpaceShooter.model.Bonus
 {
     /// <summary>
-    /// 
+    /// Classe héritant de Bonus représentant le bonus de tir
     /// </summary>
     /// <author>Clément Boutet</author>
     public class BonusShoot : Bonus
     {
 
+
+        /// <summary>
+        /// Constructeur de la classe
+        /// </summary>
+        /// <param name="x">Position abscisse</param>
+        /// <param name="y">Position ordonnée</param>
+        /// <param name="game">Jeu auquel appartient le bonus</param>
+        /// <param name="spriteName">Nom du sprite</param>
+        /// <param name="zindex">position en altitude</param>
         public BonusShoot(double x, double y, Game game, string spriteName = "shoot.png", int zindex = 0) : base(x, y, game, spriteName, zindex)
         {
             base.ChangeSprite(spriteName);
