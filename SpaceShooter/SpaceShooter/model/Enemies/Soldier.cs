@@ -57,6 +57,8 @@ namespace SpaceShooter.model.Ennemies
             TheGame.AddItem(bullet);
         }
 
+        private Random random = new Random();
+
         /// <summary>
         /// Effectue l'animation du soldat
         /// </summary>
@@ -105,6 +107,8 @@ namespace SpaceShooter.model.Ennemies
             if (timeSinceLastShot >= shootInterval)
             {
                 Shoot();
+                double delay = random.NextDouble() * 0.5 + 0.5; // délai aléatoire entre les tirs
+                shootInterval = TimeSpan.FromSeconds(delay);
                 timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps écoulé depuis le dernier tir
             }
 

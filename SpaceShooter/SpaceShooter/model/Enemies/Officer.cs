@@ -49,6 +49,9 @@ namespace SpaceShooter.model.Ennemies
             TheGame.AddItem(laser);
         }
 
+        private Random random = new Random();
+
+
         /// <summary>
         /// Effectue l'animation de l'officer
         /// </summary>
@@ -94,14 +97,16 @@ namespace SpaceShooter.model.Ennemies
                 Right = GameWidth;
             }
 
-            MoveDA(Speed * dt.TotalSeconds, Angle);
-            timeSinceLastShot += dt;
-
             if (timeSinceLastShot >= shootInterval)
             {
-                ShootLaser();
+                ShootLaser();               
+                double delay = random.NextDouble() * 2 + 1; // délai aléatoire entre les tirs (entre 1 et 3 secondes)
+                shootInterval = TimeSpan.FromSeconds(delay);
                 timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps écoulé depuis le dernier tir
             }
+
+            MoveDA(Speed * dt.TotalSeconds, Angle);
+            timeSinceLastShot += dt;
         }
 
         /// <summary>

@@ -73,7 +73,7 @@ namespace SpaceShooter.model.Ennemies
 
         private TimeSpan GetRandomTimeToCreate()
         {
-            int alea = random.Next(5) + 1;
+            int alea = random.Next(4) + 1;
             return TimeSpan.FromSeconds(alea);
         }
 
@@ -102,20 +102,35 @@ namespace SpaceShooter.model.Ennemies
             TheGame.AddItem(officer);
         }
 
-        // Diminue l'intervalle entre les apparitions de soldats au fil du temps
+        /// <summary>
+        /// Diminue l'intervalle entre les apparitions de soldats au fil du temps
+        /// </summary>
         private TimeSpan AdjustSoldierInterval()
         {
-            if (soldierInterval > soldierIntervalMin)
-                soldierInterval -= TimeSpan.FromSeconds(1);
+            double intervalReduction = random.NextDouble() * 0.8 + 0.4; // Réduction aléatoire de l'intervalle à chaque génération 
+
+            soldierInterval -= TimeSpan.FromSeconds(intervalReduction);
+
+            if (soldierInterval < soldierIntervalMin)
+            {
+                soldierInterval = soldierIntervalMin;
+            }
 
             return soldierInterval;
         }
 
+
         // Diminue l'intervalle entre les apparitions d'officiers au fil du temps
         private TimeSpan AdjustOfficerInterval()
         {
-            if (officerInterval > officerIntervalMin)
-                officerInterval -= TimeSpan.FromSeconds(1);
+            double intervalReduction = random.NextDouble() * 0.6 + 0.2; // Réduction aléatoire de l'intervalle à chaque génération 
+
+            officerInterval -= TimeSpan.FromSeconds(intervalReduction);
+
+            if (officerInterval < officerIntervalMin)
+            {
+                officerInterval = officerIntervalMin;
+            }
 
             return officerInterval;
         }
