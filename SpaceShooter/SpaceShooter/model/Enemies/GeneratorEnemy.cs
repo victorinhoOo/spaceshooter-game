@@ -19,6 +19,10 @@ namespace SpaceShooter.model.Ennemies
         private TimeSpan officerIntervalMin;
         private Random random;
 
+
+        public static int Amount { get => Amount; set => Amount = value; }
+
+
         /// <summary>
         /// Constructeur de la fabrique d'ennemis
         /// </summary>
@@ -41,6 +45,13 @@ namespace SpaceShooter.model.Ennemies
         /// </summary>
         public override string TypeName => "generator";
 
+        public TimeSpan TimeToCreateSoldier { get => timeToCreateSoldier; set => timeToCreateSoldier = value; }
+        public TimeSpan TimeToCreateAsteroid { get => timeToCreateAsteroid; set => timeToCreateAsteroid = value; }
+        public TimeSpan TimeToCreateOfficer { get => timeToCreateOfficer; set => timeToCreateOfficer = value; }
+        public TimeSpan SoldierInterval { get => soldierInterval; set => soldierInterval = value; }
+        public TimeSpan OfficerInterval { get => officerInterval; set => officerInterval = value; }
+
+
         /// <summary>
         /// Effectue la génération d'ennemis
         /// </summary>
@@ -52,19 +63,19 @@ namespace SpaceShooter.model.Ennemies
             timeToCreateSoldier -= dt;
             timeToCreateOfficer -= dt;
 
-            if (timeToCreateAsteroid.TotalMilliseconds < 0)
+            if (timeToCreateAsteroid.TotalMilliseconds <= 0)
             {
                 CreateAsteroid();
                 timeToCreateAsteroid = GetRandomTimeToCreate();
             }
 
-            if (timeToCreateSoldier.TotalMilliseconds < 0)
+            if (timeToCreateSoldier.TotalMilliseconds <= 0)
             {
                 CreateSoldier();
                 timeToCreateSoldier = AdjustSoldierInterval();
             }
 
-            if (timeToCreateOfficer.TotalMilliseconds < 0)
+            if (timeToCreateOfficer.TotalMilliseconds <= 0)
             {
                 CreateOfficer();
                 timeToCreateOfficer = AdjustOfficerInterval();
