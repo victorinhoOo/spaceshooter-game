@@ -24,13 +24,12 @@ namespace SpaceShooter.view
     {
         private GameWindow gameWindow;
         private MainWindow mainWindow;
-        private int score;
-        private TheGame game;
+        
 
         public LooseWindow(int score)
         {
             InitializeComponent();
-            this.score = score;
+           
         }
 
         // Méthode pour démarrer une nouvelle partie
