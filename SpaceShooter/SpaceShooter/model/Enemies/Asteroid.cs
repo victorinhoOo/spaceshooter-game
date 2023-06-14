@@ -13,6 +13,7 @@ namespace SpaceShooter.model.Ennemies
     /// Gère les astéroïdes.
     /// </summary>
     /// <author>Victor Duboz</author>
+    /// <author>Théo Cornu</author>
     public class Asteroid : Enemy
     {
         /// <summary>
@@ -28,6 +29,7 @@ namespace SpaceShooter.model.Ennemies
             base.Speed = 350;
         }
 
+        public override string TypeName => "Asteroid";
 
         /// <summary>
         /// Effectue l'animation de l'astéroïde
@@ -39,7 +41,7 @@ namespace SpaceShooter.model.Ennemies
             if (Bottom > GameHeight)
             {
                 TheGame.RemoveItem(this);
-                --Amount;
+                --GeneratorEnemy.Amount;
             }
             else if (Left < 0)
             {

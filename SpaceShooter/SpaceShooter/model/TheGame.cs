@@ -11,6 +11,11 @@ using SpaceShooter.view;
 
 namespace SpaceShooter.model
 {
+    /// <summary>
+    /// Classe qui représente le jeu avec toutes les méthodes
+    /// </summary>
+    /// <author>Théo Cornu</author>
+    /// <author>Victor Duboz</author>
     public class TheGame : IUTGame.Game
     {
         public TheGame(IScreen screen, IWindow view) : base(screen, "Sprites", "Sounds")
@@ -37,10 +42,15 @@ namespace SpaceShooter.model
             AddItem(player);
             AddItem(new GeneratorEnemy(this));
 
-            //PlayBackgroundMusic("mainMusic.mp3");
+            PlayBackgroundMusic("mainMusic.mp3");
 
         }
 
+        /// <summary>
+        /// Met à jour le score du joueur
+        /// </summary>
+        /// <param name="score">score du joueur</param>
+        /// <author>Victor Duboz</author>
         public void UpdateScore(int score)
         {
             view.UpdateScore(score);
@@ -50,9 +60,9 @@ namespace SpaceShooter.model
         {
             int score = this.Score;
 
-            if (view is GameWindow)
+            if (view is GameWindow gameWindow)
             {
-                view.ShowHighScoresWindow(score);
+                gameWindow.ShowHighScoresWindow(score);
             }
 
             LooseWindow loose = new LooseWindow(score); // Passer le score en tant qu'argument lors de la création de la fenêtre LooseWindow

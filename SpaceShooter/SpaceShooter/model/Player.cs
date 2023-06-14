@@ -7,6 +7,11 @@ using SpaceShooter.model.Projectiles;
 
 namespace SpaceShooter.model
 {
+    /// <summary>
+    /// Classe qui représente le joueur avec toutes ses méthodes
+    /// </summary>
+    /// <author>Théo Cornu</author>
+    /// <author>Victor Duboz</author>
     public class Player : GameItem, IAnimable, IKeyboardInteract
     {
 
@@ -29,6 +34,11 @@ namespace SpaceShooter.model
         private bool isExploding; // joueur en train d'exploser ou non
         public bool IsExploding { get => isExploding; set => isExploding = value; }
 
+
+        /// <summary>
+        /// Créé un joueur, initialise, le booléen, l'index et les sprites d'explosion
+        /// </summary>
+        /// <author>Victor Duboz</author>
         public Player(double x, double y, Game g) : base(x, y, g, "Ship_1.png")
         {
             this.game = g;
@@ -48,7 +58,10 @@ namespace SpaceShooter.model
 
 
 
-
+        /// <summary>
+        /// Gère les animations du jeu
+        /// </summary>
+        /// <param name="dt">temps passé depuis la dernière animation</param>
         /// <author>Clément Boutet</author>
         /// <author>Victor Duboz</author>
         public void Animate(TimeSpan dt)
@@ -87,7 +100,11 @@ namespace SpaceShooter.model
             timeSinceLastShot += dt;
         }
 
-        ///<author>Victor Duboz</author>
+        /// <summary>
+        /// Gère les collisions du joueur avec les autres items du jeu
+        /// </summary>
+        /// <param name="other">autre item du jeu</param>
+        /// <author>Victor Duboz</author>
         /// <author>Clément Boutet</author>
         public override void CollideEffect(GameItem other)
         {
@@ -107,7 +124,7 @@ namespace SpaceShooter.model
                 TheGame.RemoveItem(other);
             }          
 
-            if ((other.TypeName == "Enemy")||(other.TypeName == "Bullet") || (other.TypeName =="Laser"))
+            if ((other.TypeName == "Enemy")||(other.TypeName == "Projectile")||(other.TypeName=="Asteroid"))
             {
                 if (!isExploding)
                 {
@@ -118,13 +135,21 @@ namespace SpaceShooter.model
             }
         }
 
+        /// <summary>
+        /// Tire une balle
+        /// </summary>
+        /// <author>Victor Duboz</author>
         public void Shoot()
         {
             PlayerBullet bullet = new PlayerBullet(this.Left, this.Top - 30, this.TheGame);
             TheGame.AddItem(bullet);
         }
 
-        /// <author>Clément Boutet</author>
+        /// <summary>
+        /// Gère les déplacements du joueur en fonction de la touche pressée
+        /// </summary>
+        /// <param name="key">touche pressée</param>
+        ///  <author>Clément Boutet</author>
         /// <author>Théo Cornu</author>
         public void KeyDown(Key key)
         {

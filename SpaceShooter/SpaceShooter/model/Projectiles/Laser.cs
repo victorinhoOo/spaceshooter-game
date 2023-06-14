@@ -25,8 +25,6 @@ namespace SpaceShooter.model.Projectiles
         }
 
 
-        public override string TypeName => "Laser";
-
 
 
         /// <summary>

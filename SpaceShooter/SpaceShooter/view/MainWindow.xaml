@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:res="clr-namespace:SpaceShooter.Res"
         xmlns:local="clr-namespace:IHM"
         mc:Ignorable="d"
         Background="Black"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{x:Static res:Strings.TitleMainWindow}" Height="450" Width="800">
     <Grid>
         
         <Grid.RowDefinitions>
@@ -24,47 +25,47 @@
             <ColumnDefinition Width="*"/>
             
         </Grid.ColumnDefinitions>
-        <Image Source="/view/Image/Fond.png" Grid.ColumnSpan="4" Grid.RowSpan="7" Stretch="UniformToFill" />
+        <Image Source="/view/Image/Fond2.png" Grid.ColumnSpan="4" Grid.RowSpan="7" Stretch="UniformToFill" />
 
-        <Button Content="PLAY" Grid.Row="1" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="Play" FontSize="14">
+        <Button Content="{x:Static res:Strings.Play}" Grid.Row="1" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="PlayButton_Click" FontSize="14">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2" Color="DarkBlue" Opacity="1" BlurRadius="2"/>
+                            <DropShadowEffect ShadowDepth="2" Color="#1570AC" Opacity="1" BlurRadius="2"/>
                         </TextBlock.Effect>
                     </TextBlock>
                 </DataTemplate>
             </Button.ContentTemplate>
             </Button>
-        <Button Content="HIGH SCORES" Grid.Row="2" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="OpenHighScoresWindow">
+        <Button Content="{x:Static res:Strings.High_Scores}" Grid.Row="2" Grid.Column="1" Width="142" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="OpenHighScoresWindow">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2" Color="DarkBlue" Opacity="1" BlurRadius="2"/>
+                            <DropShadowEffect ShadowDepth="2" Color="#1570AC" Opacity="1" BlurRadius="2"/>
                         </TextBlock.Effect>
                     </TextBlock>
                 </DataTemplate>
             </Button.ContentTemplate>
         </Button>
-        <Button Content="PARAMETERS" Grid.Row="3" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="OpenParametersWindow">
+        <Button Content="{x:Static res:Strings.Parameters}" Grid.Row="3" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="OpenParametersButton_Click">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2" Color="DarkBlue" Opacity="1" BlurRadius="2"/>
+                            <DropShadowEffect ShadowDepth="2" Color="#1570AC" Opacity="1" BlurRadius="2"/>
                         </TextBlock.Effect>
                     </TextBlock>
                 </DataTemplate>
             </Button.ContentTemplate>
         </Button>
-        <Button Content="EXIT" Grid.Row="4" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="Quit">
+        <Button Content="{x:Static res:Strings.Exit}" Grid.Row="4" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="Quit">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2" Color="DarkBlue" Opacity="1" BlurRadius="2"/>
+                            <DropShadowEffect ShadowDepth="2" Color="#1570AC" Opacity="1" BlurRadius="2"/>
                         </TextBlock.Effect>
                     </TextBlock>
                 </DataTemplate>

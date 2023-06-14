@@ -22,9 +22,10 @@ namespace SpaceShooter.view
     /// <summary>
     /// Logique d'interaction pour HighScores.xaml
     /// </summary>
+    /// <author>Théo Cornu</author>
     public partial class HighScoresWindow : Window, IWindow
     {
-        private TheGame game;
+        
         private MainWindow menu;
         private int bestScore; // Variable pour stocker le meilleur score
 
@@ -34,6 +35,7 @@ namespace SpaceShooter.view
             LoadScores();
         }
 
+        // Méthode pour revenir au menu principal
         public void BackMenu(object sender, RoutedEventArgs e)
         {
             this.menu = new MainWindow();
@@ -41,26 +43,30 @@ namespace SpaceShooter.view
             this.Close();
         }
 
+        // Classe pour représenter un élément de score (nom du joueur et score)
         public class ScoreItem
         {
             public string PlayerName { get; set; }
             public int Score { get; set; }
         }
 
+        // Méthode pour charger les scores à partir du fichier
         private void LoadScores()
         {
             string chemin = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string scoresFilePath = System.IO.Path.Combine(chemin, "scores.txt");
 
+            // Vérifier si le fichier des scores existe, sinon le créer avec des scores par défaut
             if (!File.Exists(scoresFilePath))
             {
                 using (StreamWriter writer = File.CreateText(scoresFilePath))
                 {
                     writer.WriteLine("ThéoTheKiller,2997600");
+                    writer.WriteLine("ThéoTheKiller,2997600");
                     writer.WriteLine("TheGoatAlex89,2999500");
                     writer.WriteLine("RockerBabyClem,2997829");
                     writer.WriteLine("Victorihnooo,2975400");
-                    writer.WriteLine("Votre Score,0");
+                    writer.WriteLine(Res.Strings.YourScore,", 0");
                 }
             }
 
@@ -76,9 +82,10 @@ namespace SpaceShooter.view
                     string playerName = parts[0];
                     int score = int.Parse(parts[1]);
 
+                    // Ajouter l'élément de score à la liste affichée
                     listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
 
-                    if (!isFirstScoreAdded && playerName == "Votre Score")
+                    if (!isFirstScoreAdded && playerName == Res.Strings.YourScore)
                     {
                         // Ajouter le premier score du joueur pour la comparaison future
                         bestScore = score;
@@ -99,13 +106,14 @@ namespace SpaceShooter.view
             if (!isFirstScoreAdded)
             {
                 // Ajouter le premier score du joueur s'il n'est pas déjà présent dans la liste
-                string playerName = "Votre Score";
+                string playerName = Res.Strings.YourScore;
                 int initialScore = 0;
                 listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = initialScore });
                 bestScore = initialScore;
             }
         }
 
+        // Méthode pour ajouter un score à la liste des scores
         public void AddScore(string playerName, int score)
         {
             string chemin = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -131,6 +139,7 @@ namespace SpaceShooter.view
             }
         }
 
+        // Méthode pour supprimer le meilleur score de la liste
         private void RemoveBestScore()
         {
             ScoreItem bestScoreItem = null;
@@ -150,12 +159,7 @@ namespace SpaceShooter.view
             }
         }
 
-        public void AddScoreFromGame(int score)
-        {
-            string playerName = "Votre Score";
-            AddScore(playerName, score);
-        }
-
+        // Méthodes non implémentées de l'interface IWindow
         public void UpdateScore(int score)
         {
             throw new NotImplementedException();
@@ -172,3 +176,10 @@ namespace SpaceShooter.view
         }
     }
 }
+
+
+
+
+
+
+

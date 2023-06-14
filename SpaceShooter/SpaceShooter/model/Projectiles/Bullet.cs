@@ -20,10 +20,6 @@ namespace SpaceShooter.model.Projectiles
         }
 
         
-        public override string TypeName => "Bullet";
-
-
-        
 
         public override void Animate(TimeSpan dt)
         {

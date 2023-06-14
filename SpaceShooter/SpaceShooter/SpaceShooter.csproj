@@ -17,15 +17,13 @@
     <None Remove="Sprites\explosion4.png" />
     <None Remove="Sprites\explosion5.png" />
     <None Remove="Sprites\laser.png" />
+    <None Remove="Sprites\player1.png" />
+    <None Remove="Sprites\player2.png" />
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
-    <None Remove="view\background.png" />
-    <None Remove="view\Image\Fond.png" />
+    <None Remove="view\Image\espace.jpg" />
+    <None Remove="view\Image\Fond2.png" />
     <None Remove="view\Image\Game_over.png" />
-    <None Remove="view\Image\Quit.png" />
-    <None Remove="view\Image\Settings.png" />
-    <None Remove="view\Image\Space_Shooter.png" />
-    <None Remove="view\Image\Start.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +62,8 @@
     <Resource Include="Sprites\flaming_asteroid.png" />
     <Resource Include="Sprites\laser-bolts.png" />
     <Resource Include="Sprites\laser.png" />
+    <Resource Include="Sprites\player1.png" />
+    <Resource Include="Sprites\player2.png" />
     <Resource Include="Sprites\player_bullet.png" />
     <Resource Include="Sprites\power-up.png" />
     <Resource Include="Sprites\Ship_1.png" />
@@ -71,15 +71,27 @@
     <Resource Include="Sprites\Ship_5.png" />
     <Resource Include="Sprites\shoot.png" />
     <Resource Include="Sprites\speed.png" />
-    <Resource Include="view\background.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="view\Image\Fond.png" />
+    <Resource Include="view\Image\espace.jpg" />
+    <Resource Include="view\Image\Fond2.png" />
     <Resource Include="view\Image\Game_over.png" />
-    <Resource Include="view\Image\Quit.png" />
-    <Resource Include="view\Image\Settings.png" />
-    <Resource Include="view\Image\Space_Shooter.png" />
-    <Resource Include="view\Image\Start.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Res\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Res\Strings.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Res\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

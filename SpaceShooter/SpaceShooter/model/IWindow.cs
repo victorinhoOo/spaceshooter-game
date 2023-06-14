@@ -7,6 +7,12 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace SpaceShooter.model
 {
+    /// <summary>
+    /// Interface IWindow
+    /// </summary>
+    /// <author>Clément Boutet</author>
+    /// <author>Théo Cornu</author>
+    /// <author>Victor Duboz</author>
     public interface IWindow
     {
         public void UpdateScore(int score);

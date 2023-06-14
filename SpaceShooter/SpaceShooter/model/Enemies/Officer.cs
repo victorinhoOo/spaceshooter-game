@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace SpaceShooter.model.Ennemies
 {
+    /// <summary>
+    /// Classe qui représente les officiers avec toutes ses méthodes 
+    /// </summary>
+    /// <author>Victor Duboz</author>
+    /// <author>Théo Cornu</author>
     public class Officer : Enemy
     {
 
@@ -69,8 +74,8 @@ namespace SpaceShooter.model.Ennemies
                     {
                         TheGame.RemoveItem(this);
                         this.GenerateBonus();
-                        g.Score += 1;
-                        --Amount;
+                        g.Score += 2;
+                        --GeneratorEnemy.Amount;
                     }
                 }
                 return;
