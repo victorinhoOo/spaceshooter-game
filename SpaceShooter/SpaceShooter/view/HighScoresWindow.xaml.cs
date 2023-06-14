@@ -66,7 +66,7 @@ namespace SpaceShooter.view
                     writer.WriteLine("TheGoatAlex89,2999500");
                     writer.WriteLine("RockerBabyClem,2997829");
                     writer.WriteLine("Victorihnooo,2975400");
-                    writer.WriteLine("Votre Score,0");
+                    writer.WriteLine(Res.Strings.YourScore,", 0");
                 }
             }
 
@@ -85,7 +85,7 @@ namespace SpaceShooter.view
                     // Ajouter l'élément de score à la liste affichée
                     listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
 
-                    if (!isFirstScoreAdded && playerName == "Votre Score")
+                    if (!isFirstScoreAdded && playerName == Res.Strings.YourScore)
                     {
                         // Ajouter le premier score du joueur pour la comparaison future
                         bestScore = score;
@@ -106,7 +106,7 @@ namespace SpaceShooter.view
             if (!isFirstScoreAdded)
             {
                 // Ajouter le premier score du joueur s'il n'est pas déjà présent dans la liste
-                string playerName = "Votre Score";
+                string playerName = Res.Strings.YourScore;
                 int initialScore = 0;
                 listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = initialScore });
                 bestScore = initialScore;
