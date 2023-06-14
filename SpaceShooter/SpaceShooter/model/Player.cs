@@ -106,6 +106,7 @@ namespace SpaceShooter.model
         /// <param name="other">autre item du jeu</param>
         /// <author>Victor Duboz</author>
         /// <author>Clément Boutet</author>
+        /// <author>Théo Cornu</author>
         public override void CollideEffect(GameItem other)
         {
 
