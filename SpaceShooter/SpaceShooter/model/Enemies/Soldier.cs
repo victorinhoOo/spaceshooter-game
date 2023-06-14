@@ -75,7 +75,7 @@ namespace SpaceShooter.model.Ennemies
                     if (currentExplosionIndex >= explosionSprites.Count)
                     { 
                         TheGame.RemoveItem(this);
-                        --GeneratorEnemy.Amount;
+                        --Amount;
                         this.GenerateBonus();
                         g.Score += 1;
                     }

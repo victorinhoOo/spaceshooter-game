@@ -25,7 +25,7 @@ namespace SpaceShooter.view
     /// <author>Théo Cornu</author>
     public partial class HighScoresWindow : Window, IWindow
     {
-        
+        private TheGame game;
         private MainWindow menu;
         private int bestScore; // Variable pour stocker le meilleur score
 
@@ -66,7 +66,7 @@ namespace SpaceShooter.view
                     writer.WriteLine("TheGoatAlex89,2999500");
                     writer.WriteLine("RockerBabyClem,2997829");
                     writer.WriteLine("Victorihnooo,2975400");
-                    writer.WriteLine(Res.Strings.YourScore,", 0");
+                    writer.WriteLine(Res.Strings.Score, ",0");
                 }
             }
 
@@ -85,7 +85,7 @@ namespace SpaceShooter.view
                     // Ajouter l'élément de score à la liste affichée
                     listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = score });
 
-                    if (!isFirstScoreAdded && playerName == Res.Strings.YourScore)
+                    if (!isFirstScoreAdded && playerName == Res.Strings.Score)
                     {
                         // Ajouter le premier score du joueur pour la comparaison future
                         bestScore = score;
@@ -106,7 +106,7 @@ namespace SpaceShooter.view
             if (!isFirstScoreAdded)
             {
                 // Ajouter le premier score du joueur s'il n'est pas déjà présent dans la liste
-                string playerName = Res.Strings.YourScore;
+                string playerName = Res.Strings.Score;
                 int initialScore = 0;
                 listHighScores.Items.Add(new ScoreItem { PlayerName = playerName, Score = initialScore });
                 bestScore = initialScore;
@@ -176,10 +176,3 @@ namespace SpaceShooter.view
         }
     }
 }
-
-
-
-
-
-
-

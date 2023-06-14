@@ -23,11 +23,14 @@ namespace SpaceShooter.model.Ennemies
         public double Angle { get=> angle; set => angle = value; }
 
 
+        private int amount = 0;
+        public int Amount { get=> amount; set => amount = value; }
+
 
         public Enemy(double x, double y, Game g, string name = "", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
-            ++GeneratorEnemy.Amount;
+            ++amount;
         }
 
         public override string TypeName => "Enemy";
@@ -46,7 +49,6 @@ namespace SpaceShooter.model.Ennemies
             BonusType type;
             Random random = new Random();
             int dropRate = random.Next(1,100);
-
             if (dropRate >= 1 && dropRate <= 15)
             {
                 int index;
@@ -64,6 +66,7 @@ namespace SpaceShooter.model.Ennemies
                     case BonusType.Shoot: TheGame.AddItem(new BonusShoot(this.Left, this.Top, TheGame)); break;
                 }
             }
+
 
         }
 
