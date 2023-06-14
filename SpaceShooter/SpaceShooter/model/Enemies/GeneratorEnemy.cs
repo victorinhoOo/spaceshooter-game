@@ -19,6 +19,9 @@ namespace SpaceShooter.model.Ennemies
         private TimeSpan officerIntervalMin;
         private Random random;
 
+        private static int amount = 0;
+        public static int Amount { get => amount; set => amount = value; }
+
         /// <summary>
         /// Constructeur de la fabrique d'ennemis
         /// </summary>
@@ -40,6 +43,10 @@ namespace SpaceShooter.model.Ennemies
         /// Propriété qui renvoie le type de la fabrique d'ennemis
         /// </summary>
         public override string TypeName => "generator";
+
+        public TimeSpan TimeToCreateAsteroid { get => timeToCreateAsteroid; set => timeToCreateAsteroid = value; }
+        public TimeSpan TimeToCreateSoldier { get => timeToCreateSoldier; set => timeToCreateSoldier = value; }
+        public TimeSpan TimeToCreateOfficer { get => timeToCreateOfficer; set => timeToCreateOfficer = value; }
 
         /// <summary>
         /// Effectue la génération d'ennemis
