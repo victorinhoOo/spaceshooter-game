@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Formats.Asn1.AsnWriter;
 using SpaceShooter.Res;
+using System.IO;
 
 namespace SpaceShooter.view
 {
@@ -25,7 +26,6 @@ namespace SpaceShooter.view
     public partial class GameWindow : Window, IWindow
     {
         private TheGame game;
-
         /// <author>Clément Boutet</author>
         public GameWindow()
         {
@@ -40,6 +40,7 @@ namespace SpaceShooter.view
             WPFScreen screen = new WPFScreen(this.canvas);
             this.game = new TheGame(screen, this);
             this.game.Run();
+            VolumeSound(this.game);
         }
 
   
@@ -65,6 +66,24 @@ namespace SpaceShooter.view
             highScores.AddScore("Votre Score", score); 
             
             this.Close();
+        }
+
+        private void VolumeSound(TheGame game)
+        {
+            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string filePath = System.IO.Path.Combine(folderPath, "volume.txt");
+
+            if (File.Exists(filePath))
+            {
+                // Lecture de la valeur du volume à partir du fichier texte
+                string volumeString = File.ReadAllText(filePath);
+
+                if (double.TryParse(volumeString, out double volume))
+                {
+                    // Utilisation de la valeur du volume pour initialiser la propriété de volume de TheGame
+                    game.BackgroundVolume = (double)volume / 100;
+                }
+            }
         }
 
     }

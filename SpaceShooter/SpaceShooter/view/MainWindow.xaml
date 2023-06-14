@@ -27,7 +27,7 @@
         </Grid.ColumnDefinitions>
         <Image Source="/view/Image/Fond.png" Grid.ColumnSpan="4" Grid.RowSpan="7" Stretch="UniformToFill" />
 
-        <Button Content="{x:Static res:Strings.Play}" Grid.Row="1" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="Play" FontSize="14">
+        <Button Content="{x:Static res:Strings.Play}" Grid.Row="1" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="PlayButton_Click" FontSize="14">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
@@ -49,7 +49,7 @@
                 </DataTemplate>
             </Button.ContentTemplate>
         </Button>
-        <Button Content="{x:Static res:Strings.Parameters}" Grid.Row="3" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="OpenParametersWindow">
+        <Button Content="{x:Static res:Strings.Parameters}" Grid.Row="3" Grid.Column="1" Width="120" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1e7ff" BorderBrush="#b1e7ff" Click="OpenParametersButton_Click">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Foreground="White" FontSize="15" FontWeight="Bold" TextAlignment="Center">
