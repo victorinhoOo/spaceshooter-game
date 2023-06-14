@@ -10,7 +10,7 @@
     <Grid>
         <Canvas x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Canvas.Background>
-                <ImageBrush ImageSource="/view/Image/espace.jpg" />
+                <ImageBrush ImageSource="Image/background2.png" />
             </Canvas.Background>
         </Canvas>
         <Label x:Name="scoreLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Foreground="White" Content="{x:Static res:Strings.Score}"/>
