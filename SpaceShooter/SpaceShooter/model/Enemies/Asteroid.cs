@@ -41,7 +41,7 @@ namespace SpaceShooter.model.Ennemies
             if (Bottom > GameHeight)
             {
                 TheGame.RemoveItem(this);
-                --GeneratorEnemy.Amount;
+                --Amount;
             }
             else if (Left < 0)
             {

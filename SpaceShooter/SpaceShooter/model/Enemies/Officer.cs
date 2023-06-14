@@ -75,7 +75,7 @@ namespace SpaceShooter.model.Ennemies
                         TheGame.RemoveItem(this);
                         this.GenerateBonus();
                         g.Score += 2;
-                        --GeneratorEnemy.Amount;
+                        --Amount;
                     }
                 }
                 return;
