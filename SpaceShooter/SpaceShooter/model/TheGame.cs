@@ -55,7 +55,10 @@ namespace SpaceShooter.model
         {
             view.UpdateScore(score);
         }
-
+        /// <summary>
+        /// Gère le jeu quand on perd 
+        /// </summary>
+        /// <author>Théo Cornu</author>
         protected override void RunWhenLoose()
         {
             int score = this.Score;
