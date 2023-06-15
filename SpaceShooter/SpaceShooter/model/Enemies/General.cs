@@ -15,7 +15,7 @@ namespace SpaceShooter.model.Ennemies
     public class General : Enemy
     {
 
-        private TimeSpan shootInterval = TimeSpan.FromSeconds(1); // Intervalle de 1 secondes entre les tirs
+        private TimeSpan shootInterval = TimeSpan.FromSeconds(0.5); // Intervalle entre les tirs
         private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
         private List<string> explosionSprites;
         private int currentExplosionIndex;
@@ -31,8 +31,9 @@ namespace SpaceShooter.model.Ennemies
         /// <param name="y">coordonnee d'apparition</param>
         /// <param name="g">le jeu dans lequel il apparait</param>
         /// <param name="name">sprite</param>
-        public General(double x, double y, Game g, string name = "Ship_5.png") : base(x, y, g, name, -100)
+        public General(double x, double y, Game g, string name = "general.png") : base(x, y, g, name, -100)
         {
+            base.Speed = 100;
             Random random = new Random();
             double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
             base.Angle = randomAngle;
@@ -61,10 +62,7 @@ namespace SpaceShooter.model.Ennemies
 
         private Random random = new Random();
 
-        public void ShootMissile()
-        {
 
-        }
 
         /// <summary>
         /// Effectue l'animation du général
@@ -81,7 +79,7 @@ namespace SpaceShooter.model.Ennemies
                     {
                         TheGame.RemoveItem(this);
                         this.GenerateBonus();
-                        g.Score += 5;
+                        g.Score += 2;
                         --GeneratorEnemy.Amount;
                     }
                 }
@@ -112,8 +110,6 @@ namespace SpaceShooter.model.Ennemies
             if (timeSinceLastShot >= shootInterval)
             {
                 ShootLaser();
-                double delay = random.NextDouble() * 2 ; // délai aléatoire entre les tirs
-                shootInterval = TimeSpan.FromSeconds(delay);
                 timeSinceLastShot = TimeSpan.Zero; // Réinitialise le temps écoulé depuis le dernier tir
             }
 

@@ -52,6 +52,24 @@ namespace Tests_Unitaires.TestAnimateEnnemy
             Assert.True(enemy.Left != 100);
             Assert.True(enemy.Top != 100);
         }
+
+
+        [Fact]
+        public void TestPositionGeneral()
+        {
+
+            w = new FakeWindow();
+            s = new FakeScreen();
+
+
+            game = new TheGame(s, w);
+            enemy = new General(100, 100, game);
+            enemy.Animate(new TimeSpan(0, 0, 10));
+
+            Assert.True(enemy.Left != 100);
+            Assert.True(enemy.Top != 100);
+        }
+
     }
 }
              

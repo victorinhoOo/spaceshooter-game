@@ -35,14 +35,16 @@ namespace Tests_Unitaires.TestGeneratorEnemy
             ge.TimeToCreateAsteroid = new TimeSpan(0);
             ge.TimeToCreateSoldier = new TimeSpan(0);
             ge.TimeToCreateOfficer = new TimeSpan(0);
+            ge.TimeToCreateGeneral= new TimeSpan(0);
 
-            ge.Animate(new TimeSpan(5));
+            ge.Animate(new TimeSpan(12));
 
             // Vérifie que des ennemis ont été créés et que les intervalles ont augmentés
 
             Assert.True(ge.TimeToCreateOfficer > new TimeSpan(0));
             Assert.True(ge.TimeToCreateSoldier > new TimeSpan(0));
             Assert.True(ge.TimeToCreateAsteroid > new TimeSpan(0));
+            Assert.True(ge.TimeToCreateGeneral> new TimeSpan(0));
             Assert.True(GeneratorEnemy.Amount > 0);
         }
     }
