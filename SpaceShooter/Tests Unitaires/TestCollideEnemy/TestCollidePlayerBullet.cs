@@ -20,6 +20,7 @@ namespace Tests_Unitaires.TestCollideEnemy
         private Game game;
         private Soldier soldier;
         private Officer officer;
+        private General general;
 
         private FakeScreen s;
         private FakeWindow w;
@@ -62,6 +63,26 @@ namespace Tests_Unitaires.TestCollideEnemy
             officer.CollideEffect(projectile);
 
             Assert.True(officer.IsExploding);
+        }
+
+        /// <author>Alexandre Hugot</author>
+        [Fact]
+        public void TestCollideGeneral()
+        {
+
+            w = new FakeWindow();
+            s = new FakeScreen();
+
+
+            game = new TheGame(s, w);
+            general = new General(100, 100, game);
+            projectile = new PlayerBullet(100, 100, game);
+
+            Assert.True(general.IsCollide(projectile));
+
+            general.CollideEffect(projectile);
+
+            Assert.True(general.IsExploding);
         }
     }
 }
