@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpaceShooter.view"
-                xmlns:res="clr-namespace:SpaceShooter.Res"
+        xmlns:res="clr-namespace:SpaceShooter.Res"
         mc:Ignorable="d"
         Background="Black"
         Title="{x:Static res:Strings.ParametersTitle}" Height="450" Width="800">
@@ -80,6 +80,24 @@
             <Slider x:Name="SoundLevelSlider" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="200" Minimum="0" Maximum="100" Value="{Binding volumeSound, Mode=TwoWay}" ValueChanged="SoundLevelSlider_ValueChanged"/>
             
         </StackPanel>
+
+        <Button Content="{x:Static res:Strings.Credits}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="20" Foreground="White" Background="LightBlue" Click="ShowPopup"/>
+        <Popup x:Name="MyPopup" IsOpen="False" Placement="Center" PopupAnimation="Fade" MouseDown="Popup_MouseDown">
+            <Grid Background="LightBlue" Width="300" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="{x:Static res:Strings.SpaceShooter}" FontSize="15" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.EquipDate}" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.Concept_Graphics}" FontSize="15" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.NamesEkip}" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.Program_Sounds}" FontSize="15" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.NamesEkip}" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.Framework}" FontSize="15" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.IUT}" FontSize="10" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Popup>
+        
+        
 
     </Grid>
 </Window>
