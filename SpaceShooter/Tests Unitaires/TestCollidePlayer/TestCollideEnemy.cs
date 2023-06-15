@@ -56,6 +56,25 @@ namespace Tests_Unitaires.TestCollidePlayer
             Assert.True(player.IsExploding);
         }
 
+        /// <author>Alexandre Hugot</author>
+        [Fact]
+        public void TestCollideGeneral()
+        {
+            w = new FakeWindow();
+            s = new FakeScreen();
+
+
+            game = new TheGame(s, w);
+            player = new Player(100, 100, game);
+            enemy = new General(100, 100, game);
+
+            Assert.True(player.IsCollide(enemy));
+
+            player.CollideEffect(enemy);
+
+            Assert.True(player.IsExploding);
+        }
+
 
         [Fact]
         public void TestCollideBullet()

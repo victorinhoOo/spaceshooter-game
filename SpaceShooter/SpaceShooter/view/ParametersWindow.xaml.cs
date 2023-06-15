@@ -26,14 +26,19 @@ namespace SpaceShooter.view
     public partial class ParametersWindow : Window
     {
         private MainWindow menu;
-        private double volumeSound;
-        public double VolumeSound { get; set; }
+
+        /// <summary>
+        /// Constructeur d'une fenêtre de paramètres
+        /// </summary>
         public ParametersWindow()
         {
             InitializeComponent();
             Loaded += Window_Loaded;
         }
 
+        /// <summary>
+        /// Click bouton qui nous ramène au menu
+        /// </summary>
         public void BackMenu(object sender, RoutedEventArgs e)
         {
             this.menu = new MainWindow();
@@ -41,7 +46,26 @@ namespace SpaceShooter.view
             this.Close();
         }
 
-        private void SoundLevelSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        /// <summary>
+        /// Clique bouton qui ouvre le popup des credits
+        /// </summary>
+        public void ShowPopup(object sender, RoutedEventArgs e)
+        {
+            MyPopup.IsOpen = true;
+        }
+
+        /// <summary>
+        /// Ferme le popup avec un clic
+        /// </summary>
+        public void Popup_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MyPopup.IsOpen = false;
+        }
+
+        /// <summary>
+        /// Lorsque la valeur du slider change, le document texte où est enregistré le paramètre de son récris le paramètre
+        /// </summary>
+        public void SoundLevelSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             double volume = SoundLevelSlider.Value;
 
@@ -51,7 +75,13 @@ namespace SpaceShooter.view
             File.WriteAllText(filePath, volume.ToString());
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Gestion du fichier de paramètre de son
+        /// création s'il n'existe pas
+        /// s'il n'a aucun texte initialise a la valeur du slider
+        /// sinon initialise la valeur du slider
+        /// </summary>
+        public void Window_Loaded(object sender, RoutedEventArgs e)
         {
             string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string filePath = System.IO.Path.Combine(folderPath, "volume.txt");

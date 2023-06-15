@@ -61,11 +61,47 @@ namespace SpaceShooter.Res {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à CONCEPT AND GRAPHICS:.
+        /// </summary>
+        public static string Concept_Graphics {
+            get {
+                return ResourceManager.GetString("Concept_Graphics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Credits.
+        /// </summary>
+        public static string Credits {
+            get {
+                return ResourceManager.GetString("Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à (C) EKIP JUNE 2023.
+        /// </summary>
+        public static string EquipDate {
+            get {
+                return ResourceManager.GetString("EquipDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à EXIT.
         /// </summary>
         public static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à FRAMEWORK:.
+        /// </summary>
+        public static string Framework {
+            get {
+                return ResourceManager.GetString("Framework", resourceCulture);
             }
         }
         
@@ -97,11 +133,29 @@ namespace SpaceShooter.Res {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à IUT DIJON.
+        /// </summary>
+        public static string IUT {
+            get {
+                return ResourceManager.GetString("IUT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Menu.
         /// </summary>
         public static string Menu {
             get {
                 return ResourceManager.GetString("Menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à A.HUGOT, T.CORNU, C.BOUTET, V.DUBOZ.
+        /// </summary>
+        public static string NamesEkip {
+            get {
+                return ResourceManager.GetString("NamesEkip", resourceCulture);
             }
         }
         
@@ -133,6 +187,15 @@ namespace SpaceShooter.Res {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à PROGRAMMING AND SOUNDS:.
+        /// </summary>
+        public static string Program_Sounds {
+            get {
+                return ResourceManager.GetString("Program_Sounds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Replay.
         /// </summary>
         public static string Replay {
@@ -156,6 +219,15 @@ namespace SpaceShooter.Res {
         public static string Sound {
             get {
                 return ResourceManager.GetString("Sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à -- SPACE SHOOTER --.
+        /// </summary>
+        public static string SpaceShooter {
+            get {
+                return ResourceManager.GetString("SpaceShooter", resourceCulture);
             }
         }
         

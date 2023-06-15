@@ -13,6 +13,10 @@ using System.Windows.Media.Media3D;
 
 namespace Tests_Unitaires.TestMoovePlayer
 {
+    /// <summary>
+    /// test unitaire des mouvements du joueur
+    /// </summary>
+    /// <author>Théo Cornu</author>
     public class TestPlayerMovement
     {
         [Fact]

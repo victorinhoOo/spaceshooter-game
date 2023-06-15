@@ -69,6 +69,7 @@ namespace SpaceShooter.view
             this.Close();
         }
 
+        /// <author>Alexandre Hugot</author>
         private void VolumeSound(TheGame game)
         {
             string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);

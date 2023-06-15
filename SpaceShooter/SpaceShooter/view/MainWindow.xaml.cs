@@ -34,9 +34,9 @@ namespace IHM
         {
             InitializeComponent();
         }
-        
+
         // Méthode pour démarrer une nouvelle partie
-        /// <author>Clément Boutet</author>
+        /// <author>Clément Boutet, Alexandre Hugot</author>
         public void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             this.gameWindow = new GameWindow();
@@ -51,8 +51,9 @@ namespace IHM
             this.highScoresWindow.Show();
             this.Close();
         }
-        
+
         // Méthode pour ouvrir la fenêtre des paramètres
+        /// <author>Alexandre Hugot</author>
         public void OpenParametersButton_Click(object sender, RoutedEventArgs e)
         {
             this.parametersWindow = new ParametersWindow();
@@ -66,8 +67,6 @@ namespace IHM
             this.Close();
         }
 
-        ///Ouvre une fenetre ParametersWindow et cache la fenêtre MainMenu
-        /// <author>Alexandre Hugot</author>
         
     }
 }
