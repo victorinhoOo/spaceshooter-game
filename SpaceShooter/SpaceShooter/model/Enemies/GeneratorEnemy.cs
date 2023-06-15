@@ -41,9 +41,9 @@ namespace SpaceShooter.model.Ennemies
             soldierInterval = TimeSpan.FromSeconds(5); // Intervalle entre les apparitions de soldats
             officerInterval = TimeSpan.FromSeconds(10); // Intervalle entre les apparitions d'officiers
             generalInterval = TimeSpan.FromSeconds(20); // Intervalle entre les apparitions de généraux
-            soldierIntervalMin = TimeSpan.FromSeconds(2); // Intervalle minimum entre les apparitions de soldats
+            soldierIntervalMin = TimeSpan.FromSeconds(1); // Intervalle minimum entre les apparitions de soldats
             officerIntervalMin = TimeSpan.FromSeconds(3); // Intervalle minimum entre les apparitions d'officiers
-            generalIntervalMin = TimeSpan.FromSeconds(7); // Intervalle minimum entre les apparitions de généraux
+            generalIntervalMin = TimeSpan.FromSeconds(4); // Intervalle minimum entre les apparitions de généraux
         }
 
         /// <summary>

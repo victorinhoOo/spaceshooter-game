@@ -15,7 +15,7 @@ namespace SpaceShooter.model.Ennemies
     public class General : Enemy
     {
 
-        private TimeSpan shootInterval = TimeSpan.FromSeconds(0.5); // Intervalle entre les tirs
+        private TimeSpan shootInterval = TimeSpan.FromSeconds(0.3); // Intervalle entre les tirs
         private TimeSpan timeSinceLastShot = TimeSpan.Zero; // Temps écoulé depuis le dernier tir
         private List<string> explosionSprites;
         private int currentExplosionIndex;
