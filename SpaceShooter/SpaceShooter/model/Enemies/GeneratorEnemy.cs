@@ -8,15 +8,19 @@ namespace SpaceShooter.model.Ennemies
     /// </summary>
     /// <author>Victor Duboz</author>
     /// <author>Théo Cornu</author>
+    /// <author>Alexandre Hugot</author>
     public class GeneratorEnemy : GameItem, IAnimable
     {
         private TimeSpan timeToCreateAsteroid;
         private TimeSpan timeToCreateSoldier;
         private TimeSpan timeToCreateOfficer;
+        private TimeSpan timeToCreateGeneral;
         private TimeSpan soldierInterval;
         private TimeSpan officerInterval;
+        private TimeSpan generalInterval;
         private TimeSpan soldierIntervalMin;
         private TimeSpan officerIntervalMin;
+        private TimeSpan generalIntervalMin;
         private Random random;
 
         private static int amount = 0;
@@ -33,10 +37,13 @@ namespace SpaceShooter.model.Ennemies
             timeToCreateAsteroid = GetRandomTimeToCreate();
             timeToCreateSoldier = TimeSpan.FromSeconds(3); // Temps initial pour la création de soldats
             timeToCreateOfficer = TimeSpan.FromSeconds(5); // Temps initial pour la création d'officiers
+            timeToCreateGeneral = TimeSpan.FromSeconds(10); // Temps initial pour la création de généraux
             soldierInterval = TimeSpan.FromSeconds(5); // Intervalle entre les apparitions de soldats
             officerInterval = TimeSpan.FromSeconds(10); // Intervalle entre les apparitions d'officiers
+            generalInterval = TimeSpan.FromSeconds(20); // Intervalle entre les apparitions de généraux
             soldierIntervalMin = TimeSpan.FromSeconds(1); // Intervalle minimum entre les apparitions de soldats
             officerIntervalMin = TimeSpan.FromSeconds(3); // Intervalle minimum entre les apparitions d'officiers
+            generalIntervalMin = TimeSpan.FromSeconds(4); // Intervalle minimum entre les apparitions de généraux
         }
 
         /// <summary>
@@ -47,6 +54,7 @@ namespace SpaceShooter.model.Ennemies
         public TimeSpan TimeToCreateAsteroid { get => timeToCreateAsteroid; set => timeToCreateAsteroid = value; }
         public TimeSpan TimeToCreateSoldier { get => timeToCreateSoldier; set => timeToCreateSoldier = value; }
         public TimeSpan TimeToCreateOfficer { get => timeToCreateOfficer; set => timeToCreateOfficer = value; }
+        public TimeSpan TimeToCreateGeneral { get => timeToCreateGeneral; set => timeToCreateGeneral = value; }
 
         /// <summary>
         /// Effectue la génération d'ennemis
@@ -58,6 +66,7 @@ namespace SpaceShooter.model.Ennemies
             timeToCreateAsteroid -= dt;
             timeToCreateSoldier -= dt;
             timeToCreateOfficer -= dt;
+            timeToCreateGeneral -= dt;
 
             if (timeToCreateAsteroid.TotalMilliseconds < 0)
             {
@@ -75,6 +84,12 @@ namespace SpaceShooter.model.Ennemies
             {
                 CreateOfficer();
                 timeToCreateOfficer = AdjustOfficerInterval();
+            }
+
+            if (timeToCreateGeneral.TotalMilliseconds < 0)
+            {
+                CreateGeneral();
+                timeToCreateGeneral = AdjustGeneralInterval();
             }
         }
 
@@ -109,6 +124,14 @@ namespace SpaceShooter.model.Ennemies
             TheGame.AddItem(officer);
         }
 
+        private void CreateGeneral()
+        {
+            double x = random.NextDouble() * GameWidth;
+            double y = random.NextDouble() * (GameHeight / 2); // Position aléatoire en haut de l'écran
+            General general = new General(x, y, TheGame);
+            TheGame.AddItem(general);
+        }
+
         /// <summary>
         /// Diminue l'intervalle entre les apparitions de soldats au fil du temps
         /// </summary>
@@ -140,6 +163,21 @@ namespace SpaceShooter.model.Ennemies
             }
 
             return officerInterval;
+        }
+
+        // Diminue l'intervalle entre les apparitions de generaux au fil du temps
+        private TimeSpan AdjustGeneralInterval()
+        {
+            double intervalReduction = random.NextDouble() * 0.5 + 0.2; // Réduction aléatoire de l'intervalle à chaque génération 
+
+            generalInterval -= TimeSpan.FromSeconds(intervalReduction);
+
+            if (generalInterval < generalIntervalMin)
+            {
+                generalInterval = generalIntervalMin;
+            }
+
+            return generalInterval;
         }
 
         public override void CollideEffect(GameItem other)

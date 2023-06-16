@@ -16,6 +16,7 @@
     <None Remove="Sprites\explosion3.png" />
     <None Remove="Sprites\explosion4.png" />
     <None Remove="Sprites\explosion5.png" />
+    <None Remove="Sprites\general.png" />
     <None Remove="Sprites\laser.png" />
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
@@ -59,6 +60,7 @@
     <Resource Include="Sprites\explosion4.png" />
     <Resource Include="Sprites\explosion5.png" />
     <Resource Include="Sprites\flaming_asteroid.png" />
+    <Resource Include="Sprites\general.png" />
     <Resource Include="Sprites\laser-bolts.png" />
     <Resource Include="Sprites\laser.png" />
     <Resource Include="Sprites\player_bullet.png" />

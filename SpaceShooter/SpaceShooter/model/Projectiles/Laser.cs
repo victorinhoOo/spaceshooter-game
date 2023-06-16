@@ -21,7 +21,7 @@ namespace SpaceShooter.model.Projectiles
             base(x, y, g, name, zindex)
         {
             ChangeSprite(name);
-            base.Speed = 750;
+            base.Speed = 700;
         }
 
 
