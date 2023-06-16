@@ -11,6 +11,10 @@ using SpaceShooter.model.Projectiles;
 
 namespace Tests_Unitaires.TestCollidePlayer
 {
+    /// <summary>
+    /// Tests pour les collisions des ennemis avec le joeuur
+    /// </summary>
+    /// <author>Clément Boutet</author>
     public class TestCollideEnemy
     {
         private Game game;

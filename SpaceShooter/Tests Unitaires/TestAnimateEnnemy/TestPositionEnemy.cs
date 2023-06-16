@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace Tests_Unitaires.TestAnimateEnnemy
 {
+    /// <summary>
+    /// Tests pour le déplacement des ennemis
+    /// </summary>
+    /// <author>Clément Boutet</author>
     public class TestPositionEnemy
     {
 

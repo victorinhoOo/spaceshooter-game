@@ -11,6 +11,10 @@ using System.Runtime.CompilerServices;
 
 namespace Tests_Unitaires.TestCollidePlayer
 {
+    /// <summary>
+    /// Tests pour la collisions des bonus avec le joueur
+    /// </summary>
+    /// <author>Clément </author>
     public class TestCollideBonus
     {
         private Game game;

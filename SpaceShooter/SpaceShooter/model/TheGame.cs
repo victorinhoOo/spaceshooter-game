@@ -16,6 +16,7 @@ namespace SpaceShooter.model
     /// </summary>
     /// <author>Théo Cornu</author>
     /// <author>Victor Duboz</author>
+    /// <author>Clément Boutet</author>
     public class TheGame : IUTGame.Game
     {
         public TheGame(IScreen screen, IWindow view) : base(screen, "Sprites", "Sounds")
