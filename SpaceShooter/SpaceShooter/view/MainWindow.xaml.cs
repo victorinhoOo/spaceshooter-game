@@ -64,9 +64,10 @@ namespace IHM
         // Méthode pour quitter l'application
         public void Quit(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            System.Windows.Application.Current.Shutdown();
+
         }
 
-        
+
     }
 }
