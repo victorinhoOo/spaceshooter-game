@@ -23,7 +23,14 @@ namespace SpaceShooter.model.Ennemies
         public double Angle { get=> angle; set => angle = value; }
 
 
-
+        /// <summary>
+        /// Créé un ennemi, incrémente le compteur d'ennemis
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="g"></param>
+        /// <param name="name"></param>
+        /// <param name="zindex"></param>
         public Enemy(double x, double y, Game g, string name = "", int zindex = 0) :
             base(x, y, g, name, zindex)
         {
@@ -40,6 +47,10 @@ namespace SpaceShooter.model.Ennemies
         }
 
 
+        /// <summary>
+        /// Génère un bonus
+        /// </summary>
+        /// <author>Clément Boutet</author>
         public void GenerateBonus()
         {
             List<BonusType> bonusTypes = new List<BonusType>();

@@ -13,10 +13,9 @@ namespace SpaceShooter.model.Projectiles
 
 
         /// <summary>
-        /// Créé un laser, lui attribut une vitesse de 750
+        /// Créé un laser, lui attribut une vitesse de 700
         /// </summary>
         /// <author>Victor Duboz</author>
- 
         public Laser(double x, double y, Game g, string name = "laser.png", int zindex = 0) :
             base(x, y, g, name, zindex)
         {

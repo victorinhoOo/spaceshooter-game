@@ -27,10 +27,27 @@ namespace SpaceShooter.model.Ennemies
 
         private TheGame g;
 
+
+        /// <summary>
+        /// Construit un soldat, le fait apparaître avec un angle aléatoire parmis un interval
+        /// </summary>
+        /// <param name="x">Coordonnées d'apparition</param>
+        /// <param name="y">Coordonnées d'apparition</param>
+        /// <param name="g">Jeu auquel il appartient</param>
+        /// <param name="name">sprite du soldat</param>
         public Soldier(double x, double y, Game g, string name = "Ship_5.png") : base(x, y, g, name, -100)
         {
             Random random = new Random();
-            double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
+            double randomAngle;
+
+            if (random.NextDouble() < 0.5)
+            {
+                randomAngle = random.NextDouble() * 50 - 25; // apparaît entre -25 et 25
+            }
+            else
+            {
+                randomAngle = random.NextDouble() * 50 - 25 + 180; // apparaît avec un angle opposé
+            }
             base.Angle = randomAngle;
             this.g = (TheGame)g;
 

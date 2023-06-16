@@ -24,10 +24,27 @@ namespace SpaceShooter.model.Ennemies
         public bool IsExploding { get => isExploding; set => isExploding = value; }
 
         private TheGame g;
+
+        /// <summary>
+        /// Construit un officier, le fait apparaître avec un angle aléatoire parmi un interval
+        /// </summary>
+        /// <param name="x">Coordonnées d'apparition</param>
+        /// <param name="y">Coordonnées d'apparition</param>
+        /// <param name="g">Jeu auquel il appartient</param>
+        /// <param name="name">sprite du soldat</param>
         public Officer(double x, double y, Game g, string name = "Ship_3.png") : base(x, y, g, name, -100)
         {
             Random random = new Random();
-            double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
+            double randomAngle;
+
+            if (random.NextDouble() < 0.5)
+            {
+                randomAngle = random.NextDouble() * 50 - 25; // apparaît entre -25 et 25
+            }
+            else
+            {
+                randomAngle = random.NextDouble() * 50 - 25 + 180; // apparaît avec un angle opposé
+            }
             base.Angle = randomAngle;
             base.Speed = 400;
             this.g = (TheGame) g;
@@ -64,7 +81,7 @@ namespace SpaceShooter.model.Ennemies
         /// <author>Victor Duboz</author>
         public override void Animate(TimeSpan dt)
         {
-            if (isExploding)
+            if (isExploding) // si l'officier est en train d'exploser
             {
                 if (currentExplosionIndex < explosionSprites.Count)
                 {

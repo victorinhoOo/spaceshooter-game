@@ -51,10 +51,13 @@ namespace SpaceShooter.model.Ennemies
         /// </summary>
         public override string TypeName => "generator";
 
+
+        // Ces propriétés sont utilisées uniquement pour les tests unitaires du Générateur d'ennemis
         public TimeSpan TimeToCreateAsteroid { get => timeToCreateAsteroid; set => timeToCreateAsteroid = value; }
         public TimeSpan TimeToCreateSoldier { get => timeToCreateSoldier; set => timeToCreateSoldier = value; }
         public TimeSpan TimeToCreateOfficer { get => timeToCreateOfficer; set => timeToCreateOfficer = value; }
         public TimeSpan TimeToCreateGeneral { get => timeToCreateGeneral; set => timeToCreateGeneral = value; }
+
 
         /// <summary>
         /// Effectue la génération d'ennemis

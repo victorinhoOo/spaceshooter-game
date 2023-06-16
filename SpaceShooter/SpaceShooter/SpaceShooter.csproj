@@ -18,6 +18,9 @@
     <None Remove="Sprites\explosion5.png" />
     <None Remove="Sprites\general.png" />
     <None Remove="Sprites\laser.png" />
+    <None Remove="Sprites\player_anim1.png" />
+    <None Remove="Sprites\player_anim1_2424.png" />
+    <None Remove="Sprites\player_anim2.png" />
     <None Remove="Sprites\shoot.png" />
     <None Remove="Sprites\speed.png" />
     <None Remove="view\Image\background2.png" />
@@ -63,6 +66,8 @@
     <Resource Include="Sprites\general.png" />
     <Resource Include="Sprites\laser-bolts.png" />
     <Resource Include="Sprites\laser.png" />
+    <Resource Include="Sprites\player_anim1.png" />
+    <Resource Include="Sprites\player_anim2.png" />
     <Resource Include="Sprites\player_bullet.png" />
     <Resource Include="Sprites\power-up.png" />
     <Resource Include="Sprites\Ship_1.png" />

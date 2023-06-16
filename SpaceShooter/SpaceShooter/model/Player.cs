@@ -34,12 +34,14 @@ namespace SpaceShooter.model
         private bool isExploding; // joueur en train d'exploser ou non
         public bool IsExploding { get => isExploding; set => isExploding = value; }
 
+        private bool isPlayerAnim1 = true;
+
 
         /// <summary>
         /// Créé un joueur, initialise, le booléen, l'index et les sprites d'explosion
         /// </summary>
         /// <author>Victor Duboz</author>
-        public Player(double x, double y, Game g) : base(x, y, g, "Ship_1.png")
+        public Player(double x, double y, Game g) : base(x, y, g, "player_anim1.png")
         {
             this.game = g;
             explosionSprites = new List<string>()
@@ -66,7 +68,7 @@ namespace SpaceShooter.model
         /// <author>Victor Duboz</author>
         public void Animate(TimeSpan dt)
         {
-            if (isExploding)
+            if (isExploding) // si le joueur explose
             {
                 if (currentExplosionIndex < explosionSprites.Count)
                 {
@@ -79,6 +81,22 @@ namespace SpaceShooter.model
                 }
                 return;
             }
+
+            else // gestion de l'animation du réacteur
+            {
+                if (isPlayerAnim1)
+                {
+                    this.ChangeSprite("player_anim2.png");
+                }
+                else
+                {
+                    this.ChangeSprite("player_anim1.png");
+                }
+
+                isPlayerAnim1 = !isPlayerAnim1; 
+            }
+
+
             if (this.Top <= 0)
             {
                 this.Top = 0;
@@ -99,6 +117,7 @@ namespace SpaceShooter.model
             // Met à jour le temps écoulé depuis le dernier tir
             timeSinceLastShot += dt;
         }
+
 
         /// <summary>
         /// Gère les collisions du joueur avec les autres items du jeu
@@ -142,7 +161,7 @@ namespace SpaceShooter.model
         /// <author>Victor Duboz</author>
         public void Shoot()
         {
-            PlayerBullet bullet = new PlayerBullet(this.Left, this.Top - 30, this.TheGame);
+            PlayerBullet bullet = new PlayerBullet(this.Left+4, this.Top - 30, this.TheGame);
             TheGame.AddItem(bullet);
         }
 

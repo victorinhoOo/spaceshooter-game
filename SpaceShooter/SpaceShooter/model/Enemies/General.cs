@@ -33,9 +33,17 @@ namespace SpaceShooter.model.Ennemies
         /// <param name="name">sprite</param>
         public General(double x, double y, Game g, string name = "general.png") : base(x, y, g, name, -100)
         {
-            base.Speed = 100;
             Random random = new Random();
-            double randomAngle = random.NextDouble() * 40 - 20; // Génère un angle aléatoire entre -20 et 20
+            double randomAngle;
+
+            if (random.NextDouble() < 0.5)
+            {
+                randomAngle = random.NextDouble() * 50 - 25; // apparaît entre -25 et 25
+            }
+            else
+            {
+                randomAngle = random.NextDouble() * 50 - 25 + 180; // apparaît avec un angle opposé
+            }
             base.Angle = randomAngle;
             this.g = (TheGame)g;
 
