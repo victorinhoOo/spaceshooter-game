@@ -30,7 +30,7 @@ namespace SpaceShooter.model.Bonus
         /// <param name="zindex">position en altitude</param>
         public Bonus(double x, double y, Game game, string spriteName="", int zindex = 0) : base(x, y, game, spriteName, zindex)
         {
-            this.delay = new TimeSpan(0,0,3);
+            this.delay = new TimeSpan(0,0,2);
         }
 
         public override string TypeName => "Bonus";
