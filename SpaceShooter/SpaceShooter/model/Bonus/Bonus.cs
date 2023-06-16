@@ -14,7 +14,6 @@ namespace SpaceShooter.model.Bonus
     /// Représente les bonus du jeux
     /// </summary>
     /// <author>Clément Boutet</author>
-    /// <author>Théo Cornu</author>
     public abstract class Bonus : GameItem, IAnimable
     {
 
