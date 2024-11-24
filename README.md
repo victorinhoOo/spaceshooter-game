@@ -1,32 +1,40 @@
 # Space Shooter
 
-Space Shooter est un jeu dans lequel le joueur dirige un vaisseau chargé de détruire les vaisseaux ennemis venus l'attaquer (soldats, officiers et généraux) et d'esquiver les astéroides qui tombent dans sa direction.
+[🇬🇧 English](README.md) | [🇫🇷 Français](README.fr.md)
 
-Un menu de paramètres et de high-scores est disponible, ainsi que deux languages (anglais/français) qui se mettent automatiquement à jour en fonction de la langue du système.
+---
 
-# Technologies utilisés
+Space Shooter is a game where the player controls a spaceship tasked with destroying enemy ships (soldiers, officers, and generals) while dodging asteroids falling in its direction.
 
-Front-end : WPF
+A settings menu and high-score list are available, along with two languages (English/French) that automatically update based on the system language.
 
-Backend : C#
+---
 
-# Captures d'écrans 
+## Technologies Used  
 
-![fr](https://github.com/user-attachments/assets/314d090d-dadd-432b-8d51-edcc48948a4e)
+C# / WPF
+---
 
-<img alt="en png" src="https://github.com/user-attachments/assets/635a02ab-9a23-48fe-8b79-fce052ded123">
+## Screenshots  
 
+![French Screenshot](https://github.com/user-attachments/assets/314d090d-dadd-432b-8d51-edcc48948a4e)  
 
-![game png 2](https://github.com/user-attachments/assets/589fcbb1-073c-4b0f-b5a2-cde0218ed681)
+<img alt="English Screenshot" src="https://github.com/user-attachments/assets/635a02ab-9a23-48fe-8b79-fce052ded123">  
 
-# Livrables 
+![Gameplay Screenshot](https://github.com/user-attachments/assets/589fcbb1-073c-4b0f-b5a2-cde0218ed681)  
 
-*Lien de téléchargement du jeu en .exe* : https://drive.google.com/file/d/1durst1uM2w-fIvCXn2Dfabqsz7sA8dFP/view?usp=drive_link
-<br>
-*Lien de téléchargement de la conception en pdf* : https://drive.google.com/file/d/1gkGY6Hf1sByGy98pUTT6hlYiUaHYptpF/view?usp=drive_link
-<br>
-*Lien de téléchargement de la documentation* : https://drive.google.com/file/d/1y6nS0ZHz0APYOOletcB5Pa6L2GBk2TVa/view?usp=drive_link
+---
 
+## Deliverables  
 
+- **Download the game (.exe)**: [Space Shooter - Executable](https://drive.google.com/file/d/1durst1uM2w-fIvCXn2Dfabqsz7sA8dFP/view?usp=drive_link)  
+- **Download the design document (PDF)**: [Design Document](https://drive.google.com/file/d/1gkGY6Hf1sByGy98pUTT6hlYiUaHYptpF/view?usp=drive_link)  
+- **Download the documentation**: [Documentation](https://drive.google.com/file/d/1y6nS0ZHz0APYOOletcB5Pa6L2GBk2TVa/view?usp=drive_link)  
 
-Si certains tests unitaires ne passent pas, il est nécessaire de les relancer individuellement
+---
+
+### Note  
+
+Some unit tests might fail due to a thread issue in Visual Studio, it is necessary to rerun them individually.
+
+---
