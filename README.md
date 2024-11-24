@@ -10,9 +10,10 @@ A settings menu and high-score list are available, along with two languages (Eng
 
 ---
 
-## Technologies Used  
+## Built with
 
 C# / WPF
+
 ---
 
 ## Screenshots  
